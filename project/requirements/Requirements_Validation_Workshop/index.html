@@ -1,0 +1,3298 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Enterprise Zero-Based Budgeting System Documentation">
+      
+      
+        <meta name="author" content="ZBB ERP Team">
+      
+      
+      
+        <link rel="prev" href="../functional_specs/">
+      
+      
+        <link rel="next" href="../Requirements_Workshop_Results/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Validation Workshop - ZBB ERP Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#requirements-validation-workshop" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ZBB ERP Platform" class="md-header__button md-logo" aria-label="ZBB ERP Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZBB ERP Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Validation Workshop
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/remitpro/ZBBERPSaaSPlatform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZBBERPSaaSPlatform
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../guides/quickstart/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../reference/api/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../design/Technical_Architecture/" class="md-tabs__link">
+          
+  
+  
+  Project Info
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ZBB ERP Platform" class="md-nav__button md-logo" aria-label="ZBB ERP Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ZBB ERP Platform
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/remitpro/ZBBERPSaaSPlatform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZBBERPSaaSPlatform
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (AWS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/deployment_digitalocean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (DigitalOcean)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Info
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Info
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/Technical_Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/CoA_Mapping_Specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoA Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/Loan_Product_Taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loan Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/Product_Geography_Taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geo Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/integration_specs/GL_Integration_PoC_Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GL Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/integration_specs/GL_Integration_PoC_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GL Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/workplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workplan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/Infrastructure_Procurement_Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/Risk_Register/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional_specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Workshop
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Workshop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zbb-erp-module-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZBB ERP Module Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workshop Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#participants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Participants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Participants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-attendees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Attendees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-attendees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Attendees
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agenda
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agenda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#session-1-introduction-and-context-900-am-930-am" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 1: Introduction and Context (9:00 AM - 9:30 AM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-2-system-integration-architecture-930-am-1030-am" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 2: System Integration &amp; Architecture (9:30 AM - 10:30 AM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break-1030-am-1045-am" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Break (10:30 AM - 10:45 AM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-3-assumptions-engine-zbb-logic-1045-am-1200-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 3: Assumptions Engine &amp; ZBB Logic (10:45 AM - 12:00 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lunch-break-1200-pm-100-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lunch Break (12:00 PM - 1:00 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-4-loan-portfolio-funding-modules-100-pm-230-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 4: Loan Portfolio &amp; Funding Modules (1:00 PM - 2:30 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break-230-pm-245-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Break (2:30 PM - 2:45 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-5-financial-statements-kpis-245-pm-400-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 5: Financial Statements &amp; KPIs (2:45 PM - 4:00 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-6-workflow-validation-reporting-400-pm-500-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 6: Workflow, Validation &amp; Reporting (4:00 PM - 5:00 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-7-wrap-up-and-next-steps-500-pm-530-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 7: Wrap-up and Next Steps (5:00 PM - 5:30 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-workshop-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Workshop Preparation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-Workshop Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-week-before" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Week Before
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-days-before" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Days Before
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-day-before" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Day Before
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workshop Materials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workshop Materials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handouts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supplies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-workshop-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Workshop Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-Workshop Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-within-24-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate (Within 24 hours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#within-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Within 1 Week
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-worksheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Worksheets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Worksheets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worksheet-1-requirement-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worksheet 1: Requirement Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worksheet-2-gap-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worksheet 2: Gap Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worksheet-3-kpi-target-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worksheet 3: KPI Target Ranges
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements_Workshop_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Project_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Project_Status_Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Status Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Team_Roster_Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team Roster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Final_Project_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Completion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_5" id="__nav_5_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1 Details
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 1 Details
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_1_Progress_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_2_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_7" id="__nav_5_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monthly Updates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monthly Updates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_2_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_3_Phase_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_4_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zbb-erp-module-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZBB ERP Module Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workshop Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#participants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Participants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Participants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-attendees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Attendees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-attendees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Attendees
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agenda
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agenda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#session-1-introduction-and-context-900-am-930-am" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 1: Introduction and Context (9:00 AM - 9:30 AM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-2-system-integration-architecture-930-am-1030-am" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 2: System Integration &amp; Architecture (9:30 AM - 10:30 AM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break-1030-am-1045-am" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Break (10:30 AM - 10:45 AM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-3-assumptions-engine-zbb-logic-1045-am-1200-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 3: Assumptions Engine &amp; ZBB Logic (10:45 AM - 12:00 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lunch-break-1200-pm-100-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lunch Break (12:00 PM - 1:00 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-4-loan-portfolio-funding-modules-100-pm-230-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 4: Loan Portfolio &amp; Funding Modules (1:00 PM - 2:30 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break-230-pm-245-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Break (2:30 PM - 2:45 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-5-financial-statements-kpis-245-pm-400-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 5: Financial Statements &amp; KPIs (2:45 PM - 4:00 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-6-workflow-validation-reporting-400-pm-500-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 6: Workflow, Validation &amp; Reporting (4:00 PM - 5:00 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-7-wrap-up-and-next-steps-500-pm-530-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session 7: Wrap-up and Next Steps (5:00 PM - 5:30 PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-workshop-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Workshop Preparation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-Workshop Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-week-before" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Week Before
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-days-before" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Days Before
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-day-before" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Day Before
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workshop Materials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workshop Materials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handouts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supplies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-workshop-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Workshop Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-Workshop Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-within-24-hours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate (Within 24 hours)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#within-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Within 1 Week
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-worksheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Worksheets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Worksheets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worksheet-1-requirement-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worksheet 1: Requirement Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worksheet-2-gap-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worksheet 2: Gap Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worksheet-3-kpi-target-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worksheet 3: KPI Target Ranges
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/remitpro/ZBBERPSaaSPlatform/edit/master/docs/project/requirements/Requirements_Validation_Workshop.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="requirements-validation-workshop">Requirements Validation Workshop<a class="headerlink" href="#requirements-validation-workshop" title="Permanent link">&para;</a></h1>
+<h2 id="zbb-erp-module-implementation">ZBB ERP Module Implementation<a class="headerlink" href="#zbb-erp-module-implementation" title="Permanent link">&para;</a></h2>
+<p><strong>Workshop Date:</strong> [To be scheduled - Month 1, Week 2]<br />
+<strong>Duration:</strong> Full day (8 hours)<br />
+<strong>Location:</strong> [Conference Room]<br />
+<strong>Facilitator:</strong> Functional Lead</p>
+<hr />
+<h2 id="workshop-objectives">Workshop Objectives<a class="headerlink" href="#workshop-objectives" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Validate functional requirements with key stakeholders</li>
+<li>Identify any gaps or missing requirements</li>
+<li>Prioritize requirements (Must-have, Should-have, Nice-to-have)</li>
+<li>Confirm understanding of business processes</li>
+<li>Build consensus on solution approach</li>
+</ol>
+<hr />
+<h2 id="participants">Participants<a class="headerlink" href="#participants" title="Permanent link">&para;</a></h2>
+<h3 id="required-attendees">Required Attendees<a class="headerlink" href="#required-attendees" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Head of Budget (Workshop Sponsor)</li>
+<li>[ ] Budget Team Representatives (3-4 people)</li>
+<li>[ ] Heads of Business Units (sample of 3-4 units)</li>
+<li>[ ] Operations Team Lead</li>
+<li>[ ] Finance Team Representative</li>
+<li>[ ] Functional Lead (Facilitator)</li>
+<li>[ ] Business Analysts (3)</li>
+<li>[ ] Technical Lead</li>
+</ul>
+<h3 id="optional-attendees">Optional Attendees<a class="headerlink" href="#optional-attendees" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Project Manager</li>
+<li>[ ] Change Management Lead</li>
+</ul>
+<hr />
+<h2 id="agenda">Agenda<a class="headerlink" href="#agenda" title="Permanent link">&para;</a></h2>
+<h3 id="session-1-introduction-and-context-900-am-930-am">Session 1: Introduction and Context (9:00 AM - 9:30 AM)<a class="headerlink" href="#session-1-introduction-and-context-900-am-930-am" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives:</strong>
+- Set workshop context and objectives
+- Review current state challenges
+- Introduce FRD structure</p>
+<p><strong>Activities:</strong>
+- Welcome and introductions
+- Workshop objectives and ground rules
+- Current process pain points discussion
+- FRD overview presentation</p>
+<p><strong>Materials:</strong> Project Charter, FRD Executive Summary</p>
+<hr />
+<h3 id="session-2-system-integration-architecture-930-am-1030-am">Session 2: System Integration &amp; Architecture (9:30 AM - 10:30 AM)<a class="headerlink" href="#session-2-system-integration-architecture-930-am-1030-am" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives:</strong>
+- Validate Chart of Accounts mapping approach
+- Confirm GL integration requirements
+- Review RBAC model</p>
+<p><strong>Discussion Topics:</strong>
+1. <strong>Chart of Accounts Mapping</strong>
+   - Current CoA structure
+   - Multi-dimensional requirements (Cost Center, Business Unit, Product, Geography)
+   - Validation rules</p>
+<ol>
+<li><strong>GL Integration</strong></li>
+<li>Data synchronization frequency</li>
+<li>Integration points</li>
+<li>
+<p>Error handling</p>
+</li>
+<li>
+<p><strong>User Roles and Permissions</strong></p>
+</li>
+<li>Review 6 user roles (Executive, Budget Team, Unit Heads, Operations, Finance, Auditors)</li>
+<li>Validate permissions matrix</li>
+<li>Delegation requirements</li>
+</ol>
+<p><strong>Validation Questions:</strong>
+- Is the CoA structure complete and accurate?
+- Are all necessary dimensions captured?
+- Are user roles correctly defined?
+- Any missing permissions or access requirements?</p>
+<p><strong>Materials:</strong> FRD Section 2</p>
+<hr />
+<h3 id="break-1030-am-1045-am">Break (10:30 AM - 10:45 AM)<a class="headerlink" href="#break-1030-am-1045-am" title="Permanent link">&para;</a></h3>
+<hr />
+<h3 id="session-3-assumptions-engine-zbb-logic-1045-am-1200-pm">Session 3: Assumptions Engine &amp; ZBB Logic (10:45 AM - 12:00 PM)<a class="headerlink" href="#session-3-assumptions-engine-zbb-logic-1045-am-1200-pm" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives:</strong>
+- Validate assumptions management requirements
+- Confirm ZBB template design
+- Review justification requirements</p>
+<p><strong>Discussion Topics:</strong></p>
+<ol>
+<li><strong>Assumptions Engine (FR-ASM-001 to FR-ASM-007)</strong></li>
+<li>Assumption categories (Macroeconomic, Growth, Regulatory, Operational)</li>
+<li>Version control requirements</li>
+<li>Approval workflow</li>
+<li>Scenario support (Base, Optimistic, Pessimistic)</li>
+</ol>
+<p><strong>Validation Questions:</strong>
+   - Are all assumption categories covered?
+   - Is version control approach acceptable?
+   - Who should approve assumption changes?</p>
+<ol>
+<li><strong>ZBB Templates (FR-ZBB-001 to FR-ZBB-010)</strong></li>
+<li>Template structure and fields</li>
+<li>Mandatory justification (50 character minimum)</li>
+<li>Document attachment thresholds</li>
+<li>Decision Package concept</li>
+</ol>
+<p><strong>Validation Questions:</strong>
+   - Is 50 characters sufficient for justifications?
+   - What threshold should trigger mandatory document attachment? ($50K suggested)
+   - Is Decision Package grouping useful?
+   - What business drivers should be in the dropdown?</p>
+<p><strong>Materials:</strong> FRD Section 3.1, 3.2</p>
+<hr />
+<h3 id="lunch-break-1200-pm-100-pm">Lunch Break (12:00 PM - 1:00 PM)<a class="headerlink" href="#lunch-break-1200-pm-100-pm" title="Permanent link">&para;</a></h3>
+<hr />
+<h3 id="session-4-loan-portfolio-funding-modules-100-pm-230-pm">Session 4: Loan Portfolio &amp; Funding Modules (1:00 PM - 2:30 PM)<a class="headerlink" href="#session-4-loan-portfolio-funding-modules-100-pm-230-pm" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives:</strong>
+- Validate loan portfolio budget structure
+- Confirm funding sources and calculations
+- Review interest income/expense logic</p>
+<p><strong>Discussion Topics:</strong></p>
+<ol>
+<li><strong>Loan Portfolio Module (FR-LOAN-001 to FR-LOAN-012)</strong></li>
+<li>Product types taxonomy</li>
+<li>PFI types and PFI master data</li>
+<li>Disbursement template (Product × PFI Type × PFI Name)</li>
+<li>Monthly phasing approach</li>
+<li>Interest income calculations</li>
+<li>Provisioning logic (IFRS 9)</li>
+</ol>
+<p><strong>Validation Questions:</strong>
+   - Are all product types captured?
+   - Is the PFI classification correct?
+   - Is monthly phasing granular enough?
+   - Are interest income formulas accurate?
+   - Is provisioning calculation aligned with accounting standards?</p>
+<ol>
+<li><strong>Borrowings &amp; Funding Module (FR-FUND-001 to FR-FUND-007)</strong></li>
+<li>Funding source types</li>
+<li>Borrowings schedule template</li>
+<li>Interest expense calculations</li>
+<li>Weighted average cost of funds</li>
+</ol>
+<p><strong>Validation Questions:</strong>
+   - Are all funding sources covered?
+   - Is deposit projection approach acceptable?
+   - Are interest expense formulas correct?</p>
+<p><strong>Materials:</strong> FRD Section 3.3, 3.4</p>
+<hr />
+<h3 id="break-230-pm-245-pm">Break (2:30 PM - 2:45 PM)<a class="headerlink" href="#break-230-pm-245-pm" title="Permanent link">&para;</a></h3>
+<hr />
+<h3 id="session-5-financial-statements-kpis-245-pm-400-pm">Session 5: Financial Statements &amp; KPIs (2:45 PM - 4:00 PM)<a class="headerlink" href="#session-5-financial-statements-kpis-245-pm-400-pm" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives:</strong>
+- Validate Three Statement Model integration
+- Confirm KPI formulas
+- Review reporting requirements</p>
+<p><strong>Discussion Topics:</strong></p>
+<ol>
+<li><strong>Three Statement Model (FR-IS, FR-BS, FR-CF)</strong></li>
+<li>Income Statement structure</li>
+<li>Balance Sheet structure</li>
+<li>Cash Flow Statement (indirect method)</li>
+<li>Integration validation checks</li>
+</ol>
+<p><strong>Validation Questions:</strong>
+   - Is the Income Statement structure complete?
+   - Are all Balance Sheet line items captured?
+   - Is the indirect method acceptable for Cash Flow?
+   - Are integration checks sufficient?</p>
+<ol>
+<li><strong>KPI Engine (FR-KPI-001 to FR-KPI-013)</strong></li>
+<li>Review all 13 KPI formulas:<ul>
+<li>Net Interest Margin (NIM)</li>
+<li>Return on Assets (ROA)</li>
+<li>Return on Equity (ROE)</li>
+<li>Cost-to-Income Ratio</li>
+<li>Loan Growth Rate</li>
+<li>NPL Ratio</li>
+<li>Provision Coverage Ratio</li>
+<li>Loan-to-Deposit Ratio (LDR)</li>
+<li>Liquidity Ratio</li>
+<li>Capital Adequacy Ratio (CAR)</li>
+<li>EPS, Dividend Payout, Net Interest Spread</li>
+</ul>
+</li>
+</ol>
+<p><strong>Validation Questions:</strong>
+   - Are formulas mathematically correct?
+   - Are these the right KPIs for management?
+   - Any missing KPIs?
+   - What are acceptable target ranges for each KPI?</p>
+<p><strong>Materials:</strong> FRD Sections 4, 5</p>
+<hr />
+<h3 id="session-6-workflow-validation-reporting-400-pm-500-pm">Session 6: Workflow, Validation &amp; Reporting (4:00 PM - 5:00 PM)<a class="headerlink" href="#session-6-workflow-validation-reporting-400-pm-500-pm" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives:</strong>
+- Validate workflow stages and approvals
+- Confirm validation rules
+- Review reporting requirements</p>
+<p><strong>Discussion Topics:</strong></p>
+<ol>
+<li><strong>Workflow (FR-WF-001 to FR-WF-010)</strong></li>
+<li>8-stage workflow: Draft → Submit → Review → Query → Approve → Consolidate → Final Review → Publish</li>
+<li>Approval hierarchy</li>
+<li>SLA timers</li>
+<li>Notification triggers</li>
+</ol>
+<p><strong>Validation Questions:</strong>
+   - Is the workflow appropriate?
+   - Who should be in each approval stage?
+   - What are acceptable SLAs (e.g., 3 days for review)?</p>
+<ol>
+<li><strong>Validation Framework (FR-VAL-001 to FR-VAL-019)</strong></li>
+<li>Hard validations (9 blocking rules)</li>
+<li>Soft validations (6 warnings)</li>
+<li>Error messages</li>
+</ol>
+<p><strong>Validation Questions:</strong>
+   - Are validation rules appropriate?
+   - Any missing validations?
+   - Are warning thresholds correct (e.g., 20% budget growth)?</p>
+<ol>
+<li><strong>Reporting (FR-REP-001 to FR-REP-009)</strong></li>
+<li>Standard reports</li>
+<li>Variance analysis</li>
+<li>Scenario analysis</li>
+<li>Export formats</li>
+</ol>
+<p><strong>Validation Questions:</strong>
+   - Are all necessary reports covered?
+   - Any missing reports?
+   - Are export formats sufficient (Excel, PDF, CSV)?</p>
+<p><strong>Materials:</strong> FRD Sections 6, 7, 8</p>
+<hr />
+<h3 id="session-7-wrap-up-and-next-steps-500-pm-530-pm">Session 7: Wrap-up and Next Steps (5:00 PM - 5:30 PM)<a class="headerlink" href="#session-7-wrap-up-and-next-steps-500-pm-530-pm" title="Permanent link">&para;</a></h3>
+<p><strong>Activities:</strong>
+- Summary of key findings and decisions
+- Review identified gaps or changes
+- Prioritization exercise (MoSCoW method)
+  - <strong>Must have:</strong> Critical for go-live
+  - <strong>Should have:</strong> Important but not critical
+  - <strong>Could have:</strong> Nice to have if time/budget permits
+  - <strong>Won't have:</strong> Out of scope for this phase
+- Action items and owners
+- Next steps</p>
+<p><strong>Outputs:</strong>
+- Validated requirements list
+- Identified gaps/changes
+- Prioritized requirements
+- Action item tracker</p>
+<hr />
+<h2 id="pre-workshop-preparation">Pre-Workshop Preparation<a class="headerlink" href="#pre-workshop-preparation" title="Permanent link">&para;</a></h2>
+<h3 id="1-week-before">1 Week Before<a class="headerlink" href="#1-week-before" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Send FRD to all participants</li>
+<li>[ ] Request participants to review assigned sections</li>
+<li>[ ] Prepare workshop presentation materials</li>
+<li>[ ] Book conference room</li>
+<li>[ ] Arrange refreshments</li>
+</ul>
+<h3 id="3-days-before">3 Days Before<a class="headerlink" href="#3-days-before" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Send reminder with agenda and pre-read materials</li>
+<li>[ ] Prepare flip charts, sticky notes, markers</li>
+<li>[ ] Set up projector/screen</li>
+<li>[ ] Prepare sign-in sheet</li>
+</ul>
+<h3 id="1-day-before">1 Day Before<a class="headerlink" href="#1-day-before" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Confirm attendance</li>
+<li>[ ] Print handouts (agenda, FRD summary, worksheets)</li>
+<li>[ ] Test equipment</li>
+</ul>
+<hr />
+<h2 id="workshop-materials">Workshop Materials<a class="headerlink" href="#workshop-materials" title="Permanent link">&para;</a></h2>
+<h3 id="handouts">Handouts<a class="headerlink" href="#handouts" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Workshop agenda</li>
+<li>FRD executive summary</li>
+<li>Section-specific excerpts from FRD</li>
+<li>Validation worksheets</li>
+<li>Prioritization matrix</li>
+</ul>
+<h3 id="supplies">Supplies<a class="headerlink" href="#supplies" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Flip charts and markers</li>
+<li>Sticky notes (multiple colors)</li>
+<li>Pens/pencils</li>
+<li>Name tents</li>
+<li>Sign-in sheet</li>
+</ul>
+<hr />
+<h2 id="post-workshop-actions">Post-Workshop Actions<a class="headerlink" href="#post-workshop-actions" title="Permanent link">&para;</a></h2>
+<h3 id="immediate-within-24-hours">Immediate (Within 24 hours)<a class="headerlink" href="#immediate-within-24-hours" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Distribute workshop notes and decisions</li>
+<li>[ ] Share action item tracker</li>
+<li>[ ] Send thank you email to participants</li>
+</ul>
+<h3 id="within-1-week">Within 1 Week<a class="headerlink" href="#within-1-week" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Update FRD based on workshop feedback</li>
+<li>[ ] Document all requirement changes</li>
+<li>[ ] Update requirements traceability matrix</li>
+<li>[ ] Circulate updated FRD for final sign-off</li>
+</ul>
+<hr />
+<h2 id="validation-worksheets">Validation Worksheets<a class="headerlink" href="#validation-worksheets" title="Permanent link">&para;</a></h2>
+<h3 id="worksheet-1-requirement-validation">Worksheet 1: Requirement Validation<a class="headerlink" href="#worksheet-1-requirement-validation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Requirement ID</th>
+<th>Description</th>
+<th>Valid? (Y/N)</th>
+<th>Comments/Changes</th>
+<th>Priority (M/S/C/W)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-ASM-001</td>
+<td>Assumptions Management module</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>FR-ZBB-001</td>
+<td>No auto-populate from prior year</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>FR-LOAN-007</td>
+<td>Interest income calculation</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>...</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="worksheet-2-gap-analysis">Worksheet 2: Gap Analysis<a class="headerlink" href="#worksheet-2-gap-analysis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Gap Description</th>
+<th>Impact</th>
+<th>Proposed Solution</th>
+<th>Priority</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="worksheet-3-kpi-target-ranges">Worksheet 3: KPI Target Ranges<a class="headerlink" href="#worksheet-3-kpi-target-ranges" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Formula</th>
+<th>Target Range</th>
+<th>Alert Threshold</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NIM</td>
+<td>(Int Inc - Int Exp) / Avg Earning Assets</td>
+<td>% to %</td>
+<td>&lt; %</td>
+<td></td>
+</tr>
+<tr>
+<td>ROA</td>
+<td>Net Profit / Avg Total Assets</td>
+<td>% to %</td>
+<td>&lt; %</td>
+<td></td>
+</tr>
+<tr>
+<td>...</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="success-criteria">Success Criteria<a class="headerlink" href="#success-criteria" title="Permanent link">&para;</a></h2>
+<ul>
+<li>✅ All key stakeholders participate actively</li>
+<li>✅ All FRD sections reviewed and validated</li>
+<li>✅ Gaps and changes documented</li>
+<li>✅ Requirements prioritized</li>
+<li>✅ Consensus achieved on solution approach</li>
+<li>✅ Action items assigned with due dates</li>
+<li>✅ Updated FRD ready for sign-off within 1 week</li>
+</ul>
+<hr />
+<p><strong>Workshop Owner:</strong> Functional Lead<br />
+<strong>Document Version:</strong> 1.0<br />
+<strong>Last Updated:</strong> February 10, 2026</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

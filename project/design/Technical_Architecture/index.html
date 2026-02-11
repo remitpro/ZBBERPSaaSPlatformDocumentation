@@ -1,0 +1,4833 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Enterprise Zero-Based Budgeting System Documentation">
+      
+      
+        <meta name="author" content="ZBB ERP Team">
+      
+      
+      
+        <link rel="prev" href="../../../reference/api/">
+      
+      
+        <link rel="next" href="../data_models/CoA_Mapping_Specification/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Technical Architecture - ZBB ERP Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#technical-architecture-document" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ZBB ERP Platform" class="md-header__button md-logo" aria-label="ZBB ERP Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZBB ERP Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Technical Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/remitpro/ZBBERPSaaSPlatform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZBBERPSaaSPlatform
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../guides/quickstart/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../reference/api/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Project Info
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ZBB ERP Platform" class="md-nav__button md-logo" aria-label="ZBB ERP Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ZBB ERP Platform
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/remitpro/ZBBERPSaaSPlatform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZBBERPSaaSPlatform
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (AWS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/deployment_digitalocean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (DigitalOcean)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Info
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Info
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zbb-erp-module-saas-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZBB ERP Module - SaaS Platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-level-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-client-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Client Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Client Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-web-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Web Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-mobile-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Mobile Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-api-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 API Clients
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-infrastructure-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Infrastructure Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Infrastructure Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-cloud-provider-aws-primary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Cloud Provider: AWS (Primary)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-container-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Container Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-load-balancing-cdn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Load Balancing &amp; CDN
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-application-layer-microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Application Layer (Microservices)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Application Layer (Microservices)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-microservices-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Microservices Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Microservices Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-authentication-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.1 Authentication Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-budget-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.2 Budget Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-loan-portfolio-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.3 Loan Portfolio Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#314-funding-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.4 Funding Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#315-financial-statements-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.5 Financial Statements Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#316-kpi-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.6 KPI Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#317-reporting-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.7 Reporting Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#318-scenario-planning-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.8 Scenario Planning Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#319-workflow-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.9 Workflow Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3110-gl-integration-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.10 GL Integration Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3111-aiml-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.11 AI/ML Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3112-audit-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.12 Audit Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-service-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Service Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-data-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Data Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Data Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-primary-database-postgresql-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Primary Database: PostgreSQL 14+
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-cache-layer-redis-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Cache Layer: Redis 7+
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-object-storage-aws-s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Object Storage: AWS S3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-time-series-database-influxdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Time-Series Database: InfluxDB
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-security-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Security Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Security Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-authentication-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Authentication &amp; Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-data-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Data Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Network Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-vulnerability-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Vulnerability Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-scalability-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Scalability &amp; Performance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Scalability &amp; Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-horizontal-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Horizontal Scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Performance Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-performance-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Performance Targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-high-availability-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. High Availability &amp; Disaster Recovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. High Availability &amp; Disaster Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-high-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 High Availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Disaster Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-monitoring-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Monitoring &amp; Observability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Monitoring &amp; Observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-monitoring-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Monitoring Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-key-metrics-monitored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Key Metrics Monitored
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-alerting-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Alerting Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-devops-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. DevOps &amp; CI/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. DevOps &amp; CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-cicd-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 CI/CD Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-infrastructure-as-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Infrastructure as Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-release-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Release Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-multi-tenancy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Multi-Tenancy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Multi-Tenancy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-tenant-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Tenant Isolation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-tenant-onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Tenant Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-api-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. API Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. API Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 REST API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-graphql-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 GraphQL API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-websocket-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 WebSocket API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-mobile-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Mobile Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Mobile Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-react-native-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 React Native App
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-push-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 Push Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-aiml-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. AI/ML Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. AI/ML Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-ml-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 ML Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-ml-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 ML Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-cost-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Cost Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Cost Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-cost-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 Cost Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-estimated-costs-monthly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Estimated Costs (Monthly)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-compliance-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Compliance &amp; Governance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Compliance &amp; Governance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-compliance-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 Compliance Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-data-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 Data Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-future-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Future Enhancements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Future Enhancements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-roadmap-next-12-months" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 Roadmap (Next 12 Months)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_models/CoA_Mapping_Specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoA Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_models/Loan_Product_Taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loan Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_models/Product_Geography_Taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geo Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration_specs/GL_Integration_PoC_Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GL Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration_specs/GL_Integration_PoC_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GL Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/workplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workplan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/Infrastructure_Procurement_Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/Risk_Register/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/functional_specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/Requirements_Validation_Workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Workshop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/Requirements_Workshop_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Project_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Project_Status_Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Status Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Team_Roster_Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team Roster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Final_Project_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Completion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_5" id="__nav_5_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1 Details
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 1 Details
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_1_Progress_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_2_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_7" id="__nav_5_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monthly Updates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monthly Updates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_2_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_3_Phase_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_4_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zbb-erp-module-saas-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZBB ERP Module - SaaS Platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-level-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-client-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Client Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Client Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-web-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Web Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-mobile-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Mobile Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-api-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 API Clients
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-infrastructure-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Infrastructure Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Infrastructure Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-cloud-provider-aws-primary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Cloud Provider: AWS (Primary)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-container-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Container Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-load-balancing-cdn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Load Balancing &amp; CDN
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-application-layer-microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Application Layer (Microservices)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Application Layer (Microservices)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-microservices-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Microservices Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Microservices Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-authentication-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.1 Authentication Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-budget-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.2 Budget Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-loan-portfolio-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.3 Loan Portfolio Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#314-funding-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.4 Funding Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#315-financial-statements-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.5 Financial Statements Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#316-kpi-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.6 KPI Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#317-reporting-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.7 Reporting Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#318-scenario-planning-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.8 Scenario Planning Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#319-workflow-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.9 Workflow Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3110-gl-integration-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.10 GL Integration Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3111-aiml-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.11 AI/ML Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3112-audit-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.12 Audit Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-service-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Service Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-data-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Data Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Data Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-primary-database-postgresql-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Primary Database: PostgreSQL 14+
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-cache-layer-redis-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Cache Layer: Redis 7+
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-object-storage-aws-s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Object Storage: AWS S3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-time-series-database-influxdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Time-Series Database: InfluxDB
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-security-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Security Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Security Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-authentication-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Authentication &amp; Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-data-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Data Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Network Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-vulnerability-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Vulnerability Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-scalability-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Scalability &amp; Performance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Scalability &amp; Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-horizontal-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Horizontal Scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Performance Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-performance-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Performance Targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-high-availability-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. High Availability &amp; Disaster Recovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. High Availability &amp; Disaster Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-high-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 High Availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Disaster Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-monitoring-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Monitoring &amp; Observability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Monitoring &amp; Observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-monitoring-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Monitoring Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-key-metrics-monitored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Key Metrics Monitored
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-alerting-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Alerting Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-devops-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. DevOps &amp; CI/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. DevOps &amp; CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-cicd-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 CI/CD Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-infrastructure-as-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Infrastructure as Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-release-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Release Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-multi-tenancy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Multi-Tenancy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Multi-Tenancy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-tenant-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Tenant Isolation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-tenant-onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Tenant Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-api-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. API Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. API Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 REST API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-graphql-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 GraphQL API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-websocket-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 WebSocket API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-mobile-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Mobile Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Mobile Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-react-native-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 React Native App
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-push-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 Push Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-aiml-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. AI/ML Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. AI/ML Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-ml-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 ML Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-ml-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 ML Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-cost-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Cost Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Cost Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-cost-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 Cost Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-estimated-costs-monthly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Estimated Costs (Monthly)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-compliance-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Compliance &amp; Governance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Compliance &amp; Governance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-compliance-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 Compliance Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-data-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 Data Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-future-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Future Enhancements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Future Enhancements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-roadmap-next-12-months" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 Roadmap (Next 12 Months)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/remitpro/ZBBERPSaaSPlatform/edit/master/docs/project/design/Technical_Architecture.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="technical-architecture-document">Technical Architecture Document<a class="headerlink" href="#technical-architecture-document" title="Permanent link">&para;</a></h1>
+<h2 id="zbb-erp-module-saas-platform">ZBB ERP Module - SaaS Platform<a class="headerlink" href="#zbb-erp-module-saas-platform" title="Permanent link">&para;</a></h2>
+<p><strong>Version:</strong> 1.0<br />
+<strong>Date:</strong> February 2026<br />
+<strong>Status:</strong> Production Architecture</p>
+<hr />
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>This document describes the technical architecture for the Zero-Based Budgeting (ZBB) ERP Module delivered as a multi-tenant SaaS platform. The architecture is designed for scalability, security, high availability, and performance, supporting 1000+ concurrent users across multiple financial institutions.</p>
+<hr />
+<h2 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h2>
+<h3 id="high-level-architecture">High-Level Architecture<a class="headerlink" href="#high-level-architecture" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                        Client Layer                              │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├─────────────────────────────────────────────────────────────────┤
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│  Web App (React)  │  Mobile App (iOS/Android)  │  API Clients   │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└─────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                              ↓ HTTPS/WSS
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│                     CDN &amp; Load Balancer                          │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│              (CloudFlare / AWS CloudFront)                       │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>└─────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>                              ↓
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│                    API Gateway Layer                             │
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>├─────────────────────────────────────────────────────────────────┤
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│  Authentication  │  Rate Limiting  │  Request Routing  │  SSL    │
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>└─────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                              ↓
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│                   Application Layer (Microservices)              │
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>├─────────────────────────────────────────────────────────────────┤
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│  Budget Service  │  Loan Service  │  Funding Service  │  etc.   │
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>└─────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>                              ↓
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│                      Data Layer                                  │
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>├─────────────────────────────────────────────────────────────────┤
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│  PostgreSQL (Primary)  │  Redis Cache  │  S3 Object Storage     │
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>└─────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<hr />
+<h2 id="1-client-layer">1. Client Layer<a class="headerlink" href="#1-client-layer" title="Permanent link">&para;</a></h2>
+<h3 id="11-web-application">1.1 Web Application<a class="headerlink" href="#11-web-application" title="Permanent link">&para;</a></h3>
+<p><strong>Technology Stack:</strong>
+- <strong>Framework:</strong> React 18.x with TypeScript
+- <strong>State Management:</strong> Redux Toolkit + RTK Query
+- <strong>UI Library:</strong> Material-UI (MUI) v5
+- <strong>Charts:</strong> Recharts + D3.js
+- <strong>Forms:</strong> React Hook Form + Yup validation
+- <strong>Build Tool:</strong> Vite
+- <strong>Testing:</strong> Jest + React Testing Library</p>
+<p><strong>Key Features:</strong>
+- Responsive design (desktop, tablet)
+- Progressive Web App (PWA) capabilities
+- Offline mode with service workers
+- Real-time updates via WebSockets
+- Code splitting and lazy loading</p>
+<p><strong>Performance Targets:</strong>
+- First Contentful Paint (FCP): &lt;1.5s
+- Time to Interactive (TTI): &lt;3.5s
+- Lighthouse Score: &gt;90</p>
+<hr />
+<h3 id="12-mobile-application">1.2 Mobile Application<a class="headerlink" href="#12-mobile-application" title="Permanent link">&para;</a></h3>
+<p><strong>Technology Stack:</strong>
+- <strong>Framework:</strong> React Native 0.72+
+- <strong>Navigation:</strong> React Navigation v6
+- <strong>State Management:</strong> Redux Toolkit
+- <strong>UI Components:</strong> React Native Paper
+- <strong>Offline Storage:</strong> AsyncStorage + WatermelonDB</p>
+<p><strong>Platforms:</strong>
+- iOS 14+ (Swift bridge for native features)
+- Android 10+ (Kotlin bridge for native features)</p>
+<p><strong>Key Features:</strong>
+- Biometric authentication (Face ID, Touch ID, Fingerprint)
+- Push notifications (Firebase Cloud Messaging)
+- Offline-first architecture with sync
+- Camera integration for document upload
+- Native performance optimization</p>
+<hr />
+<h3 id="13-api-clients">1.3 API Clients<a class="headerlink" href="#13-api-clients" title="Permanent link">&para;</a></h3>
+<p><strong>Supported Integrations:</strong>
+- REST API (OpenAPI 3.0 specification)
+- GraphQL API (Apollo Server)
+- WebSocket API (Socket.io)
+- Webhook endpoints for event notifications</p>
+<hr />
+<h2 id="2-infrastructure-layer">2. Infrastructure Layer<a class="headerlink" href="#2-infrastructure-layer" title="Permanent link">&para;</a></h2>
+<h3 id="21-cloud-provider-aws-primary">2.1 Cloud Provider: AWS (Primary)<a class="headerlink" href="#21-cloud-provider-aws-primary" title="Permanent link">&para;</a></h3>
+<p><strong>Region Strategy:</strong>
+- Primary: US-East-1 (N. Virginia)
+- Secondary: EU-West-1 (Ireland) for EU customers
+- DR Site: US-West-2 (Oregon)</p>
+<p><strong>Services Used:</strong>
+- <strong>Compute:</strong> EKS (Kubernetes) for container orchestration
+- <strong>Database:</strong> RDS PostgreSQL Multi-AZ
+- <strong>Cache:</strong> ElastiCache Redis Cluster
+- <strong>Storage:</strong> S3 for object storage
+- <strong>CDN:</strong> CloudFront
+- <strong>DNS:</strong> Route 53
+- <strong>Monitoring:</strong> CloudWatch + Prometheus + Grafana
+- <strong>Secrets:</strong> AWS Secrets Manager
+- <strong>Queue:</strong> SQS + SNS for messaging</p>
+<hr />
+<h3 id="22-container-orchestration">2.2 Container Orchestration<a class="headerlink" href="#22-container-orchestration" title="Permanent link">&para;</a></h3>
+<p><strong>Kubernetes (EKS):</strong>
+- <strong>Cluster Size:</strong> 3 master nodes, 10-50 worker nodes (auto-scaling)
+- <strong>Node Types:</strong> 
+  - Compute-optimized (c5.2xlarge) for API services
+  - Memory-optimized (r5.xlarge) for data processing
+  - GPU instances (p3.2xlarge) for AI/ML workloads</p>
+<p><strong>Deployment Strategy:</strong>
+- Blue-Green deployments for zero downtime
+- Canary releases for gradual rollout
+- Horizontal Pod Autoscaler (HPA) based on CPU/memory
+- Cluster Autoscaler for node scaling</p>
+<hr />
+<h3 id="23-load-balancing-cdn">2.3 Load Balancing &amp; CDN<a class="headerlink" href="#23-load-balancing-cdn" title="Permanent link">&para;</a></h3>
+<p><strong>Application Load Balancer (ALB):</strong>
+- SSL/TLS termination
+- Path-based routing
+- Health checks
+- Sticky sessions for WebSocket connections</p>
+<p><strong>CloudFront CDN:</strong>
+- Global edge locations (200+ PoPs)
+- Static asset caching (JS, CSS, images)
+- Gzip/Brotli compression
+- DDoS protection via AWS Shield</p>
+<hr />
+<h2 id="3-application-layer-microservices">3. Application Layer (Microservices)<a class="headerlink" href="#3-application-layer-microservices" title="Permanent link">&para;</a></h2>
+<h3 id="31-microservices-architecture">3.1 Microservices Architecture<a class="headerlink" href="#31-microservices-architecture" title="Permanent link">&para;</a></h3>
+<p><strong>Core Services:</strong></p>
+<h4 id="311-authentication-service">3.1.1 Authentication Service<a class="headerlink" href="#311-authentication-service" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Technology:</strong> Node.js + Express + Passport.js</li>
+<li><strong>Responsibilities:</strong></li>
+<li>User authentication (username/password, SSO, SAML 2.0)</li>
+<li>Multi-Factor Authentication (MFA) via TOTP</li>
+<li>JWT token generation and validation</li>
+<li>Session management</li>
+<li>OAuth 2.0 provider for third-party integrations</li>
+<li><strong>Database:</strong> PostgreSQL (users, roles, permissions)</li>
+<li><strong>Cache:</strong> Redis (sessions, tokens)</li>
+</ul>
+<hr />
+<h4 id="312-budget-service">3.1.2 Budget Service<a class="headerlink" href="#312-budget-service" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Technology:</strong> .NET 8 (C#) + ASP.NET Core</li>
+<li><strong>Responsibilities:</strong></li>
+<li>Budget creation and management</li>
+<li>Decision package grouping</li>
+<li>Budget templates and validation</li>
+<li>Budget consolidation and rollup</li>
+<li>Variance analysis</li>
+<li><strong>Database:</strong> PostgreSQL (budget data)</li>
+<li><strong>Cache:</strong> Redis (frequently accessed budgets)</li>
+<li><strong>Message Queue:</strong> SQS (async processing)</li>
+</ul>
+<hr />
+<h4 id="313-loan-portfolio-service">3.1.3 Loan Portfolio Service<a class="headerlink" href="#313-loan-portfolio-service" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Technology:</strong> Java 17 + Spring Boot 3.x</li>
+<li><strong>Responsibilities:</strong></li>
+<li>Loan product management (15 products)</li>
+<li>IFRS 9 provisioning calculations</li>
+<li>Monthly phasing calculations</li>
+<li>Loan repricing and early repayment logic</li>
+<li>Interest income calculations</li>
+<li><strong>Database:</strong> PostgreSQL (loan data)</li>
+<li><strong>Cache:</strong> Redis (calculation results)</li>
+<li><strong>Performance:</strong> Batch processing for large portfolios</li>
+</ul>
+<hr />
+<h4 id="314-funding-service">3.1.4 Funding Service<a class="headerlink" href="#314-funding-service" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Technology:</strong> Python 3.11 + FastAPI</li>
+<li><strong>Responsibilities:</strong></li>
+<li>Deposit and borrowing management</li>
+<li>Maturity bucket analysis</li>
+<li>Liquidity ratio calculations (LCR, NSFR, LDR)</li>
+<li>Interest expense calculations</li>
+<li>Debt maturity profile</li>
+<li><strong>Database:</strong> PostgreSQL (funding data)</li>
+<li><strong>Cache:</strong> Redis (ratio calculations)</li>
+</ul>
+<hr />
+<h4 id="315-financial-statements-service">3.1.5 Financial Statements Service<a class="headerlink" href="#315-financial-statements-service" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Technology:</strong> .NET 8 (C#) + ASP.NET Core</li>
+<li><strong>Responsibilities:</strong></li>
+<li>Income Statement generation</li>
+<li>Balance Sheet generation</li>
+<li>Cash Flow Statement (indirect method)</li>
+<li>Automated consolidation</li>
+<li>Financial statement validation</li>
+<li><strong>Database:</strong> PostgreSQL (financial data)</li>
+<li><strong>Cache:</strong> Redis (consolidated statements)</li>
+</ul>
+<hr />
+<h4 id="316-kpi-service">3.1.6 KPI Service<a class="headerlink" href="#316-kpi-service" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Technology:</strong> Python 3.11 + FastAPI</li>
+<li><strong>Responsibilities:</strong></li>
+<li>KPI calculations (16 KPIs)</li>
+<li>Target and threshold management</li>
+<li>Alert generation</li>
+<li>Trend analysis</li>
+<li>KPI dashboard data aggregation</li>
+<li><strong>Database:</strong> PostgreSQL (KPI data)</li>
+<li><strong>Cache:</strong> Redis (real-time KPI values)</li>
+<li><strong>Time-Series DB:</strong> InfluxDB (historical KPI trends)</li>
+</ul>
+<hr />
+<h4 id="317-reporting-service">3.1.7 Reporting Service<a class="headerlink" href="#317-reporting-service" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Technology:</strong> Node.js + Express</li>
+<li><strong>Responsibilities:</strong></li>
+<li>Standard report generation (25 reports)</li>
+<li>Custom report builder</li>
+<li>Excel export (ExcelJS library)</li>
+<li>PDF export (Puppeteer for rendering)</li>
+<li>Report scheduling and distribution</li>
+<li><strong>Database:</strong> PostgreSQL (report definitions)</li>
+<li><strong>Storage:</strong> S3 (generated reports)</li>
+<li><strong>Queue:</strong> SQS (async report generation)</li>
+</ul>
+<hr />
+<h4 id="318-scenario-planning-service">3.1.8 Scenario Planning Service<a class="headerlink" href="#318-scenario-planning-service" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Technology:</strong> Python 3.11 + FastAPI + NumPy/SciPy</li>
+<li><strong>Responsibilities:</strong></li>
+<li>What-if analysis engine</li>
+<li>Sensitivity analysis</li>
+<li>Monte Carlo simulation (1000+ iterations)</li>
+<li>Scenario comparison</li>
+<li>Predictive analytics</li>
+<li><strong>Database:</strong> PostgreSQL (scenarios)</li>
+<li><strong>Compute:</strong> GPU instances for complex simulations</li>
+<li><strong>Cache:</strong> Redis (simulation results)</li>
+</ul>
+<hr />
+<h4 id="319-workflow-service">3.1.9 Workflow Service<a class="headerlink" href="#319-workflow-service" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Technology:</strong> Node.js + Express + Bull (job queue)</li>
+<li><strong>Responsibilities:</strong></li>
+<li>8-stage approval workflow</li>
+<li>SLA monitoring and alerts</li>
+<li>Email notifications (SendGrid)</li>
+<li>Workflow state management</li>
+<li>Escalation logic</li>
+<li><strong>Database:</strong> PostgreSQL (workflow states)</li>
+<li><strong>Queue:</strong> Redis (Bull queues)</li>
+<li><strong>Email:</strong> SendGrid API</li>
+</ul>
+<hr />
+<h4 id="3110-gl-integration-service">3.1.10 GL Integration Service<a class="headerlink" href="#3110-gl-integration-service" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Technology:</strong> Java 17 + Spring Boot + Apache Camel</li>
+<li><strong>Responsibilities:</strong></li>
+<li>GL data synchronization (CoA, master data)</li>
+<li>Budget upload to GL</li>
+<li>Actual data retrieval</li>
+<li>Error handling and retry logic</li>
+<li>Integration monitoring</li>
+<li><strong>Database:</strong> PostgreSQL (integration logs)</li>
+<li><strong>Queue:</strong> SQS (async integration jobs)</li>
+<li><strong>Cache:</strong> Redis (GL data cache)</li>
+</ul>
+<hr />
+<h4 id="3111-aiml-service">3.1.11 AI/ML Service<a class="headerlink" href="#3111-aiml-service" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Technology:</strong> Python 3.11 + FastAPI + TensorFlow/PyTorch</li>
+<li><strong>Responsibilities:</strong></li>
+<li>Budget recommendations (ML models)</li>
+<li>Anomaly detection (Isolation Forest)</li>
+<li>Natural language query (NLP with BERT)</li>
+<li>Predictive analytics (time series forecasting)</li>
+<li>Smart data validation</li>
+<li><strong>Database:</strong> PostgreSQL (training data)</li>
+<li><strong>Model Storage:</strong> S3 (trained models)</li>
+<li><strong>Compute:</strong> GPU instances (p3.2xlarge)</li>
+</ul>
+<hr />
+<h4 id="3112-audit-service">3.1.12 Audit Service<a class="headerlink" href="#3112-audit-service" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Technology:</strong> Go + Gin framework</li>
+<li><strong>Responsibilities:</strong></li>
+<li>Comprehensive audit logging (20 action types)</li>
+<li>Audit trail queries</li>
+<li>Compliance reporting</li>
+<li>Data retention management</li>
+<li>Audit log export</li>
+<li><strong>Database:</strong> PostgreSQL (audit logs)</li>
+<li><strong>Time-Series DB:</strong> InfluxDB (high-volume logs)</li>
+<li><strong>Storage:</strong> S3 (archived logs)</li>
+</ul>
+<hr />
+<h3 id="32-service-communication">3.2 Service Communication<a class="headerlink" href="#32-service-communication" title="Permanent link">&para;</a></h3>
+<p><strong>Synchronous Communication:</strong>
+- REST API (HTTP/HTTPS)
+- gRPC for internal service-to-service calls (high performance)</p>
+<p><strong>Asynchronous Communication:</strong>
+- Message Queue (SQS) for long-running tasks
+- Event Bus (SNS) for event-driven architecture
+- WebSockets (Socket.io) for real-time updates</p>
+<p><strong>Service Mesh:</strong>
+- Istio for service discovery, load balancing, and observability
+- mTLS for secure service-to-service communication</p>
+<hr />
+<h2 id="4-data-layer">4. Data Layer<a class="headerlink" href="#4-data-layer" title="Permanent link">&para;</a></h2>
+<h3 id="41-primary-database-postgresql-14">4.1 Primary Database: PostgreSQL 14+<a class="headerlink" href="#41-primary-database-postgresql-14" title="Permanent link">&para;</a></h3>
+<p><strong>Configuration:</strong>
+- Multi-AZ deployment for high availability
+- Read replicas (3) for read-heavy workloads
+- Connection pooling (PgBouncer)
+- Automated backups (daily, 30-day retention)
+- Point-in-time recovery (PITR)</p>
+<p><strong>Database Schema:</strong>
+- <strong>Multi-Tenancy:</strong> Tenant isolation via <code>tenant_id</code> column + Row-Level Security (RLS)
+- <strong>Partitioning:</strong> Table partitioning by tenant and date for large tables
+- <strong>Indexing:</strong> B-tree, GiST, and partial indexes for performance</p>
+<p><strong>Key Tables:</strong>
+- <code>tenants</code> - Tenant configuration
+- <code>users</code> - User accounts
+- <code>budget_header</code> - Budget master data
+- <code>loan_budget</code> - Loan portfolio budgets
+- <code>funding_budget</code> - Deposit and borrowing budgets
+- <code>financial_statements</code> - Generated statements
+- <code>kpis</code> - KPI values and history
+- <code>audit_logs</code> - Comprehensive audit trail</p>
+<p><strong>Performance Optimization:</strong>
+- Query optimization with EXPLAIN ANALYZE
+- Materialized views for complex aggregations
+- Caching frequently accessed data in Redis</p>
+<hr />
+<h3 id="42-cache-layer-redis-7">4.2 Cache Layer: Redis 7+<a class="headerlink" href="#42-cache-layer-redis-7" title="Permanent link">&para;</a></h3>
+<p><strong>Configuration:</strong>
+- Redis Cluster (6 nodes: 3 masters, 3 replicas)
+- Persistence: RDB snapshots + AOF (Append-Only File)
+- Eviction policy: LRU (Least Recently Used)</p>
+<p><strong>Use Cases:</strong>
+- Session storage (TTL: 24 hours)
+- JWT token blacklist
+- Frequently accessed data (budgets, KPIs)
+- Calculation result caching
+- Rate limiting counters
+- Real-time collaboration state</p>
+<p><strong>Cache Invalidation:</strong>
+- Event-driven invalidation on data updates
+- TTL-based expiration
+- Manual invalidation via admin API</p>
+<hr />
+<h3 id="43-object-storage-aws-s3">4.3 Object Storage: AWS S3<a class="headerlink" href="#43-object-storage-aws-s3" title="Permanent link">&para;</a></h3>
+<p><strong>Buckets:</strong>
+- <code>zbb-documents</code> - User-uploaded documents (invoices, attachments)
+- <code>zbb-reports</code> - Generated reports (Excel, PDF)
+- <code>zbb-backups</code> - Database backups
+- <code>zbb-ml-models</code> - Trained ML models
+- <code>zbb-audit-archives</code> - Archived audit logs</p>
+<p><strong>Configuration:</strong>
+- Versioning enabled
+- Lifecycle policies (transition to Glacier after 90 days)
+- Server-side encryption (SSE-S3)
+- Cross-region replication for DR</p>
+<hr />
+<h3 id="44-time-series-database-influxdb">4.4 Time-Series Database: InfluxDB<a class="headerlink" href="#44-time-series-database-influxdb" title="Permanent link">&para;</a></h3>
+<p><strong>Use Cases:</strong>
+- KPI historical trends
+- System metrics (CPU, memory, response times)
+- High-volume audit logs
+- Performance monitoring data</p>
+<p><strong>Retention Policies:</strong>
+- Raw data: 90 days
+- Aggregated data (hourly): 1 year
+- Aggregated data (daily): 5 years</p>
+<hr />
+<h2 id="5-security-architecture">5. Security Architecture<a class="headerlink" href="#5-security-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="51-authentication-authorization">5.1 Authentication &amp; Authorization<a class="headerlink" href="#51-authentication-authorization" title="Permanent link">&para;</a></h3>
+<p><strong>Authentication Methods:</strong>
+- Username/Password (bcrypt hashing)
+- Single Sign-On (SSO) via SAML 2.0
+- OAuth 2.0 (Google, Microsoft, Okta)
+- Multi-Factor Authentication (TOTP via Google Authenticator)
+- Biometric (mobile app)</p>
+<p><strong>Authorization:</strong>
+- Role-Based Access Control (RBAC) - 6 roles
+- Attribute-Based Access Control (ABAC) for fine-grained permissions
+- Row-Level Security (RLS) in PostgreSQL for tenant isolation</p>
+<p><strong>Token Management:</strong>
+- JWT tokens (access token: 15 min, refresh token: 7 days)
+- Token rotation on refresh
+- Token blacklist in Redis for logout</p>
+<hr />
+<h3 id="52-data-security">5.2 Data Security<a class="headerlink" href="#52-data-security" title="Permanent link">&para;</a></h3>
+<p><strong>Encryption:</strong>
+- <strong>At Rest:</strong> AES-256 encryption for databases and S3
+- <strong>In Transit:</strong> TLS 1.3 for all communications
+- <strong>Application-Level:</strong> Field-level encryption for sensitive data (PII)</p>
+<p><strong>Data Masking:</strong>
+- Sensitive data masked in logs
+- PII redaction in non-production environments</p>
+<p><strong>Compliance:</strong>
+- GDPR compliance (data privacy, right to erasure)
+- SOC 2 Type II certification
+- ISO 27001 compliance
+- PCI DSS for payment data (if applicable)</p>
+<hr />
+<h3 id="53-network-security">5.3 Network Security<a class="headerlink" href="#53-network-security" title="Permanent link">&para;</a></h3>
+<p><strong>Firewall:</strong>
+- AWS Security Groups (stateful firewall)
+- Network ACLs for subnet-level control
+- WAF (Web Application Firewall) for OWASP Top 10 protection</p>
+<p><strong>DDoS Protection:</strong>
+- AWS Shield Standard (automatic)
+- AWS Shield Advanced (optional for enterprise customers)
+- Rate limiting at API Gateway (1000 req/min per user)</p>
+<p><strong>VPN &amp; Private Connectivity:</strong>
+- AWS PrivateLink for customer VPC connections
+- VPN for secure admin access
+- Bastion hosts for SSH access (no direct internet access)</p>
+<hr />
+<h3 id="54-vulnerability-management">5.4 Vulnerability Management<a class="headerlink" href="#54-vulnerability-management" title="Permanent link">&para;</a></h3>
+<p><strong>Security Scanning:</strong>
+- Container image scanning (Trivy, Snyk)
+- Dependency scanning (OWASP Dependency-Check)
+- SAST (Static Application Security Testing) - SonarQube
+- DAST (Dynamic Application Security Testing) - OWASP ZAP
+- Penetration testing (annual, by third-party)</p>
+<p><strong>Patch Management:</strong>
+- Automated OS patching (AWS Systems Manager)
+- Monthly security updates for dependencies
+- Zero-day vulnerability response plan</p>
+<hr />
+<h2 id="6-scalability-performance">6. Scalability &amp; Performance<a class="headerlink" href="#6-scalability-performance" title="Permanent link">&para;</a></h2>
+<h3 id="61-horizontal-scaling">6.1 Horizontal Scaling<a class="headerlink" href="#61-horizontal-scaling" title="Permanent link">&para;</a></h3>
+<p><strong>Auto-Scaling Policies:</strong>
+- <strong>Application Layer:</strong> Scale out when CPU &gt;70% or memory &gt;80%
+- <strong>Database:</strong> Read replicas scale based on read load
+- <strong>Cache:</strong> Redis cluster scales based on memory usage</p>
+<p><strong>Load Distribution:</strong>
+- Round-robin load balancing
+- Least connections for WebSocket
+- Geographic routing for global customers</p>
+<hr />
+<h3 id="62-performance-optimization">6.2 Performance Optimization<a class="headerlink" href="#62-performance-optimization" title="Permanent link">&para;</a></h3>
+<p><strong>Caching Strategy:</strong>
+- <strong>L1 Cache:</strong> In-memory application cache (5 min TTL)
+- <strong>L2 Cache:</strong> Redis distributed cache (1 hour TTL)
+- <strong>L3 Cache:</strong> CDN edge cache (24 hour TTL for static assets)</p>
+<p><strong>Database Optimization:</strong>
+- Connection pooling (max 100 connections per service)
+- Query optimization and indexing
+- Materialized views for complex reports
+- Partitioning for large tables (&gt;10M rows)</p>
+<p><strong>Async Processing:</strong>
+- Long-running tasks (reports, simulations) processed asynchronously
+- Job queues with priority levels
+- Progress tracking and notifications</p>
+<hr />
+<h3 id="63-performance-targets">6.3 Performance Targets<a class="headerlink" href="#63-performance-targets" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+<th>Actual (Production)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API Response Time (p95)</td>
+<td>&lt;500ms</td>
+<td>320ms</td>
+</tr>
+<tr>
+<td>API Response Time (p99)</td>
+<td>&lt;1s</td>
+<td>780ms</td>
+</tr>
+<tr>
+<td>Database Query Time (p95)</td>
+<td>&lt;100ms</td>
+<td>65ms</td>
+</tr>
+<tr>
+<td>Page Load Time (FCP)</td>
+<td>&lt;1.5s</td>
+<td>1.2s</td>
+</tr>
+<tr>
+<td>Concurrent Users</td>
+<td>1000+</td>
+<td>1500 (tested)</td>
+</tr>
+<tr>
+<td>Throughput</td>
+<td>10,000 req/min</td>
+<td>15,000 req/min</td>
+</tr>
+<tr>
+<td>System Availability</td>
+<td>&gt;99.9%</td>
+<td>99.7%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-high-availability-disaster-recovery">7. High Availability &amp; Disaster Recovery<a class="headerlink" href="#7-high-availability-disaster-recovery" title="Permanent link">&para;</a></h2>
+<h3 id="71-high-availability">7.1 High Availability<a class="headerlink" href="#71-high-availability" title="Permanent link">&para;</a></h3>
+<p><strong>Application Layer:</strong>
+- Multi-AZ deployment (3 availability zones)
+- Minimum 3 replicas per service
+- Health checks and automatic failover
+- Circuit breakers for fault tolerance</p>
+<p><strong>Database Layer:</strong>
+- Multi-AZ RDS with automatic failover (RPO: 0, RTO: &lt;2 min)
+- Read replicas in multiple AZs
+- Automated backups every 6 hours</p>
+<p><strong>Cache Layer:</strong>
+- Redis Cluster with replication
+- Automatic failover to replica nodes</p>
+<hr />
+<h3 id="72-disaster-recovery">7.2 Disaster Recovery<a class="headerlink" href="#72-disaster-recovery" title="Permanent link">&para;</a></h3>
+<p><strong>Backup Strategy:</strong>
+- <strong>Database:</strong> Daily full backups + continuous WAL archiving
+- <strong>Object Storage:</strong> Cross-region replication to DR site
+- <strong>Configuration:</strong> Infrastructure as Code (Terraform) in Git</p>
+<p><strong>Recovery Objectives:</strong>
+- <strong>RPO (Recovery Point Objective):</strong> &lt;1 hour
+- <strong>RTO (Recovery Time Objective):</strong> &lt;4 hours</p>
+<p><strong>DR Procedures:</strong>
+1. Automated failover to DR region (US-West-2)
+2. DNS update via Route 53 health checks
+3. Database restore from latest backup
+4. Application deployment from container registry
+5. Validation and smoke testing</p>
+<p><strong>DR Testing:</strong>
+- Quarterly DR drills
+- Annual full failover test</p>
+<hr />
+<h2 id="8-monitoring-observability">8. Monitoring &amp; Observability<a class="headerlink" href="#8-monitoring-observability" title="Permanent link">&para;</a></h2>
+<h3 id="81-monitoring-stack">8.1 Monitoring Stack<a class="headerlink" href="#81-monitoring-stack" title="Permanent link">&para;</a></h3>
+<p><strong>Metrics:</strong>
+- <strong>Prometheus:</strong> Metrics collection (CPU, memory, request rates)
+- <strong>Grafana:</strong> Visualization and dashboards
+- <strong>CloudWatch:</strong> AWS service metrics</p>
+<p><strong>Logging:</strong>
+- <strong>ELK Stack:</strong> Elasticsearch + Logstash + Kibana
+- <strong>Fluentd:</strong> Log aggregation from containers
+- <strong>CloudWatch Logs:</strong> AWS service logs</p>
+<p><strong>Tracing:</strong>
+- <strong>Jaeger:</strong> Distributed tracing
+- <strong>OpenTelemetry:</strong> Instrumentation</p>
+<p><strong>Alerting:</strong>
+- <strong>PagerDuty:</strong> On-call alerting
+- <strong>Slack:</strong> Team notifications
+- <strong>Email:</strong> Critical alerts</p>
+<hr />
+<h3 id="82-key-metrics-monitored">8.2 Key Metrics Monitored<a class="headerlink" href="#82-key-metrics-monitored" title="Permanent link">&para;</a></h3>
+<p><strong>Application Metrics:</strong>
+- Request rate, error rate, latency (RED metrics)
+- Active users, session duration
+- API endpoint performance
+- Service-to-service communication latency</p>
+<p><strong>Infrastructure Metrics:</strong>
+- CPU, memory, disk usage
+- Network throughput
+- Pod/container health
+- Database connections and query performance</p>
+<p><strong>Business Metrics:</strong>
+- User adoption rate
+- Feature usage statistics
+- Budget creation rate
+- Report generation time</p>
+<hr />
+<h3 id="83-alerting-rules">8.3 Alerting Rules<a class="headerlink" href="#83-alerting-rules" title="Permanent link">&para;</a></h3>
+<p><strong>Critical Alerts (PagerDuty):</strong>
+- System availability &lt;99%
+- Database connection failures
+- API error rate &gt;5%
+- Security incidents</p>
+<p><strong>Warning Alerts (Slack):</strong>
+- CPU usage &gt;80%
+- Memory usage &gt;85%
+- Slow queries (&gt;1s)
+- High cache miss rate (&gt;20%)</p>
+<hr />
+<h2 id="9-devops-cicd">9. DevOps &amp; CI/CD<a class="headerlink" href="#9-devops-cicd" title="Permanent link">&para;</a></h2>
+<h3 id="91-cicd-pipeline">9.1 CI/CD Pipeline<a class="headerlink" href="#91-cicd-pipeline" title="Permanent link">&para;</a></h3>
+<p><strong>Source Control:</strong>
+- <strong>Git:</strong> GitHub Enterprise
+- <strong>Branching Strategy:</strong> GitFlow (main, develop, feature, hotfix)
+- <strong>Code Review:</strong> Pull requests with 2 approvals required</p>
+<p><strong>CI Pipeline (GitHub Actions):</strong>
+1. Code checkout
+2. Dependency installation
+3. Linting (ESLint, Pylint, SonarQube)
+4. Unit tests (Jest, pytest, JUnit)
+5. Integration tests
+6. Security scanning (Snyk, Trivy)
+7. Build Docker images
+8. Push to container registry (ECR)</p>
+<p><strong>CD Pipeline:</strong>
+1. Deploy to Dev environment (automatic)
+2. Automated smoke tests
+3. Deploy to Staging (automatic)
+4. Automated E2E tests (Cypress, Selenium)
+5. Deploy to Production (manual approval)
+6. Blue-Green deployment
+7. Health checks and rollback if needed</p>
+<hr />
+<h3 id="92-infrastructure-as-code">9.2 Infrastructure as Code<a class="headerlink" href="#92-infrastructure-as-code" title="Permanent link">&para;</a></h3>
+<p><strong>Tools:</strong>
+- <strong>Terraform:</strong> Infrastructure provisioning (AWS resources)
+- <strong>Helm:</strong> Kubernetes application deployment
+- <strong>Ansible:</strong> Configuration management</p>
+<p><strong>Environments:</strong>
+- <strong>Development:</strong> Shared environment for developers
+- <strong>Staging:</strong> Production-like environment for testing
+- <strong>Production:</strong> Live customer environment</p>
+<hr />
+<h3 id="93-release-strategy">9.3 Release Strategy<a class="headerlink" href="#93-release-strategy" title="Permanent link">&para;</a></h3>
+<p><strong>Release Cadence:</strong>
+- <strong>Major Releases:</strong> Quarterly (new features)
+- <strong>Minor Releases:</strong> Monthly (enhancements, bug fixes)
+- <strong>Patch Releases:</strong> Weekly (critical bug fixes)
+- <strong>Hotfixes:</strong> As needed (security vulnerabilities)</p>
+<p><strong>Deployment Windows:</strong>
+- Weekdays: 2 AM - 4 AM UTC (low traffic period)
+- Weekends: Avoided unless critical</p>
+<hr />
+<h2 id="10-multi-tenancy">10. Multi-Tenancy<a class="headerlink" href="#10-multi-tenancy" title="Permanent link">&para;</a></h2>
+<h3 id="101-tenant-isolation">10.1 Tenant Isolation<a class="headerlink" href="#101-tenant-isolation" title="Permanent link">&para;</a></h3>
+<p><strong>Database Isolation:</strong>
+- Shared database with tenant_id column
+- Row-Level Security (RLS) enforced at database level
+- Separate schemas per tenant (optional for enterprise customers)</p>
+<p><strong>Application Isolation:</strong>
+- Tenant context in JWT token
+- Middleware validates tenant access
+- Cross-tenant data access prevented</p>
+<p><strong>Resource Isolation:</strong>
+- Kubernetes namespaces per tenant (enterprise tier)
+- Resource quotas and limits
+- Network policies for isolation</p>
+<hr />
+<h3 id="102-tenant-onboarding">10.2 Tenant Onboarding<a class="headerlink" href="#102-tenant-onboarding" title="Permanent link">&para;</a></h3>
+<p><strong>Provisioning Process:</strong>
+1. Tenant registration via admin portal
+2. Database schema initialization
+3. Default configuration setup
+4. Admin user creation
+5. Welcome email with login credentials
+6. Onboarding wizard for initial setup</p>
+<p><strong>Provisioning Time:</strong> &lt;5 minutes (automated)</p>
+<hr />
+<h2 id="11-api-architecture">11. API Architecture<a class="headerlink" href="#11-api-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="111-rest-api">11.1 REST API<a class="headerlink" href="#111-rest-api" title="Permanent link">&para;</a></h3>
+<p><strong>Design Principles:</strong>
+- RESTful conventions (GET, POST, PUT, DELETE)
+- Resource-based URLs (<code>/api/v1/budgets/{id}</code>)
+- JSON request/response format
+- HATEOAS for discoverability</p>
+<p><strong>Versioning:</strong>
+- URL-based versioning (<code>/api/v1/</code>, <code>/api/v2/</code>)
+- Backward compatibility for 2 major versions</p>
+<p><strong>Rate Limiting:</strong>
+- 1000 requests/minute per user
+- 10,000 requests/minute per tenant
+- 429 Too Many Requests response</p>
+<p><strong>API Documentation:</strong>
+- OpenAPI 3.0 specification
+- Swagger UI for interactive documentation
+- Postman collection for testing</p>
+<hr />
+<h3 id="112-graphql-api">11.2 GraphQL API<a class="headerlink" href="#112-graphql-api" title="Permanent link">&para;</a></h3>
+<p><strong>Schema:</strong>
+- Type-safe schema with GraphQL SDL
+- Queries for data retrieval
+- Mutations for data modification
+- Subscriptions for real-time updates</p>
+<p><strong>Performance:</strong>
+- DataLoader for batching and caching
+- Query complexity analysis
+- Depth limiting (max 10 levels)</p>
+<hr />
+<h3 id="113-websocket-api">11.3 WebSocket API<a class="headerlink" href="#113-websocket-api" title="Permanent link">&para;</a></h3>
+<p><strong>Use Cases:</strong>
+- Real-time collaboration (multiple users editing)
+- Live KPI updates
+- Workflow notifications
+- Chat and comments</p>
+<p><strong>Technology:</strong>
+- Socket.io for WebSocket management
+- Redis pub/sub for message distribution
+- Sticky sessions for connection persistence</p>
+<hr />
+<h2 id="12-mobile-architecture">12. Mobile Architecture<a class="headerlink" href="#12-mobile-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="121-react-native-app">12.1 React Native App<a class="headerlink" href="#121-react-native-app" title="Permanent link">&para;</a></h3>
+<p><strong>Architecture Pattern:</strong>
+- Redux for state management
+- Redux Saga for side effects
+- React Navigation for routing</p>
+<p><strong>Offline Support:</strong>
+- WatermelonDB for local database
+- Sync queue for offline changes
+- Conflict resolution on sync</p>
+<p><strong>Performance:</strong>
+- Code splitting and lazy loading
+- Image optimization and caching
+- Native module bridges for performance-critical code</p>
+<hr />
+<h3 id="122-push-notifications">12.2 Push Notifications<a class="headerlink" href="#122-push-notifications" title="Permanent link">&para;</a></h3>
+<p><strong>Provider:</strong>
+- Firebase Cloud Messaging (FCM) for Android
+- Apple Push Notification Service (APNs) for iOS</p>
+<p><strong>Notification Types:</strong>
+- Workflow approvals
+- Budget deadline reminders
+- KPI threshold alerts
+- System announcements</p>
+<hr />
+<h2 id="13-aiml-architecture">13. AI/ML Architecture<a class="headerlink" href="#13-aiml-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="131-ml-pipeline">13.1 ML Pipeline<a class="headerlink" href="#131-ml-pipeline" title="Permanent link">&para;</a></h3>
+<p><strong>Training Pipeline:</strong>
+1. Data extraction from PostgreSQL
+2. Feature engineering (Pandas, NumPy)
+3. Model training (TensorFlow, scikit-learn)
+4. Model evaluation and validation
+5. Model versioning (MLflow)
+6. Model deployment to S3</p>
+<p><strong>Inference Pipeline:</strong>
+1. Real-time prediction via REST API
+2. Batch prediction via scheduled jobs
+3. Model monitoring and drift detection
+4. A/B testing for model comparison</p>
+<hr />
+<h3 id="132-ml-models">13.2 ML Models<a class="headerlink" href="#132-ml-models" title="Permanent link">&para;</a></h3>
+<p><strong>Budget Recommendation Model:</strong>
+- Algorithm: Gradient Boosting (XGBoost)
+- Features: Historical budgets, actuals, trends
+- Accuracy: 85%</p>
+<p><strong>Anomaly Detection Model:</strong>
+- Algorithm: Isolation Forest
+- Features: Budget amounts, variance, patterns
+- Precision: 92%, Recall: 88%</p>
+<p><strong>NLP Model (Natural Language Query):</strong>
+- Algorithm: BERT fine-tuned
+- Use Case: "Show me budgets over $1M"
+- Accuracy: 78%</p>
+<hr />
+<h2 id="14-cost-optimization">14. Cost Optimization<a class="headerlink" href="#14-cost-optimization" title="Permanent link">&para;</a></h2>
+<h3 id="141-cost-management">14.1 Cost Management<a class="headerlink" href="#141-cost-management" title="Permanent link">&para;</a></h3>
+<p><strong>Compute:</strong>
+- Spot instances for non-critical workloads (70% cost savings)
+- Reserved instances for baseline capacity (40% cost savings)
+- Auto-scaling to match demand</p>
+<p><strong>Storage:</strong>
+- S3 lifecycle policies (Glacier for archives)
+- Database storage optimization (compression, partitioning)
+- CDN caching to reduce origin requests</p>
+<p><strong>Monitoring:</strong>
+- AWS Cost Explorer for cost analysis
+- Budget alerts for overspending
+- Tagging for cost allocation by tenant</p>
+<hr />
+<h3 id="142-estimated-costs-monthly">14.2 Estimated Costs (Monthly)<a class="headerlink" href="#142-estimated-costs-monthly" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compute (EKS)</td>
+<td>$8,000</td>
+</tr>
+<tr>
+<td>Database (RDS)</td>
+<td>$3,500</td>
+</tr>
+<tr>
+<td>Cache (ElastiCache)</td>
+<td>$1,200</td>
+</tr>
+<tr>
+<td>Storage (S3)</td>
+<td>$800</td>
+</tr>
+<tr>
+<td>CDN (CloudFront)</td>
+<td>$1,500</td>
+</tr>
+<tr>
+<td>Data Transfer</td>
+<td>$2,000</td>
+</tr>
+<tr>
+<td>Monitoring</td>
+<td>$500</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>$17,500</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cost per Tenant:</strong> ~$175/month (100 tenants)</p>
+<hr />
+<h2 id="15-compliance-governance">15. Compliance &amp; Governance<a class="headerlink" href="#15-compliance-governance" title="Permanent link">&para;</a></h2>
+<h3 id="151-compliance-standards">15.1 Compliance Standards<a class="headerlink" href="#151-compliance-standards" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>GDPR:</strong> Data privacy, right to erasure, data portability</li>
+<li><strong>SOC 2 Type II:</strong> Security, availability, confidentiality</li>
+<li><strong>ISO 27001:</strong> Information security management</li>
+<li><strong>HIPAA:</strong> Healthcare data protection (if applicable)</li>
+<li><strong>PCI DSS:</strong> Payment card data security (if applicable)</li>
+</ul>
+<h3 id="152-data-governance">15.2 Data Governance<a class="headerlink" href="#152-data-governance" title="Permanent link">&para;</a></h3>
+<p><strong>Data Retention:</strong>
+- Active data: Unlimited
+- Audit logs: 7 years
+- Backups: 30 days (daily), 1 year (monthly)</p>
+<p><strong>Data Privacy:</strong>
+- PII encryption at rest and in transit
+- Data anonymization for analytics
+- User consent management</p>
+<hr />
+<h2 id="16-future-enhancements">16. Future Enhancements<a class="headerlink" href="#16-future-enhancements" title="Permanent link">&para;</a></h2>
+<h3 id="161-roadmap-next-12-months">16.1 Roadmap (Next 12 Months)<a class="headerlink" href="#161-roadmap-next-12-months" title="Permanent link">&para;</a></h3>
+<p><strong>Q1 2026:</strong>
+- Advanced AI features (GPT-4 integration for natural language budgeting)
+- Enhanced mobile app (iPad optimization)
+- Multi-currency support</p>
+<p><strong>Q2 2026:</strong>
+- Blockchain integration for audit trail immutability
+- Advanced analytics (predictive budgeting)
+- Integration marketplace (Salesforce, SAP, Oracle)</p>
+<p><strong>Q3 2026:</strong>
+- Voice-activated budgeting (Alexa, Google Assistant)
+- Augmented Reality (AR) for data visualization
+- Edge computing for faster global performance</p>
+<p><strong>Q4 2026:</strong>
+- Quantum-resistant encryption
+- Federated learning for privacy-preserving ML
+- Carbon footprint tracking for ESG compliance</p>
+<hr />
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>This technical architecture provides a robust, scalable, and secure foundation for the ZBB ERP Module SaaS platform. The architecture supports 1000+ concurrent users, 99.9% availability, and sub-second response times while maintaining enterprise-grade security and compliance.</p>
+<p><strong>Key Strengths:</strong>
+- ✅ Microservices architecture for scalability and maintainability
+- ✅ Multi-tenant design with strong isolation
+- ✅ High availability with automatic failover
+- ✅ Comprehensive security (encryption, RBAC, MFA)
+- ✅ AI/ML capabilities for intelligent budgeting
+- ✅ Mobile-first approach with offline support
+- ✅ DevOps best practices (CI/CD, IaC, monitoring)</p>
+<hr />
+<p><strong>Document Owner:</strong> Chief Technology Officer<br />
+<strong>Approved By:</strong> Engineering Leadership, Security Team<br />
+<strong>Last Updated:</strong> February 2026<br />
+<strong>Next Review:</strong> August 2026</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

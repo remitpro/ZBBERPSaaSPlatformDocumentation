@@ -1,0 +1,2976 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Enterprise Zero-Based Budgeting System Documentation">
+      
+      
+        <meta name="author" content="ZBB ERP Team">
+      
+      
+      
+        <link rel="prev" href="../Infrastructure_Procurement_Plan/">
+      
+      
+        <link rel="next" href="../../requirements/functional_specs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Risks - ZBB ERP Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#risk-register" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ZBB ERP Platform" class="md-header__button md-logo" aria-label="ZBB ERP Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZBB ERP Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Risks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/remitpro/ZBBERPSaaSPlatform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZBBERPSaaSPlatform
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../guides/quickstart/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../reference/api/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../design/Technical_Architecture/" class="md-tabs__link">
+          
+  
+  
+  Project Info
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ZBB ERP Platform" class="md-nav__button md-logo" aria-label="ZBB ERP Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ZBB ERP Platform
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/remitpro/ZBBERPSaaSPlatform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZBBERPSaaSPlatform
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (AWS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/deployment_digitalocean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (DigitalOcean)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Info
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Info
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/Technical_Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/CoA_Mapping_Specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoA Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/Loan_Product_Taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loan Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/Product_Geography_Taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geo Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/integration_specs/GL_Integration_PoC_Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GL Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/integration_specs/GL_Integration_PoC_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GL Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workplan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Infrastructure_Procurement_Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zbb-erp-module-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZBB ERP Module Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-scoring-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Scoring Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Active Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-risk-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Risk Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Risk Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r-001-gl-integration-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-001: GL Integration Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-002-user-resistance-to-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-002: User Resistance to Change
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-003-scope-creep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-003: Scope Creep
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-004-key-resources-unavailable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-004: Key Resources Unavailable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-005-data-quality-issues-in-coa-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-005: Data Quality Issues in CoA Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-006-performance-issues-with-large-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-006: Performance Issues with Large Datasets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-007-regulatory-requirements-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-007: Regulatory Requirements Change
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-008-vendor-delays-or-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-008: Vendor Delays or Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-009-budget-overrun" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-009: Budget Overrun
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-010-uat-reveals-major-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-010: UAT Reveals Major Gaps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-response-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Response Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Response Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-actions-month-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate Actions (Month 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-term-actions-months-2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Short-term Actions (Months 2-3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term-actions-months-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-term Actions (Months 4+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-review-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Review Schedule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escalation-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalation Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/functional_specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/Requirements_Validation_Workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Workshop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/Requirements_Workshop_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Project_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Project_Status_Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Status Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Team_Roster_Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team Roster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Final_Project_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Completion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_5" id="__nav_5_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1 Details
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 1 Details
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_1_Progress_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_2_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_7" id="__nav_5_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monthly Updates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monthly Updates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_2_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_3_Phase_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_4_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zbb-erp-module-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZBB ERP Module Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-scoring-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Scoring Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Active Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-risk-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Risk Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Risk Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r-001-gl-integration-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-001: GL Integration Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-002-user-resistance-to-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-002: User Resistance to Change
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-003-scope-creep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-003: Scope Creep
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-004-key-resources-unavailable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-004: Key Resources Unavailable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-005-data-quality-issues-in-coa-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-005: Data Quality Issues in CoA Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-006-performance-issues-with-large-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-006: Performance Issues with Large Datasets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-007-regulatory-requirements-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-007: Regulatory Requirements Change
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-008-vendor-delays-or-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-008: Vendor Delays or Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-009-budget-overrun" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-009: Budget Overrun
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-010-uat-reveals-major-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R-010: UAT Reveals Major Gaps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-response-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Response Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Response Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-actions-month-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate Actions (Month 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-term-actions-months-2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Short-term Actions (Months 2-3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term-actions-months-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-term Actions (Months 4+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-review-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Review Schedule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escalation-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalation Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/remitpro/ZBBERPSaaSPlatform/edit/master/docs/project/planning/Risk_Register.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="risk-register">Risk Register<a class="headerlink" href="#risk-register" title="Permanent link">&para;</a></h1>
+<h2 id="zbb-erp-module-implementation">ZBB ERP Module Implementation<a class="headerlink" href="#zbb-erp-module-implementation" title="Permanent link">&para;</a></h2>
+<p><strong>Document Version:</strong> 1.0<br />
+<strong>Last Updated:</strong> February 10, 2026<br />
+<strong>Owner:</strong> Project Manager</p>
+<hr />
+<h2 id="risk-scoring-matrix">Risk Scoring Matrix<a class="headerlink" href="#risk-scoring-matrix" title="Permanent link">&para;</a></h2>
+<p><strong>Probability:</strong> Low (1), Medium (2), High (3)<br />
+<strong>Impact:</strong> Low (2), Medium (4), High (6)<br />
+<strong>Risk Score:</strong> Probability × Impact</p>
+<p><strong>Risk Levels:</strong>
+- <strong>Critical (12+):</strong> Immediate action required
+- <strong>High (9-11):</strong> Active monitoring and mitigation
+- <strong>Medium (6-8):</strong> Regular monitoring
+- <strong>Low (≤5):</strong> Periodic review</p>
+<hr />
+<h2 id="active-risks">Active Risks<a class="headerlink" href="#active-risks" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Risk Description</th>
+<th>Prob</th>
+<th>Impact</th>
+<th>Score</th>
+<th>Category</th>
+<th>Owner</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R-001</td>
+<td>GL integration complexity higher than expected</td>
+<td>Medium (2)</td>
+<td>High (6)</td>
+<td>12</td>
+<td>Technical</td>
+<td>Technical Lead</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>R-002</td>
+<td>User resistance to change from Excel</td>
+<td>High (3)</td>
+<td>Medium (4)</td>
+<td>12</td>
+<td>Change Mgmt</td>
+<td>Change Mgmt Lead</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>R-003</td>
+<td>Scope creep during implementation</td>
+<td>Medium (2)</td>
+<td>High (6)</td>
+<td>12</td>
+<td>Project Mgmt</td>
+<td>PM</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>R-004</td>
+<td>Key resources unavailable</td>
+<td>Medium (2)</td>
+<td>High (6)</td>
+<td>12</td>
+<td>Resource</td>
+<td>PM</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>R-005</td>
+<td>Data quality issues in CoA mapping</td>
+<td>Medium (2)</td>
+<td>Medium (4)</td>
+<td>8</td>
+<td>Data</td>
+<td>Functional Lead</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>R-006</td>
+<td>Performance issues with large datasets</td>
+<td>Low (1)</td>
+<td>High (6)</td>
+<td>6</td>
+<td>Technical</td>
+<td>Technical Lead</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>R-007</td>
+<td>Regulatory requirements change</td>
+<td>Low (1)</td>
+<td>High (6)</td>
+<td>6</td>
+<td>Compliance</td>
+<td>Functional Lead</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>R-008</td>
+<td>Vendor delays or issues</td>
+<td>Low (1)</td>
+<td>High (6)</td>
+<td>6</td>
+<td>Vendor</td>
+<td>PM</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>R-009</td>
+<td>Budget overrun</td>
+<td>Medium (2)</td>
+<td>Medium (4)</td>
+<td>8</td>
+<td>Financial</td>
+<td>PM</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>R-010</td>
+<td>UAT reveals major gaps</td>
+<td>Low (1)</td>
+<td>High (6)</td>
+<td>6</td>
+<td>Quality</td>
+<td>Functional Lead</td>
+<td>Active</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="detailed-risk-analysis">Detailed Risk Analysis<a class="headerlink" href="#detailed-risk-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="r-001-gl-integration-complexity">R-001: GL Integration Complexity<a class="headerlink" href="#r-001-gl-integration-complexity" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Integration with General Ledger may be more complex than anticipated due to legacy system constraints, API limitations, or data format incompatibilities.</p>
+<p><strong>Impact if Materialized:</strong>
+- Project delays of 2-4 weeks
+- Additional development effort required
+- Potential scope reduction
+- Budget impact: $50K-$100K</p>
+<p><strong>Mitigation Strategy:</strong>
+1. <strong>Proof of Concept (PoC)</strong> - Conduct GL integration PoC in Month 1, Week 2-3
+2. <strong>Dedicated Resource</strong> - Assign experienced integration specialist full-time
+3. <strong>Vendor Support</strong> - Engage ERP vendor technical support early
+4. <strong>Fallback Plan</strong> - Design manual data upload process as temporary workaround</p>
+<p><strong>Monitoring:</strong>
+- Weekly integration status reviews
+- PoC completion by Month 1, Week 3
+- Escalate to steering committee if PoC fails</p>
+<p><strong>Status:</strong> Active - PoC scheduled for Month 1</p>
+<hr />
+<h3 id="r-002-user-resistance-to-change">R-002: User Resistance to Change<a class="headerlink" href="#r-002-user-resistance-to-change" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Business users may resist transition from familiar Excel-based process to new ERP system, leading to low adoption and continued shadow processes.</p>
+<p><strong>Impact if Materialized:</strong>
+- Low user adoption (&lt;70%)
+- Continued use of Excel (shadow IT)
+- Failed project objectives
+- Wasted investment</p>
+<p><strong>Mitigation Strategy:</strong>
+1. <strong>Executive Sponsorship</strong> - Secure visible, active support from CFO and executive team
+2. <strong>Change Champions Network</strong> - Identify 15-20 champions (1-2 per business unit) by Month 2
+3. <strong>Early Involvement</strong> - Include key users in requirements validation and design (Month 1-2)
+4. <strong>Comprehensive Training</strong> - Multi-tiered training program starting Month 8
+5. <strong>Benefits Communication</strong> - Monthly newsletter highlighting time savings and benefits
+6. <strong>Quick Wins</strong> - Demonstrate early value through pilot with willing department</p>
+<p><strong>Monitoring:</strong>
+- User satisfaction surveys (quarterly)
+- Training attendance tracking
+- System usage analytics post go-live
+- Change champion feedback sessions (monthly)</p>
+<p><strong>Status:</strong> Active - Change management plan in development</p>
+<hr />
+<h3 id="r-003-scope-creep">R-003: Scope Creep<a class="headerlink" href="#r-003-scope-creep" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Stakeholders may request additional features or changes beyond agreed scope, leading to timeline delays and budget overruns.</p>
+<p><strong>Impact if Materialized:</strong>
+- Timeline delays of 1-3 months
+- Budget overrun of 10-20%
+- Team burnout
+- Delayed benefits realization</p>
+<p><strong>Mitigation Strategy:</strong>
+1. <strong>Formal Change Control Process</strong> - Implement change request form with impact analysis
+2. <strong>Steering Committee Approval</strong> - All scope changes require steering committee approval
+3. <strong>Impact Assessment</strong> - Mandatory assessment of timeline, budget, resource impact
+4. <strong>Phase 2 Backlog</strong> - Defer non-critical requests to post-implementation backlog
+5. <strong>Clear Requirements</strong> - Detailed FRD with sign-off (completed)</p>
+<p><strong>Change Request Process:</strong>
+1. Requestor submits change request form
+2. PM conducts impact analysis (timeline, budget, resources)
+3. Steering committee reviews and approves/rejects
+4. If approved, update project plan and communicate</p>
+<p><strong>Monitoring:</strong>
+- Track all change requests in change log
+- Monthly scope review in steering committee
+- Baseline vs. current scope comparison</p>
+<p><strong>Status:</strong> Active - Change control process to be established Month 1</p>
+<hr />
+<h3 id="r-004-key-resources-unavailable">R-004: Key Resources Unavailable<a class="headerlink" href="#r-004-key-resources-unavailable" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Critical team members may become unavailable due to illness, resignation, competing priorities, or reassignment.</p>
+<p><strong>Impact if Materialized:</strong>
+- Project delays of 1-4 weeks per resource
+- Knowledge loss
+- Quality issues
+- Team morale impact</p>
+<p><strong>Mitigation Strategy:</strong>
+1. <strong>Cross-Training</strong> - Ensure at least 2 people familiar with each critical area
+2. <strong>Documentation</strong> - Comprehensive documentation of all design decisions and code
+3. <strong>Backup Resources</strong> - Identify backup resources for each critical role
+4. <strong>Knowledge Transfer</strong> - Regular knowledge sharing sessions
+5. <strong>Resource Commitment</strong> - Secure written commitment from department heads</p>
+<p><strong>Critical Roles Requiring Backup:</strong>
+- Technical Lead
+- Functional Lead
+- Integration Specialists
+- Lead Business Analyst</p>
+<p><strong>Monitoring:</strong>
+- Monthly resource availability review
+- Track resource utilization
+- Early warning system for potential departures</p>
+<p><strong>Status:</strong> Active - Backup resource identification in progress</p>
+<hr />
+<h3 id="r-005-data-quality-issues-in-coa-mapping">R-005: Data Quality Issues in CoA Mapping<a class="headerlink" href="#r-005-data-quality-issues-in-coa-mapping" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Chart of Accounts data may have inconsistencies, duplicates, or inactive accounts that complicate mapping and integration.</p>
+<p><strong>Impact if Materialized:</strong>
+- Delays in Phase 1 (2-3 weeks)
+- Rework of budget templates
+- Data cleansing effort required
+- Potential errors in budget consolidation</p>
+<p><strong>Mitigation Strategy:</strong>
+1. <strong>Data Quality Assessment</strong> - Conduct CoA data quality review in Month 2, Week 1
+2. <strong>Data Cleansing</strong> - Allocate 1 week for data cleansing if issues found
+3. <strong>Validation Workshops</strong> - Conduct validation sessions with Finance team
+4. <strong>Master Data Governance</strong> - Establish CoA freeze during project
+5. <strong>Reconciliation Process</strong> - Build reconciliation checks into system</p>
+<p><strong>Monitoring:</strong>
+- Data quality metrics (duplicates, inactive accounts, missing descriptions)
+- Weekly data quality reviews during Month 2</p>
+<p><strong>Status:</strong> Active - Data quality assessment scheduled for Month 2</p>
+<hr />
+<h3 id="r-006-performance-issues-with-large-datasets">R-006: Performance Issues with Large Datasets<a class="headerlink" href="#r-006-performance-issues-with-large-datasets" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> System may experience performance degradation when handling large volumes of budget data, especially during consolidation and reporting.</p>
+<p><strong>Impact if Materialized:</strong>
+- User dissatisfaction
+- Missed performance SLAs (&lt;3 sec page load)
+- Potential need for infrastructure upgrade
+- Additional optimization effort</p>
+<p><strong>Mitigation Strategy:</strong>
+1. <strong>Performance Testing</strong> - Comprehensive load testing in Month 11 (500 concurrent users)
+2. <strong>Scalable Architecture</strong> - Design for scalability from the start
+3. <strong>Database Optimization</strong> - Proper indexing, query optimization
+4. <strong>Caching Strategy</strong> - Implement caching for frequently accessed data
+5. <strong>Infrastructure Sizing</strong> - Right-size infrastructure based on load projections</p>
+<p><strong>Performance Targets:</strong>
+- Page load time: &lt;3 seconds
+- Report generation: &lt;30 seconds
+- Consolidation: &lt;5 minutes for 50 business units
+- Concurrent users: 500 without degradation</p>
+<p><strong>Monitoring:</strong>
+- Performance testing in Month 11
+- Monitor response times during UAT
+- Capacity planning review</p>
+<p><strong>Status:</strong> Active - Will be addressed in Phase 4</p>
+<hr />
+<h3 id="r-007-regulatory-requirements-change">R-007: Regulatory Requirements Change<a class="headerlink" href="#r-007-regulatory-requirements-change" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Banking regulations may change during implementation, requiring modifications to KPI calculations, provisioning logic, or reporting.</p>
+<p><strong>Impact if Materialized:</strong>
+- Scope changes
+- Rework of KPI engine or financial statements
+- Timeline delays of 2-4 weeks
+- Additional testing required</p>
+<p><strong>Mitigation Strategy:</strong>
+1. <strong>Flexible Design</strong> - Build configurable rules engine for regulatory calculations
+2. <strong>Regulatory Monitoring</strong> - Assign Compliance team to monitor regulatory changes
+3. <strong>Quarterly Reviews</strong> - Review regulatory landscape quarterly with Compliance
+4. <strong>Configurable Parameters</strong> - Make regulatory ratios and thresholds configurable
+5. <strong>Change Absorption</strong> - Include buffer in timeline for potential changes</p>
+<p><strong>Monitoring:</strong>
+- Quarterly regulatory review meetings
+- Compliance team alerts
+- Industry association updates</p>
+<p><strong>Status:</strong> Active - Quarterly review scheduled</p>
+<hr />
+<h3 id="r-008-vendor-delays-or-issues">R-008: Vendor Delays or Issues<a class="headerlink" href="#r-008-vendor-delays-or-issues" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> ERP vendor may experience delays in providing support, delivering software updates, or resolving critical issues.</p>
+<p><strong>Impact if Materialized:</strong>
+- Project delays of 1-4 weeks
+- Workarounds required
+- Quality compromises
+- Additional costs</p>
+<p><strong>Mitigation Strategy:</strong>
+1. <strong>Clear SLAs</strong> - Establish service level agreements with vendor
+2. <strong>Escalation Process</strong> - Define escalation path for vendor issues
+3. <strong>Alternative Vendor</strong> - Identify alternative vendor as backup (if feasible)
+4. <strong>Regular Vendor Reviews</strong> - Monthly vendor performance reviews
+5. <strong>Contractual Penalties</strong> - Include penalties for vendor delays in contract</p>
+<p><strong>Vendor SLAs:</strong>
+- Critical issues: 4-hour response, 24-hour resolution
+- High priority: 1-day response, 3-day resolution
+- Medium priority: 3-day response, 1-week resolution</p>
+<p><strong>Monitoring:</strong>
+- Track vendor response and resolution times
+- Monthly vendor performance scorecard
+- Escalate persistent issues to steering committee</p>
+<p><strong>Status:</strong> Active - Vendor contract review in progress</p>
+<hr />
+<h3 id="r-009-budget-overrun">R-009: Budget Overrun<a class="headerlink" href="#r-009-budget-overrun" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Project costs may exceed approved budget due to scope changes, resource needs, or unforeseen issues.</p>
+<p><strong>Impact if Materialized:</strong>
+- Budget overrun of 10-20% ($360K-$720K)
+- Need for additional funding approval
+- Potential scope reduction
+- Project credibility impact</p>
+<p><strong>Mitigation Strategy:</strong>
+1. <strong>Monthly Budget Tracking</strong> - Track actuals vs. budget monthly
+2. <strong>15% Contingency</strong> - $348K contingency buffer included
+3. <strong>Early Warning System</strong> - Alert if projected variance &gt;5%
+4. <strong>Cost Control</strong> - Strict approval process for unbudgeted expenses
+5. <strong>Scope Management</strong> - Prevent scope creep (see R-003)</p>
+<p><strong>Budget Monitoring:</strong>
+- Monthly budget vs. actual reports
+- Forecast to completion analysis
+- Variance analysis and trend tracking</p>
+<p><strong>Status:</strong> Active - Monthly budget tracking to begin Month 1</p>
+<hr />
+<h3 id="r-010-uat-reveals-major-gaps">R-010: UAT Reveals Major Gaps<a class="headerlink" href="#r-010-uat-reveals-major-gaps" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> User Acceptance Testing may uncover significant gaps in functionality or usability that require substantial rework.</p>
+<p><strong>Impact if Materialized:</strong>
+- Go-live delays of 4-8 weeks
+- Team morale impact
+- Rework effort and costs
+- Stakeholder confidence loss</p>
+<p><strong>Mitigation Strategy:</strong>
+1. <strong>Early User Involvement</strong> - Include users in requirements and design phases
+2. <strong>Iterative Demos</strong> - Monthly demos to stakeholders starting Month 4
+3. <strong>Prototype Validation</strong> - Validate prototypes with users before full development
+4. <strong>Phased UAT</strong> - Conduct UAT by module, not all at once
+5. <strong>Clear Acceptance Criteria</strong> - Define acceptance criteria upfront for each feature</p>
+<p><strong>UAT Approach:</strong>
+- Module-level UAT during development (Months 6, 9)
+- Comprehensive UAT in Month 11-12
+- &gt;95% test case pass rate required for go-live</p>
+<p><strong>Monitoring:</strong>
+- Track user feedback from demos
+- UAT defect trends
+- User satisfaction during UAT</p>
+<p><strong>Status:</strong> Active - User involvement plan in development</p>
+<hr />
+<h2 id="risk-response-actions">Risk Response Actions<a class="headerlink" href="#risk-response-actions" title="Permanent link">&para;</a></h2>
+<h3 id="immediate-actions-month-1">Immediate Actions (Month 1)<a class="headerlink" href="#immediate-actions-month-1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Conduct GL integration PoC (R-001)</li>
+<li>[ ] Establish change control process (R-003)</li>
+<li>[ ] Identify backup resources (R-004)</li>
+<li>[ ] Set up monthly budget tracking (R-009)</li>
+</ul>
+<h3 id="short-term-actions-months-2-3">Short-term Actions (Months 2-3)<a class="headerlink" href="#short-term-actions-months-2-3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Conduct CoA data quality assessment (R-005)</li>
+<li>[ ] Identify change champions (R-002)</li>
+<li>[ ] Establish vendor SLAs (R-008)</li>
+<li>[ ] Schedule regulatory review meetings (R-007)</li>
+</ul>
+<h3 id="long-term-actions-months-4">Long-term Actions (Months 4+)<a class="headerlink" href="#long-term-actions-months-4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Performance testing (R-006) - Month 11</li>
+<li>[ ] Comprehensive UAT (R-010) - Months 11-12</li>
+<li>[ ] User training program (R-002) - Months 8-12</li>
+</ul>
+<hr />
+<h2 id="risk-review-schedule">Risk Review Schedule<a class="headerlink" href="#risk-review-schedule" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Weekly:</strong> Project team reviews high/critical risks</li>
+<li><strong>Monthly:</strong> Steering committee reviews all risks</li>
+<li><strong>Quarterly:</strong> Comprehensive risk assessment and register update</li>
+</ul>
+<hr />
+<h2 id="escalation-criteria">Escalation Criteria<a class="headerlink" href="#escalation-criteria" title="Permanent link">&para;</a></h2>
+<p>Escalate to Steering Committee if:
+- New critical risk (score ≥12) identified
+- Existing risk score increases by ≥4 points
+- Risk mitigation actions failing
+- Risk materialized with significant impact</p>
+<hr />
+<p><strong>Document Owner:</strong> Project Manager<br />
+<strong>Next Review:</strong> Monthly Steering Committee Meeting</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

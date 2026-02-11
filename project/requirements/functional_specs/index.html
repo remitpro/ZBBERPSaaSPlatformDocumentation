@@ -1,0 +1,6144 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Enterprise Zero-Based Budgeting System Documentation">
+      
+      
+        <meta name="author" content="ZBB ERP Team">
+      
+      
+      
+        <link rel="prev" href="../../planning/Risk_Register/">
+      
+      
+        <link rel="next" href="../Requirements_Validation_Workshop/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Functional Specs - ZBB ERP Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#functional-requirements-document-frd-and-system-design-specification" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ZBB ERP Platform" class="md-header__button md-logo" aria-label="ZBB ERP Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZBB ERP Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Functional Specs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/remitpro/ZBBERPSaaSPlatform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZBBERPSaaSPlatform
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../guides/quickstart/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../reference/api/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../design/Technical_Architecture/" class="md-tabs__link">
+          
+  
+  
+  Project Info
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ZBB ERP Platform" class="md-nav__button md-logo" aria-label="ZBB ERP Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ZBB ERP Platform
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/remitpro/ZBBERPSaaSPlatform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZBBERPSaaSPlatform
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (AWS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/deployment_digitalocean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (DigitalOcean)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Info
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Info
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/Technical_Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/CoA_Mapping_Specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoA Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/Loan_Product_Taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loan Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/Product_Geography_Taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geo Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/integration_specs/GL_Integration_PoC_Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GL Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/integration_specs/GL_Integration_PoC_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GL Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/workplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workplan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/Infrastructure_Procurement_Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/Risk_Register/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Specs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zero-based-budgeting-erp-module-for-banking-institution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zero-Based Budgeting ERP Module for Banking Institution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-current-state-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Current State Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Current State Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-existing-budget-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Existing Budget Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-current-process-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Current Process Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-key-pain-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Key Pain Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-system-integration-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. System Integration &amp; Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. System Integration &amp; Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-integration-with-general-ledger-gl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Integration with General Ledger (GL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Integration with General Ledger (GL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-chart-of-accounts-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1 Chart of Accounts Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-data-flow-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.2 Data Flow Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-technical-integration-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.3 Technical Integration Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-role-based-access-control-rbac-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Role-Based Access Control (RBAC) Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Role-Based Access Control (RBAC) Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-user-roles-and-permissions-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.1 User Roles and Permissions Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-security-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.2 Security Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-delegation-and-proxy-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.3 Delegation and Proxy Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-functional-module-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Functional Module Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Functional Module Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-assumptions-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Assumptions Engine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Assumptions Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-central-assumptions-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.1 Central Assumptions Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.2 Functional Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-user-interface-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.3 User Interface Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-zero-based-budgeting-zbb-logic-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Zero-Based Budgeting (ZBB) Logic Module
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Zero-Based Budgeting (ZBB) Logic Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-zbb-principles-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.1 ZBB Principles Enforcement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-digital-budget-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.2 Digital Budget Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-decision-package-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.3 Decision Package Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-operationsloan-portfolio-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Operations/Loan Portfolio Module
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Operations/Loan Portfolio Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.1 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-disbursement-projections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.2 Disbursement Projections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-loan-portfolio-growth-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.3 Loan Portfolio Growth Calculations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334-interest-income-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.4 Interest Income Calculations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#335-provisioning-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.5 Provisioning Calculations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-borrowings-and-funding-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Borrowings and Funding Module
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Borrowings and Funding Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-funding-sources-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.2 Funding Sources Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343-interest-expense-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.3 Interest Expense Calculations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#344-cost-of-funds-and-average-balance-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.4 Cost of Funds and Average Balance Calculations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-automated-calculation-integration-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Automated Calculation &amp; Integration Logic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Automated Calculation &amp; Integration Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-three-statement-model-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Three Statement Model Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-income-statement-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Income Statement Generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Income Statement Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-income-statement-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.1 Income Statement Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-calculation-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.2 Calculation Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-balance-sheet-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Balance Sheet Generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Balance Sheet Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-balance-sheet-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.1 Balance Sheet Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432-calculation-logic-and-dynamic-linkages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.2 Calculation Logic and Dynamic Linkages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-cash-flow-statement-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Cash Flow Statement Generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Cash Flow Statement Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#441-cash-flow-statement-structure-indirect-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4.1 Cash Flow Statement Structure (Indirect Method)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#442-calculation-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4.2 Calculation Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-integration-validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Integration Validation Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-financial-reporting-kpi-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Financial Reporting &amp; KPI Engine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Financial Reporting &amp; KPI Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-banking-specific-kpi-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Banking-Specific KPI Calculations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Banking-Specific KPI Calculations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-profitability-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.1 Profitability Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512-asset-quality-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.2 Asset Quality Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513-liquidity-and-capital-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.3 Liquidity and Capital Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514-additional-performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.4 Additional Performance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-kpi-dashboard-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 KPI Dashboard Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-workflow-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Workflow &amp; Governance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Workflow &amp; Governance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-budget-preparation-and-approval-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Budget Preparation and Approval Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 Budget Preparation and Approval Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611-workflow-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.1 Workflow Stages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612-workflow-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.2 Workflow Functional Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#613-workflow-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.3 Workflow Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-audit-trail-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Audit Trail Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 Audit Trail Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621-comprehensive-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1 Comprehensive Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622-audit-trail-access-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2 Audit Trail Access and Reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#623-compliance-and-retention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.3 Compliance and Retention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-validation-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Validation &amp; Error Handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Validation &amp; Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-validation-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Validation Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 Validation Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-hard-validations-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1 Hard Validations (Blocking)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712-soft-validations-warnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.2 Soft Validations (Warnings)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-error-handling-and-user-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Error Handling and User Guidance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-reporting-and-analytics-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Reporting and Analytics Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Reporting and Analytics Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-standard-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Standard Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-variance-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Variance Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-scenario-and-sensitivity-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Scenario and Sensitivity Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-export-and-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Export and Distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-non-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Non-Functional Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Non-Functional Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-availability-and-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Availability and Reliability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-usability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Usability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-integration-and-interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 Integration and Interoperability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#96-maintainability-and-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.6 Maintainability and Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-expected-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Expected Benefits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Expected Benefits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-efficiency-gains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Efficiency Gains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-accuracy-and-data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Accuracy and Data Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-governance-and-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Governance and Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-strategic-decision-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Strategic Decision-Making
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#105-user-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 User Experience
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-implementation-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Implementation Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Implementation Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-phased-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Phased Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-change-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Change Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A: Glossary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-compliance-and-regulatory-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B: Compliance and Regulatory References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements_Validation_Workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Workshop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements_Workshop_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Project_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Project_Status_Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Status Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Team_Roster_Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team Roster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Final_Project_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Completion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_5" id="__nav_5_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1 Details
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 1 Details
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_1_Progress_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_2_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_7" id="__nav_5_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monthly Updates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monthly Updates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_2_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_3_Phase_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_4_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zero-based-budgeting-erp-module-for-banking-institution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zero-Based Budgeting ERP Module for Banking Institution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-current-state-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Current State Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Current State Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-existing-budget-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Existing Budget Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-current-process-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Current Process Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-key-pain-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Key Pain Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-system-integration-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. System Integration &amp; Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. System Integration &amp; Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-integration-with-general-ledger-gl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Integration with General Ledger (GL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Integration with General Ledger (GL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-chart-of-accounts-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1 Chart of Accounts Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-data-flow-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.2 Data Flow Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-technical-integration-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.3 Technical Integration Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-role-based-access-control-rbac-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Role-Based Access Control (RBAC) Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Role-Based Access Control (RBAC) Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-user-roles-and-permissions-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.1 User Roles and Permissions Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-security-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.2 Security Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-delegation-and-proxy-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.3 Delegation and Proxy Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-functional-module-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Functional Module Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Functional Module Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-assumptions-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Assumptions Engine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Assumptions Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-central-assumptions-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.1 Central Assumptions Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.2 Functional Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-user-interface-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.3 User Interface Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-zero-based-budgeting-zbb-logic-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Zero-Based Budgeting (ZBB) Logic Module
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Zero-Based Budgeting (ZBB) Logic Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-zbb-principles-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.1 ZBB Principles Enforcement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-digital-budget-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.2 Digital Budget Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-decision-package-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.3 Decision Package Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-operationsloan-portfolio-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Operations/Loan Portfolio Module
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Operations/Loan Portfolio Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.1 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-disbursement-projections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.2 Disbursement Projections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-loan-portfolio-growth-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.3 Loan Portfolio Growth Calculations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334-interest-income-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.4 Interest Income Calculations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#335-provisioning-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.5 Provisioning Calculations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-borrowings-and-funding-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Borrowings and Funding Module
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Borrowings and Funding Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-funding-sources-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.2 Funding Sources Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343-interest-expense-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.3 Interest Expense Calculations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#344-cost-of-funds-and-average-balance-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.4 Cost of Funds and Average Balance Calculations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-automated-calculation-integration-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Automated Calculation &amp; Integration Logic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Automated Calculation &amp; Integration Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-three-statement-model-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Three Statement Model Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-income-statement-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Income Statement Generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Income Statement Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-income-statement-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.1 Income Statement Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-calculation-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.2 Calculation Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-balance-sheet-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Balance Sheet Generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Balance Sheet Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-balance-sheet-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.1 Balance Sheet Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432-calculation-logic-and-dynamic-linkages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.2 Calculation Logic and Dynamic Linkages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-cash-flow-statement-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Cash Flow Statement Generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Cash Flow Statement Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#441-cash-flow-statement-structure-indirect-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4.1 Cash Flow Statement Structure (Indirect Method)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#442-calculation-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4.2 Calculation Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-integration-validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Integration Validation Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-financial-reporting-kpi-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Financial Reporting &amp; KPI Engine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Financial Reporting &amp; KPI Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-banking-specific-kpi-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Banking-Specific KPI Calculations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Banking-Specific KPI Calculations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-profitability-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.1 Profitability Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512-asset-quality-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.2 Asset Quality Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513-liquidity-and-capital-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.3 Liquidity and Capital Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514-additional-performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.4 Additional Performance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-kpi-dashboard-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 KPI Dashboard Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-workflow-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Workflow &amp; Governance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Workflow &amp; Governance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-budget-preparation-and-approval-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Budget Preparation and Approval Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 Budget Preparation and Approval Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611-workflow-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.1 Workflow Stages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612-workflow-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.2 Workflow Functional Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#613-workflow-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.3 Workflow Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-audit-trail-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Audit Trail Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 Audit Trail Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621-comprehensive-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1 Comprehensive Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622-audit-trail-access-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2 Audit Trail Access and Reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#623-compliance-and-retention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.3 Compliance and Retention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-validation-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Validation &amp; Error Handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Validation &amp; Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-validation-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Validation Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 Validation Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-hard-validations-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1 Hard Validations (Blocking)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712-soft-validations-warnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.2 Soft Validations (Warnings)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-error-handling-and-user-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Error Handling and User Guidance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-reporting-and-analytics-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Reporting and Analytics Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Reporting and Analytics Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-standard-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Standard Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-variance-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Variance Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-scenario-and-sensitivity-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Scenario and Sensitivity Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-export-and-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Export and Distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-non-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Non-Functional Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Non-Functional Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-availability-and-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Availability and Reliability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-usability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Usability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-integration-and-interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 Integration and Interoperability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#96-maintainability-and-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.6 Maintainability and Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-expected-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Expected Benefits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Expected Benefits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-efficiency-gains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Efficiency Gains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-accuracy-and-data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Accuracy and Data Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-governance-and-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Governance and Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-strategic-decision-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Strategic Decision-Making
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#105-user-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 User Experience
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-implementation-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Implementation Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Implementation Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-phased-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Phased Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-change-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Change Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A: Glossary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-compliance-and-regulatory-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B: Compliance and Regulatory References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/remitpro/ZBBERPSaaSPlatform/edit/master/docs/project/requirements/functional_specs.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="functional-requirements-document-frd-and-system-design-specification">Functional Requirements Document (FRD) and System Design Specification<a class="headerlink" href="#functional-requirements-document-frd-and-system-design-specification" title="Permanent link">&para;</a></h1>
+<h2 id="zero-based-budgeting-erp-module-for-banking-institution">Zero-Based Budgeting ERP Module for Banking Institution<a class="headerlink" href="#zero-based-budgeting-erp-module-for-banking-institution" title="Permanent link">&para;</a></h2>
+<p><strong>Document Version:</strong> 1.0<br />
+<strong>Date:</strong> February 10, 2026<br />
+<strong>Classification:</strong> Procurement - Request for Proposal (RFP)<br />
+<strong>Prepared For:</strong> ERP Vendor Selection and Implementation</p>
+<hr />
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>This Functional Requirements Document (FRD) defines the comprehensive requirements for implementing an automated Zero-Based Budgeting (ZBB) module within an Enterprise Resource Planning (ERP) system for a banking institution. The solution must replace the current manual, Excel-based budget process with an integrated, automated system that supports budget formulation, coordination, consolidation, and automated generation of complete financial statements and banking-specific Key Performance Indicators (KPIs).</p>
+<h3 id="key-objectives">Key Objectives<a class="headerlink" href="#key-objectives" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Automate</strong> the end-to-end budget process from assumptions setup to financial statement generation</li>
+<li><strong>Enforce</strong> Zero-Based Budgeting principles with mandatory justifications</li>
+<li><strong>Integrate</strong> seamlessly with the General Ledger and Chart of Accounts</li>
+<li><strong>Generate</strong> the complete Three Statement Model (Income Statement, Balance Sheet, Cash Flow Statement)</li>
+<li><strong>Calculate</strong> banking-specific KPIs automatically with full traceability</li>
+<li><strong>Provide</strong> robust workflow, approval mechanisms, and comprehensive audit trails</li>
+</ul>
+<hr />
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-current-state-analysis">Current State Analysis</a></li>
+<li><a href="#2-system-integration--architecture">System Integration &amp; Architecture</a></li>
+<li><a href="#3-functional-module-requirements">Functional Module Requirements</a></li>
+<li><a href="#4-automated-calculation--integration-logic">Automated Calculation &amp; Integration Logic</a></li>
+<li><a href="#5-financial-reporting--kpi-engine">Financial Reporting &amp; KPI Engine</a></li>
+<li><a href="#6-workflow--governance">Workflow &amp; Governance</a></li>
+<li><a href="#7-validation--error-handling">Validation &amp; Error Handling</a></li>
+<li><a href="#8-reporting-and-analytics-requirements">Reporting and Analytics Requirements</a></li>
+<li><a href="#9-non-functional-requirements">Non-Functional Requirements</a></li>
+<li><a href="#10-expected-benefits">Expected Benefits</a></li>
+<li><a href="#11-implementation-approach">Implementation Approach</a></li>
+</ol>
+<hr />
+<h2 id="1-current-state-analysis">1. Current State Analysis<a class="headerlink" href="#1-current-state-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="11-existing-budget-framework">1.1 Existing Budget Framework<a class="headerlink" href="#11-existing-budget-framework" title="Permanent link">&para;</a></h3>
+<p>The Bank currently employs a <strong>Zero-Based Budgeting (ZBB)</strong> methodology for annual budget preparation, requiring all business units to justify anticipated expenditures from a zero base. The process is governed by centrally approved budget assumptions including inflation rates, growth targets, and regulatory constraints.</p>
+<h3 id="12-current-process-flow">1.2 Current Process Flow<a class="headerlink" href="#12-current-process-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>flowchart TD
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A[Budget Team: Prepare Excel Templates] --&gt; B[Distribute to Business Units]
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    B --&gt; C[Heads of Units: Populate Templates]
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    B --&gt; D[Operations Team: Loan Portfolio Budget]
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    C --&gt; E[Submit to Budget Team]
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    D --&gt; E
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    E --&gt; F[Manual Consolidation in Master Template]
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    F --&gt; G[Generate Draft Summaries]
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    G --&gt; H[Manual Financial Statement Preparation]
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    H --&gt; I[Manual Ratio Calculations]
+</code></pre></div>
+<h3 id="13-key-pain-points">1.3 Key Pain Points<a class="headerlink" href="#13-key-pain-points" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heavy reliance on manual Excel templates</td>
+<td>High error risk, version control issues</td>
+</tr>
+<tr>
+<td>Manual consolidation process</td>
+<td>Time-consuming, labor-intensive</td>
+</tr>
+<tr>
+<td>Limited audit trail</td>
+<td>Compliance and governance risks</td>
+</tr>
+<tr>
+<td>No automated approval workflow</td>
+<td>Delays, lack of accountability</td>
+</tr>
+<tr>
+<td>Manual financial statement preparation</td>
+<td>Inconsistencies, delayed reporting</td>
+</tr>
+<tr>
+<td>Difficulty in scenario analysis</td>
+<td>Limited strategic planning capability</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-system-integration-architecture">2. System Integration &amp; Architecture<a class="headerlink" href="#2-system-integration-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="21-integration-with-general-ledger-gl">2.1 Integration with General Ledger (GL)<a class="headerlink" href="#21-integration-with-general-ledger-gl" title="Permanent link">&para;</a></h3>
+<h4 id="211-chart-of-accounts-mapping">2.1.1 Chart of Accounts Mapping<a class="headerlink" href="#211-chart-of-accounts-mapping" title="Permanent link">&para;</a></h4>
+<p><strong>Requirement:</strong> The Budget Module must be fully integrated with the Bank's General Ledger through a synchronized Chart of Accounts (CoA) mapping.</p>
+<p><strong>Specifications:</strong></p>
+<ul>
+<li><strong>Bi-directional synchronization</strong> between Budget Module and GL</li>
+<li>All budget line items must map to specific GL account codes</li>
+<li>Support for multi-dimensional account structures:</li>
+<li>Cost Center</li>
+<li>Business Unit</li>
+<li>Product Line</li>
+<li>Geographic Location</li>
+<li>Project/Initiative Code</li>
+<li><strong>Real-time validation</strong> to ensure budget entries align with active GL accounts</li>
+<li>Ability to handle GL account hierarchy (parent-child relationships)</li>
+<li>Support for account consolidation rules at multiple organizational levels</li>
+</ul>
+<h4 id="212-data-flow-architecture">2.1.2 Data Flow Architecture<a class="headerlink" href="#212-data-flow-architecture" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>flowchart LR
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    A[Budget Module] &lt;--&gt;|CoA Sync| B[General Ledger]
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    A &lt;--&gt;|Actual vs Budget| C[Financial Reporting]
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    A --&gt;|Budget Data| D[Data Warehouse]
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    B --&gt;|Actual Data| D
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    D --&gt;|Analytics| E[BI Dashboard]
+</code></pre></div>
+<p><strong>Integration Points:</strong></p>
+<ol>
+<li><strong>Master Data Synchronization</strong></li>
+<li>Chart of Accounts</li>
+<li>Cost Centers</li>
+<li>Business Units</li>
+<li>
+<p>Employee Master (for approvers)</p>
+</li>
+<li>
+<p><strong>Transactional Data Flow</strong></p>
+</li>
+<li>Approved budget data flows to GL as budget allocations</li>
+<li>
+<p>Actual expenditure data flows from GL for variance analysis</p>
+</li>
+<li>
+<p><strong>Reporting Integration</strong></p>
+</li>
+<li>Consolidated financial statements pull from both budget and actual data</li>
+<li>KPI calculations use integrated data sources</li>
+</ol>
+<h4 id="213-technical-integration-requirements">2.1.3 Technical Integration Requirements<a class="headerlink" href="#213-technical-integration-requirements" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>API-based integration</strong> with RESTful web services</li>
+<li><strong>Real-time or near-real-time</strong> data synchronization (max 15-minute latency)</li>
+<li><strong>Error handling and reconciliation</strong> mechanisms</li>
+<li><strong>Data integrity checks</strong> at integration points</li>
+<li>Support for <strong>batch and real-time</strong> processing modes</li>
+</ul>
+<h3 id="22-role-based-access-control-rbac-model">2.2 Role-Based Access Control (RBAC) Model<a class="headerlink" href="#22-role-based-access-control-rbac-model" title="Permanent link">&para;</a></h3>
+<h4 id="221-user-roles-and-permissions-matrix">2.2.1 User Roles and Permissions Matrix<a class="headerlink" href="#221-user-roles-and-permissions-matrix" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Access Level</th>
+<th>Permissions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Executive Management</strong></td>
+<td>View, Approve (Final)</td>
+<td>- View all budgets across the Bank<br>- Approve/reject consolidated budgets<br>- Access all reports and dashboards<br>- Configure strategic assumptions</td>
+</tr>
+<tr>
+<td><strong>Budget Team</strong></td>
+<td>Admin, Review, Consolidate</td>
+<td>- Create and distribute budget templates<br>- Set up budget assumptions<br>- Review all unit submissions<br>- Query and request revisions<br>- Consolidate budgets<br>- Generate financial statements<br>- Configure validation rules</td>
+</tr>
+<tr>
+<td><strong>Heads of Business Units</strong></td>
+<td>Create, Edit, Submit</td>
+<td>- Access assigned unit templates<br>- Enter budget data for their units<br>- Attach justification documents<br>- Submit for review<br>- Respond to queries<br>- View their unit's budget status</td>
+</tr>
+<tr>
+<td><strong>Operations Team</strong></td>
+<td>Create, Edit, Submit (Loan Portfolio)</td>
+<td>- Access loan portfolio budget templates<br>- Enter disbursement projections by PFI and product<br>- Input interest income assumptions<br>- Submit loan budget<br>- View loan portfolio reports</td>
+</tr>
+<tr>
+<td><strong>Finance Team</strong></td>
+<td>View, Analyze</td>
+<td>- View approved budgets<br>- Run variance analysis<br>- Generate ad-hoc reports<br>- Access financial statements</td>
+</tr>
+<tr>
+<td><strong>Auditors</strong></td>
+<td>View (Read-only), Audit Trail</td>
+<td>- Read-only access to all budget data<br>- Full audit trail access<br>- Export capabilities for audit purposes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="222-security-requirements">2.2.2 Security Requirements<a class="headerlink" href="#222-security-requirements" title="Permanent link">&para;</a></h4>
+<p><strong>Authentication:</strong>
+- Integration with Bank's existing Active Directory/LDAP
+- Support for Single Sign-On (SSO)
+- Multi-factor authentication (MFA) for privileged users</p>
+<p><strong>Authorization:</strong>
+- Granular permissions at field level
+- Data segregation by business unit
+- Hierarchical access control (managers can view subordinate budgets)</p>
+<p><strong>Data Security:</strong>
+- Encryption at rest (AES-256)
+- Encryption in transit (TLS 1.3)
+- Field-level encryption for sensitive data
+- Compliance with banking data protection regulations</p>
+<h4 id="223-delegation-and-proxy-access">2.2.3 Delegation and Proxy Access<a class="headerlink" href="#223-delegation-and-proxy-access" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Ability to delegate approval authority temporarily</li>
+<li>Proxy access for users during absence</li>
+<li>Audit trail for all delegated actions</li>
+</ul>
+<hr />
+<h2 id="3-functional-module-requirements">3. Functional Module Requirements<a class="headerlink" href="#3-functional-module-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="31-assumptions-engine">3.1 Assumptions Engine<a class="headerlink" href="#31-assumptions-engine" title="Permanent link">&para;</a></h3>
+<h4 id="311-central-assumptions-dashboard">3.1.1 Central Assumptions Dashboard<a class="headerlink" href="#311-central-assumptions-dashboard" title="Permanent link">&para;</a></h4>
+<p><strong>Purpose:</strong> Provide a centralized interface for the Budget Team to define, manage, and version-control all budget assumptions that drive calculations across the system.</p>
+<p><strong>Required Assumptions Categories:</strong></p>
+<ol>
+<li><strong>Macroeconomic Assumptions</strong></li>
+<li>Inflation rate (general and sector-specific)</li>
+<li>Interest rate benchmarks (policy rate, LIBOR, etc.)</li>
+<li>Exchange rates (for multi-currency operations)</li>
+<li>
+<p>GDP growth projections</p>
+</li>
+<li>
+<p><strong>Growth Targets</strong></p>
+</li>
+<li>Loan portfolio growth rate (by product type)</li>
+<li>Deposit growth rate</li>
+<li>Revenue growth targets</li>
+<li>
+<p>Market share objectives</p>
+</li>
+<li>
+<p><strong>Regulatory and Policy Constraints</strong></p>
+</li>
+<li>Capital adequacy requirements (CAR)</li>
+<li>Liquidity coverage ratio (LCR) requirements</li>
+<li>Maximum loan-to-deposit ratio</li>
+<li>Provisioning rates by loan classification</li>
+<li>
+<p>Regulatory expense caps</p>
+</li>
+<li>
+<p><strong>Operational Assumptions</strong></p>
+</li>
+<li>Headcount growth/reduction plans</li>
+<li>Salary increment percentages</li>
+<li>Branch expansion/closure plans</li>
+<li>Technology investment priorities</li>
+</ol>
+<h4 id="312-functional-requirements">3.1.2 Functional Requirements<a class="headerlink" href="#312-functional-requirements" title="Permanent link">&para;</a></h4>
+<p><strong>FR-ASM-001:</strong> The system shall provide a dedicated Assumptions Management module accessible only to authorized Budget Team members.</p>
+<p><strong>FR-ASM-002:</strong> The system shall support creation of multiple assumption scenarios (Base Case, Optimistic, Pessimistic).</p>
+<p><strong>FR-ASM-003:</strong> The system shall maintain complete version history of all assumptions with:
+- Version number
+- Effective date
+- Created by (user ID)
+- Timestamp
+- Change description
+- Approval status</p>
+<p><strong>FR-ASM-004:</strong> The system shall allow assumptions to be defined at multiple organizational levels:
+- Bank-wide (default)
+- Business unit-specific
+- Product-specific
+- Geographic region-specific</p>
+<p><strong>FR-ASM-005:</strong> The system shall enforce approval workflow for assumption changes:
+- Draft → Review → Approved → Published
+- Only published assumptions are available for budget preparation</p>
+<p><strong>FR-ASM-006:</strong> The system shall automatically cascade assumption changes to all dependent budget calculations with user notification.</p>
+<p><strong>FR-ASM-007:</strong> The system shall provide comparison reports showing impact of assumption changes on budget outcomes.</p>
+<h4 id="313-user-interface-requirements">3.1.3 User Interface Requirements<a class="headerlink" href="#313-user-interface-requirements" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Dashboard view</strong> showing all active assumptions by category</li>
+<li><strong>Drill-down capability</strong> to view assumption details and history</li>
+<li><strong>Visual indicators</strong> for assumptions pending approval</li>
+<li><strong>Impact analysis tool</strong> showing which budgets are affected by each assumption</li>
+<li><strong>Export functionality</strong> for assumption documentation</li>
+</ul>
+<h3 id="32-zero-based-budgeting-zbb-logic-module">3.2 Zero-Based Budgeting (ZBB) Logic Module<a class="headerlink" href="#32-zero-based-budgeting-zbb-logic-module" title="Permanent link">&para;</a></h3>
+<h4 id="321-zbb-principles-enforcement">3.2.1 ZBB Principles Enforcement<a class="headerlink" href="#321-zbb-principles-enforcement" title="Permanent link">&para;</a></h4>
+<p><strong>Purpose:</strong> Ensure that every expense line item is justified from a zero base, eliminating automatic rollover of prior year budgets.</p>
+<p><strong>FR-ZBB-001:</strong> The system shall NOT auto-populate budget templates with prior year actual or budget figures as default values.</p>
+<p><strong>FR-ZBB-002:</strong> The system shall provide prior year data as reference only, displayed in a separate read-only column for comparison purposes.</p>
+<p><strong>FR-ZBB-003:</strong> The system shall require explicit justification for every non-zero budget line item.</p>
+<h4 id="322-digital-budget-templates">3.2.2 Digital Budget Templates<a class="headerlink" href="#322-digital-budget-templates" title="Permanent link">&para;</a></h4>
+<p><strong>FR-ZBB-004:</strong> The system shall provide role-based digital budget templates dynamically generated based on:
+- User role (Business Unit Head, Operations Team, etc.)
+- Organizational unit assignment
+- Chart of Accounts access permissions</p>
+<p><strong>FR-ZBB-005:</strong> Templates shall include the following columns for Operating Expenses:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GL Account Code</td>
+<td>Auto-populated</td>
+<td>Yes</td>
+<td>From CoA mapping</td>
+</tr>
+<tr>
+<td>Account Description</td>
+<td>Auto-populated</td>
+<td>Yes</td>
+<td>From CoA</td>
+</tr>
+<tr>
+<td>Budget Amount</td>
+<td>User input</td>
+<td>Yes</td>
+<td>Proposed budget for the line item</td>
+</tr>
+<tr>
+<td>Justification</td>
+<td>Text field (min 50 chars)</td>
+<td>Yes</td>
+<td>Mandatory explanation</td>
+</tr>
+<tr>
+<td>Business Driver</td>
+<td>Dropdown</td>
+<td>Yes</td>
+<td>Volume, Headcount, Strategic Initiative, Regulatory, etc.</td>
+</tr>
+<tr>
+<td>Calculation Basis</td>
+<td>Text/Formula</td>
+<td>Conditional</td>
+<td>Required if amount &gt; threshold</td>
+</tr>
+<tr>
+<td>Supporting Documents</td>
+<td>File attachment</td>
+<td>Conditional</td>
+<td>Required for amounts exceeding defined threshold</td>
+</tr>
+<tr>
+<td>Prior Year Actual</td>
+<td>Display only</td>
+<td>No</td>
+<td>For reference</td>
+</tr>
+<tr>
+<td>Prior Year Budget</td>
+<td>Display only</td>
+<td>No</td>
+<td>For reference</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FR-ZBB-006:</strong> The system shall enforce mandatory justification fields with the following rules:
+- Minimum character count (configurable, default 50 characters)
+- Cannot submit with placeholder text (e.g., "TBD", "N/A")
+- Must select a valid business driver from predefined list</p>
+<p><strong>FR-ZBB-007:</strong> The system shall support attachment of multiple supporting documents per line item:
+- Accepted formats: PDF, Excel, Word, images
+- Maximum file size: 10MB per attachment
+- Virus scanning on upload
+- Version control for attachments</p>
+<h4 id="323-decision-package-approach">3.2.3 Decision Package Approach<a class="headerlink" href="#323-decision-package-approach" title="Permanent link">&para;</a></h4>
+<p><strong>FR-ZBB-008:</strong> The system shall support grouping of related line items into "Decision Packages" representing discrete activities or initiatives.</p>
+<p><strong>FR-ZBB-009:</strong> Each Decision Package shall have:
+- Package name and description
+- Package owner
+- Total cost
+- Consolidated justification
+- Priority ranking (Critical, High, Medium, Low)
+- Incremental levels (Minimum, Base, Enhanced)</p>
+<p><strong>FR-ZBB-010:</strong> The system shall allow Budget Team to approve/reject entire Decision Packages or individual line items within packages.</p>
+<h3 id="33-operationsloan-portfolio-module">3.3 Operations/Loan Portfolio Module<a class="headerlink" href="#33-operationsloan-portfolio-module" title="Permanent link">&para;</a></h3>
+<h4 id="331-purpose">3.3.1 Purpose<a class="headerlink" href="#331-purpose" title="Permanent link">&para;</a></h4>
+<p>Enable the Operations Team to prepare comprehensive loan portfolio budgets including disbursement projections, portfolio growth, and interest income calculations.</p>
+<h4 id="332-disbursement-projections">3.3.2 Disbursement Projections<a class="headerlink" href="#332-disbursement-projections" title="Permanent link">&para;</a></h4>
+<p><strong>FR-LOAN-001:</strong> The system shall provide a Loan Disbursement Budget template with the following dimensions:</p>
+<p><strong>Dimension 1: Product Type</strong>
+- Retail Loans (Personal, Auto, Mortgage, etc.)
+- SME Loans
+- Corporate Loans
+- Agricultural Loans
+- Other specialized products</p>
+<p><strong>Dimension 2: Participating Financial Institution (PFI) Type</strong>
+- Tier 1 Banks
+- Tier 2 Banks
+- Microfinance Institutions
+- Non-Bank Financial Institutions
+- Direct Lending (if applicable)</p>
+<p><strong>Dimension 3: Individual PFI Names</strong>
+- Dropdown list of all active PFIs
+- Ability to add new PFIs</p>
+<p><strong>FR-LOAN-002:</strong> For each combination of Product Type × PFI Type × PFI Name, the system shall capture:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Projected Disbursement Amount</td>
+<td>Currency</td>
+<td>Yes</td>
+<td>Total loan amount to be disbursed</td>
+</tr>
+<tr>
+<td>Number of Loans</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Expected loan count</td>
+</tr>
+<tr>
+<td>Average Loan Size</td>
+<td>Auto-calculated</td>
+<td>N/A</td>
+<td>Disbursement Amount ÷ Number of Loans</td>
+</tr>
+<tr>
+<td>Disbursement Timing</td>
+<td>Monthly distribution</td>
+<td>Yes</td>
+<td>Phasing across 12 months</td>
+</tr>
+<tr>
+<td>Interest Rate</td>
+<td>Percentage</td>
+<td>Yes</td>
+<td>Expected lending rate</td>
+</tr>
+<tr>
+<td>Loan Tenor</td>
+<td>Months</td>
+<td>Yes</td>
+<td>Average loan duration</td>
+</tr>
+<tr>
+<td>Repayment Schedule</td>
+<td>Dropdown</td>
+<td>Yes</td>
+<td>Monthly, Quarterly, Bullet, etc.</td>
+</tr>
+<tr>
+<td>Expected NPL Rate</td>
+<td>Percentage</td>
+<td>Yes</td>
+<td>Projected non-performing loan rate</td>
+</tr>
+<tr>
+<td>Provisioning Rate</td>
+<td>Auto-calculated</td>
+<td>N/A</td>
+<td>Based on regulatory rules and NPL rate</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FR-LOAN-003:</strong> The system shall support monthly phasing of disbursements with:
+- Manual input option (enter amount per month)
+- Pattern-based distribution (equal, seasonal, custom curve)
+- Visual representation (chart showing disbursement profile)</p>
+<h4 id="333-loan-portfolio-growth-calculations">3.3.3 Loan Portfolio Growth Calculations<a class="headerlink" href="#333-loan-portfolio-growth-calculations" title="Permanent link">&para;</a></h4>
+<p><strong>FR-LOAN-004:</strong> The system shall automatically calculate projected loan portfolio growth:</p>
+<p>$$\text{Projected Loan Growth Rate} = \frac{\text{Total Projected Disbursements} - \text{Projected Repayments}}{\text{Opening Loan Portfolio Balance}} \times 100$$</p>
+<p><strong>FR-LOAN-005:</strong> The system shall calculate projected loan portfolio balance by month:</p>
+<p>$$\text{Closing Balance}<em>{\text{Month}} = \text{Opening Balance}</em>{\text{Month}} + \text{Disbursements}<em>{\text{Month}} - \text{Repayments}</em>{\text{Month}} - \text{Write-offs}_{\text{Month}}$$</p>
+<p><strong>FR-LOAN-006:</strong> Repayment projections shall be auto-calculated based on:
+- Existing portfolio repayment schedule (from loan management system)
+- New disbursements with specified tenor and repayment frequency
+- Historical prepayment rates (configurable assumption)</p>
+<h4 id="334-interest-income-calculations">3.3.4 Interest Income Calculations<a class="headerlink" href="#334-interest-income-calculations" title="Permanent link">&para;</a></h4>
+<p><strong>FR-LOAN-007:</strong> The system shall calculate projected interest income using the following logic:</p>
+<p>For each loan product/PFI combination:</p>
+<p>$$\text{Monthly Interest Income} = \text{Average Loan Balance}_{\text{Month}} \times \frac{\text{Interest Rate}}{12}$$</p>
+<p>Where:</p>
+<p>$$\text{Average Loan Balance}<em>{\text{Month}} = \frac{\text{Opening Balance}</em>{\text{Month}} + \text{Closing Balance}_{\text{Month}}}{2}$$</p>
+<p><strong>FR-LOAN-008:</strong> Total Interest Income shall be aggregated across all products and PFIs and flow automatically to the Income Statement.</p>
+<p><strong>FR-LOAN-009:</strong> The system shall calculate interest income on both accrual and cash basis, with clear labeling.</p>
+<h4 id="335-provisioning-calculations">3.3.5 Provisioning Calculations<a class="headerlink" href="#335-provisioning-calculations" title="Permanent link">&para;</a></h4>
+<p><strong>FR-LOAN-010:</strong> The system shall automatically calculate loan loss provisions based on:
+- Projected NPL rates (input by Operations Team)
+- Regulatory provisioning rates by loan classification (from Assumptions Engine)
+- Expected Credit Loss (ECL) methodology (IFRS 9 compliant)</p>
+<p><strong>FR-LOAN-011:</strong> Provisioning calculation formula:</p>
+<p>$$\text{Provision Expense} = (\text{Projected NPL Amount} \times \text{Provisioning Rate}) - \text{Opening Provision Balance}$$</p>
+<p><strong>FR-LOAN-012:</strong> Provision expense shall flow automatically to the Income Statement as operating expense.</p>
+<h3 id="34-borrowings-and-funding-module">3.4 Borrowings and Funding Module<a class="headerlink" href="#34-borrowings-and-funding-module" title="Permanent link">&para;</a></h3>
+<h4 id="341-purpose">3.4.1 Purpose<a class="headerlink" href="#341-purpose" title="Permanent link">&para;</a></h4>
+<p>Enable the Budget Team to prepare a comprehensive borrowings schedule reflecting anticipated sources of funding, pricing, timing, and associated interest expense.</p>
+<h4 id="342-funding-sources-template">3.4.2 Funding Sources Template<a class="headerlink" href="#342-funding-sources-template" title="Permanent link">&para;</a></h4>
+<p><strong>FR-FUND-001:</strong> The system shall provide a Borrowings Schedule template capturing:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Funding Source Type</td>
+<td>Dropdown</td>
+<td>Yes</td>
+<td>Customer Deposits, Interbank Borrowing, Bond Issuance, Equity, Central Bank Facility, etc.</td>
+</tr>
+<tr>
+<td>Funding Source Name</td>
+<td>Text</td>
+<td>Yes</td>
+<td>Specific identifier (e.g., "5-Year Bond 2026")</td>
+</tr>
+<tr>
+<td>Principal Amount</td>
+<td>Currency</td>
+<td>Yes</td>
+<td>Total funding amount</td>
+</tr>
+<tr>
+<td>Drawdown Date</td>
+<td>Date</td>
+<td>Yes</td>
+<td>When funds are received</td>
+</tr>
+<tr>
+<td>Maturity Date</td>
+<td>Date</td>
+<td>Yes</td>
+<td>When principal is due</td>
+</tr>
+<tr>
+<td>Interest Rate</td>
+<td>Percentage</td>
+<td>Yes</td>
+<td>Cost of funds</td>
+</tr>
+<tr>
+<td>Interest Payment Frequency</td>
+<td>Dropdown</td>
+<td>Yes</td>
+<td>Monthly, Quarterly, Semi-Annual, Annual, At Maturity</td>
+</tr>
+<tr>
+<td>Fees and Charges</td>
+<td>Currency</td>
+<td>No</td>
+<td>Upfront or ongoing fees</td>
+</tr>
+<tr>
+<td>Collateral Required</td>
+<td>Yes/No</td>
+<td>Yes</td>
+<td>Whether secured</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FR-FUND-002:</strong> The system shall support multiple tranches for a single funding source with different terms.</p>
+<h4 id="343-interest-expense-calculations">3.4.3 Interest Expense Calculations<a class="headerlink" href="#343-interest-expense-calculations" title="Permanent link">&para;</a></h4>
+<p><strong>FR-FUND-003:</strong> The system shall automatically calculate interest expense for each funding source:</p>
+<p>$$\text{Monthly Interest Expense} = \text{Average Outstanding Balance}_{\text{Month}} \times \frac{\text{Interest Rate}}{12}$$</p>
+<p><strong>FR-FUND-004:</strong> For customer deposits, the system shall support:
+- Different interest rates by deposit type (Savings, Current, Fixed Deposit)
+- Projected deposit balance growth (linked to deposit mobilization targets)
+- Weighted average deposit rate calculation</p>
+<p><strong>FR-FUND-005:</strong> Total Interest Expense shall be automatically aggregated and flow to the Income Statement.</p>
+<h4 id="344-cost-of-funds-and-average-balance-calculations">3.4.4 Cost of Funds and Average Balance Calculations<a class="headerlink" href="#344-cost-of-funds-and-average-balance-calculations" title="Permanent link">&para;</a></h4>
+<p><strong>FR-FUND-006:</strong> The system shall calculate and display:</p>
+<p>$$\text{Weighted Average Cost of Funds} = \frac{\text{Total Interest Expense}}{\text{Average Total Liabilities}} \times 100$$</p>
+<p>$$\text{Average Total Liabilities}_{\text{Month}} = \frac{\text{Opening Liabilities} + \text{Closing Liabilities}}{2}$$</p>
+<p><strong>FR-FUND-007:</strong> The system shall provide a monthly funding profile showing:
+- Opening balance by funding source
+- New drawdowns
+- Repayments
+- Interest accrued
+- Closing balance</p>
+<hr />
+<h2 id="4-automated-calculation-integration-logic">4. Automated Calculation &amp; Integration Logic<a class="headerlink" href="#4-automated-calculation-integration-logic" title="Permanent link">&para;</a></h2>
+<h3 id="41-three-statement-model-integration">4.1 Three Statement Model Integration<a class="headerlink" href="#41-three-statement-model-integration" title="Permanent link">&para;</a></h3>
+<p>The ERP system must automatically generate a fully integrated Three Statement Model where changes in one statement dynamically flow through to the others, maintaining mathematical consistency.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>flowchart TD
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    A[Budget Inputs] --&gt; B[Income Statement]
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    A --&gt; C[Balance Sheet]
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    B --&gt; D[Net Income]
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    D --&gt; C
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    D --&gt; E[Cash Flow Statement]
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    C --&gt; E
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    E --&gt; F[Cash Balance]
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    F --&gt; C
+</code></pre></div>
+<h3 id="42-income-statement-generation">4.2 Income Statement Generation<a class="headerlink" href="#42-income-statement-generation" title="Permanent link">&para;</a></h3>
+<h4 id="421-income-statement-structure">4.2.1 Income Statement Structure<a class="headerlink" href="#421-income-statement-structure" title="Permanent link">&para;</a></h4>
+<p><strong>FR-IS-001:</strong> The system shall automatically generate a Budgeted Income Statement with the following structure:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>INCOME STATEMENT (Budgeted)
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>For the Year Ending [Budget Year]
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>INTEREST INCOME
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  Interest on Loans                           [Auto-calculated from Loan Module]
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  Interest on Investments                     [Input or auto-calculated]
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  Other Interest Income                       [Input]
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>Total Interest Income                         [Sum]
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>INTEREST EXPENSE
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  Interest on Customer Deposits               [Auto-calculated from Funding Module]
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>  Interest on Borrowings                      [Auto-calculated from Funding Module]
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  Other Interest Expense                      [Input]
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>Total Interest Expense                        [Sum]
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>NET INTEREST INCOME                           [Total Interest Income - Total Interest Expense]
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>NON-INTEREST INCOME
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>  Fee and Commission Income                   [Input by Business Units]
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>  Trading Income                              [Input]
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>  Foreign Exchange Income                     [Input]
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>  Other Operating Income                      [Input]
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>Total Non-Interest Income                     [Sum]
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>TOTAL OPERATING INCOME                        [Net Interest Income + Non-Interest Income]
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>OPERATING EXPENSES
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>  Personnel Expenses                          [Consolidated from Business Unit budgets]
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>    - Salaries and Wages
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>    - Benefits and Allowances
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>    - Training and Development
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>  Administrative Expenses                     [Consolidated from Business Unit budgets]
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>    - Rent and Utilities
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>    - Technology and Communication
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>    - Marketing and Advertising
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>    - Professional Fees
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>    - Other Administrative Costs
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>  Depreciation and Amortization              [Auto-calculated from asset schedule]
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>  Loan Loss Provisions                        [Auto-calculated from Loan Module]
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>Total Operating Expenses                      [Sum]
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>PROFIT BEFORE TAX                             [Total Operating Income - Total Operating Expenses]
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>Income Tax Expense                            [Auto-calculated: PBT × Tax Rate]
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>PROFIT AFTER TAX                              [PBT - Tax Expense]
+</code></pre></div>
+<h4 id="422-calculation-logic">4.2.2 Calculation Logic<a class="headerlink" href="#422-calculation-logic" title="Permanent link">&para;</a></h4>
+<p><strong>FR-IS-002:</strong> Interest Income calculation:
+- Sourced automatically from Loan Portfolio Module (FR-LOAN-007, FR-LOAN-008)
+- Investment interest calculated based on investment portfolio schedule
+- No manual override allowed; changes must be made at source</p>
+<p><strong>FR-IS-003:</strong> Interest Expense calculation:
+- Sourced automatically from Borrowings and Funding Module (FR-FUND-003, FR-FUND-005)
+- No manual override allowed; changes must be made at source</p>
+<p><strong>FR-IS-004:</strong> Operating Expenses consolidation:
+- Automatically aggregated from all approved Business Unit budgets
+- Mapped by GL account code
+- Drill-down capability to view source unit and justification</p>
+<p><strong>FR-IS-005:</strong> Tax calculation:
+- Tax rate sourced from Assumptions Engine
+- Applied to Profit Before Tax
+- Support for deferred tax adjustments (input field)</p>
+<p><strong>FR-IS-006:</strong> The system shall generate monthly, quarterly, and annual Income Statements.</p>
+<h3 id="43-balance-sheet-generation">4.3 Balance Sheet Generation<a class="headerlink" href="#43-balance-sheet-generation" title="Permanent link">&para;</a></h3>
+<h4 id="431-balance-sheet-structure">4.3.1 Balance Sheet Structure<a class="headerlink" href="#431-balance-sheet-structure" title="Permanent link">&para;</a></h4>
+<p><strong>FR-BS-001:</strong> The system shall automatically generate a Budgeted Balance Sheet with the following structure:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>STATEMENT OF FINANCIAL POSITION (Budgeted)
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>As at [End of Budget Year]
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>ASSETS
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Cash and Cash Equivalents                     [From Cash Flow Statement ending balance]
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Investment Securities                         [Input or auto-calculated from investment schedule]
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Loans and Advances to Customers              [From Loan Module - FR-LOAN-005]
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>  Less: Loan Loss Provisions                 [From Loan Module - FR-LOAN-011]
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>Net Loans and Advances                        [Gross Loans - Provisions]
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>Property, Plant and Equipment                 [Input + Capital Expenditure - Depreciation]
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>Other Assets                                  [Input]
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>TOTAL ASSETS                                  [Sum of all assets]
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>LIABILITIES
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>Customer Deposits                             [From Funding Module]
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>Borrowings                                    [From Funding Module]
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>Other Liabilities                             [Input]
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>TOTAL LIABILITIES                             [Sum of all liabilities]
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>EQUITY
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>Share Capital                                 [Opening balance + new issuances]
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>Retained Earnings                             [Opening balance + Profit After Tax - Dividends]
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>Other Reserves                                [Input]
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>TOTAL EQUITY                                  [Sum of equity components]
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>TOTAL LIABILITIES AND EQUITY                  [Must equal Total Assets]
+</code></pre></div>
+<h4 id="432-calculation-logic-and-dynamic-linkages">4.3.2 Calculation Logic and Dynamic Linkages<a class="headerlink" href="#432-calculation-logic-and-dynamic-linkages" title="Permanent link">&para;</a></h4>
+<p><strong>FR-BS-002:</strong> Cash and Cash Equivalents:
+- Ending balance from Cash Flow Statement (FR-CF-001)
+- Automatically updated when cash flow changes</p>
+<p><strong>FR-BS-003:</strong> Loans and Advances:
+- Closing balance from Loan Portfolio Module (FR-LOAN-005)
+- Calculated monthly and year-end balance displayed</p>
+<p><strong>FR-BS-004:</strong> Loan Loss Provisions:
+- From Loan Module provisioning calculations (FR-LOAN-011)
+- Displayed as contra-asset</p>
+<p><strong>FR-BS-005:</strong> Property, Plant and Equipment:</p>
+<p>$$\text{PPE}<em>{\text{Closing}} = \text{PPE}</em>{\text{Opening}} + \text{Capital Expenditure} - \text{Depreciation} - \text{Disposals}$$</p>
+<ul>
+<li>Capital Expenditure from CAPEX budget (input by Business Units)</li>
+<li>Depreciation auto-calculated based on depreciation schedule and rates</li>
+</ul>
+<p><strong>FR-BS-006:</strong> Customer Deposits:
+- From Funding Module deposit projections
+- Closing balance at year-end</p>
+<p><strong>FR-BS-007:</strong> Borrowings:
+- From Funding Module borrowings schedule
+- Sum of all outstanding borrowings at year-end</p>
+<p><strong>FR-BS-008:</strong> Retained Earnings:</p>
+<p>$$\text{Retained Earnings}<em>{\text{Closing}} = \text{Retained Earnings}</em>{\text{Opening}} + \text{Profit After Tax} - \text{Dividends Declared}$$</p>
+<ul>
+<li>Profit After Tax from Income Statement (FR-IS-001)</li>
+<li>Dividends as input or based on dividend policy assumption</li>
+</ul>
+<p><strong>FR-BS-009:</strong> The system shall enforce the fundamental accounting equation:</p>
+<p>$$\text{Total Assets} = \text{Total Liabilities} + \text{Total Equity}$$</p>
+<ul>
+<li>Real-time validation with error flagging if imbalance exists</li>
+<li>Drill-down to identify source of imbalance</li>
+</ul>
+<p><strong>FR-BS-010:</strong> The system shall generate monthly Balance Sheet projections showing balance sheet evolution throughout the budget year.</p>
+<h3 id="44-cash-flow-statement-generation">4.4 Cash Flow Statement Generation<a class="headerlink" href="#44-cash-flow-statement-generation" title="Permanent link">&para;</a></h3>
+<h4 id="441-cash-flow-statement-structure-indirect-method">4.4.1 Cash Flow Statement Structure (Indirect Method)<a class="headerlink" href="#441-cash-flow-statement-structure-indirect-method" title="Permanent link">&para;</a></h4>
+<p><strong>FR-CF-001:</strong> The system shall automatically generate a Budgeted Cash Flow Statement using the <strong>Indirect Method</strong>, with the following structure:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>CASH FLOW STATEMENT (Budgeted)
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>For the Year Ending [Budget Year]
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>CASH FLOWS FROM OPERATING ACTIVITIES
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>Profit Before Tax                             [From Income Statement]
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Adjustments for:
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>  Depreciation and Amortization              [From Income Statement]
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>  Loan Loss Provisions                        [From Income Statement]
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>  Other non-cash items                        [Input if applicable]
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Changes in Operating Assets and Liabilities:
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>  (Increase)/Decrease in Loans and Advances  [Change in net loans from Balance Sheet]
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>  (Increase)/Decrease in Other Assets        [Change from Balance Sheet]
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>  Increase/(Decrease) in Customer Deposits   [Change from Balance Sheet]
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>  Increase/(Decrease) in Other Liabilities   [Change from Balance Sheet]
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>Income Tax Paid                               [From Income Statement or input]
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>Net Cash from Operating Activities            [Sum]
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>CASH FLOWS FROM INVESTING ACTIVITIES
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>Purchase of Investment Securities             [Input or from investment schedule]
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>Proceeds from Sale of Investments             [Input]
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>Purchase of PPE (CAPEX)                       [From CAPEX budget]
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>Proceeds from Sale of PPE                     [Input]
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>Net Cash from Investing Activities            [Sum]
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>CASH FLOWS FROM FINANCING ACTIVITIES
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>Proceeds from New Borrowings                  [From Funding Module]
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>Repayment of Borrowings                       [From Funding Module]
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>Proceeds from Share Capital Issuance          [Input]
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>Dividends Paid                                [From Balance Sheet calculation]
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>Net Cash from Financing Activities            [Sum]
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>NET INCREASE/(DECREASE) IN CASH               [Sum of all three sections]
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>Cash and Cash Equivalents - Beginning         [From opening Balance Sheet]
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>CASH AND CASH EQUIVALENTS - ENDING            [Beginning + Net Increase/Decrease]
+</code></pre></div>
+<h4 id="442-calculation-logic">4.4.2 Calculation Logic<a class="headerlink" href="#442-calculation-logic" title="Permanent link">&para;</a></h4>
+<p><strong>FR-CF-002:</strong> Operating Activities - Adjustments:
+- Depreciation and Loan Loss Provisions added back (non-cash expenses)
+- Sourced automatically from Income Statement</p>
+<p><strong>FR-CF-003:</strong> Operating Activities - Working Capital Changes:</p>
+<p>$$\Delta \text{Loans and Advances} = \text{Closing Net Loans} - \text{Opening Net Loans}$$</p>
+<ul>
+<li>Increase in loans = cash outflow (negative)</li>
+<li>Decrease in loans = cash inflow (positive)</li>
+</ul>
+<p>$$\Delta \text{Customer Deposits} = \text{Closing Deposits} - \text{Opening Deposits}$$</p>
+<ul>
+<li>Increase in deposits = cash inflow (positive)</li>
+<li>Decrease in deposits = cash outflow (negative)</li>
+</ul>
+<p><strong>FR-CF-004:</strong> Investing Activities:
+- CAPEX sourced from Capital Expenditure budget
+- Investment purchases/sales from investment schedule</p>
+<p><strong>FR-CF-005:</strong> Financing Activities:
+- New borrowings and repayments from Funding Module
+- Dividends from Retained Earnings calculation</p>
+<p><strong>FR-CF-006:</strong> Ending Cash Balance:
+- Must reconcile with Cash and Cash Equivalents on Balance Sheet
+- System validation to ensure consistency</p>
+<p><strong>FR-CF-007:</strong> The system shall generate monthly Cash Flow projections to identify potential liquidity gaps.</p>
+<h3 id="45-integration-validation-rules">4.5 Integration Validation Rules<a class="headerlink" href="#45-integration-validation-rules" title="Permanent link">&para;</a></h3>
+<p><strong>FR-INT-001:</strong> The system shall perform real-time validation checks:</p>
+<table>
+<thead>
+<tr>
+<th>Validation Check</th>
+<th>Formula</th>
+<th>Action if Failed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Balance Sheet Balance</td>
+<td>Total Assets = Total Liabilities + Equity</td>
+<td>Flag error, prevent finalization</td>
+</tr>
+<tr>
+<td>Cash Flow Reconciliation</td>
+<td>CF Ending Cash = BS Cash Balance</td>
+<td>Flag error, prevent finalization</td>
+</tr>
+<tr>
+<td>Net Income Flow</td>
+<td>IS Profit After Tax = Change in Retained Earnings (adjusted for dividends)</td>
+<td>Flag error, prevent finalization</td>
+</tr>
+<tr>
+<td>Interest Income Reconciliation</td>
+<td>Sum of Loan Module Interest = IS Interest Income</td>
+<td>Flag warning, allow override with justification</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FR-INT-002:</strong> The system shall provide a "Model Integrity Dashboard" showing:
+- Status of all integration checks (Pass/Fail)
+- Source of any discrepancies
+- Drill-down to specific line items causing issues</p>
+<hr />
+<h2 id="5-financial-reporting-kpi-engine">5. Financial Reporting &amp; KPI Engine<a class="headerlink" href="#5-financial-reporting-kpi-engine" title="Permanent link">&para;</a></h2>
+<h3 id="51-banking-specific-kpi-calculations">5.1 Banking-Specific KPI Calculations<a class="headerlink" href="#51-banking-specific-kpi-calculations" title="Permanent link">&para;</a></h3>
+<p>The system must automatically calculate and display key banking performance metrics using standardized formulas. All KPIs must be traceable to source data with drill-down capability.</p>
+<h4 id="511-profitability-metrics">5.1.1 Profitability Metrics<a class="headerlink" href="#511-profitability-metrics" title="Permanent link">&para;</a></h4>
+<p><strong>FR-KPI-001: Net Interest Margin (NIM)</strong></p>
+<p>$$\text{NIM} = \frac{\text{Interest Income} - \text{Interest Expense}}{\text{Average Earning Assets}} \times 100$$</p>
+<p>Where:</p>
+<p>$$\text{Average Earning Assets} = \frac{\text{Opening Earning Assets} + \text{Closing Earning Assets}}{2}$$</p>
+<p>Earning Assets = Loans + Investment Securities</p>
+<ul>
+<li><strong>Display:</strong> Percentage (2 decimal places)</li>
+<li><strong>Frequency:</strong> Monthly, Quarterly, Annual</li>
+<li><strong>Benchmark:</strong> Configurable target from Assumptions Engine</li>
+<li><strong>Drill-down:</strong> View components (Interest Income, Interest Expense, Earning Assets breakdown)</li>
+</ul>
+<p><strong>FR-KPI-002: Return on Assets (ROA)</strong></p>
+<p>$$\text{ROA} = \frac{\text{Net Profit After Tax}}{\text{Total Average Assets}} \times 100$$</p>
+<p>Where:</p>
+<p>$$\text{Total Average Assets} = \frac{\text{Opening Total Assets} + \text{Closing Total Assets}}{2}$$</p>
+<ul>
+<li><strong>Display:</strong> Percentage (2 decimal places)</li>
+<li><strong>Frequency:</strong> Quarterly, Annual (not meaningful monthly)</li>
+<li><strong>Benchmark:</strong> Configurable target</li>
+<li><strong>Drill-down:</strong> View Net Profit components and Asset composition</li>
+</ul>
+<p><strong>FR-KPI-003: Return on Equity (ROE)</strong></p>
+<p>$$\text{ROE} = \frac{\text{Net Profit After Tax}}{\text{Average Shareholders' Equity}} \times 100$$</p>
+<p>Where:</p>
+<p>$$\text{Average Shareholders' Equity} = \frac{\text{Opening Equity} + \text{Closing Equity}}{2}$$</p>
+<ul>
+<li><strong>Display:</strong> Percentage (2 decimal places)</li>
+<li><strong>Frequency:</strong> Quarterly, Annual</li>
+<li><strong>Benchmark:</strong> Configurable target</li>
+<li><strong>Drill-down:</strong> View Net Profit and Equity components</li>
+</ul>
+<p><strong>FR-KPI-004: Cost-to-Income Ratio</strong></p>
+<p>$$\text{Cost-to-Income Ratio} = \frac{\text{Operating Expenses}}{\text{Net Interest Income} + \text{Non-Interest Income}} \times 100$$</p>
+<p>Alternative formulation:</p>
+<p>$$\text{Cost-to-Income Ratio} = \frac{\text{Operating Expenses}}{\text{Total Operating Income}} \times 100$$</p>
+<ul>
+<li><strong>Display:</strong> Percentage (2 decimal places)</li>
+<li><strong>Frequency:</strong> Monthly, Quarterly, Annual</li>
+<li><strong>Benchmark:</strong> Configurable target (lower is better)</li>
+<li><strong>Drill-down:</strong> View Operating Expenses by category and Income components</li>
+<li><strong>Note:</strong> Exclude loan loss provisions from Operating Expenses for this calculation (configurable)</li>
+</ul>
+<h4 id="512-asset-quality-metrics">5.1.2 Asset Quality Metrics<a class="headerlink" href="#512-asset-quality-metrics" title="Permanent link">&para;</a></h4>
+<p><strong>FR-KPI-005: Loan Growth Rate</strong></p>
+<p>$$\text{Loan Growth Rate} = \frac{\text{Closing Gross Loans} - \text{Opening Gross Loans}}{\text{Opening Gross Loans}} \times 100$$</p>
+<ul>
+<li><strong>Display:</strong> Percentage (2 decimal places)</li>
+<li><strong>Frequency:</strong> Monthly, Quarterly, Annual (annualized for monthly/quarterly)</li>
+<li><strong>Benchmark:</strong> Target from Assumptions Engine</li>
+<li><strong>Drill-down:</strong> View growth by product type, PFI, geographic region</li>
+</ul>
+<p><strong>FR-KPI-006: Non-Performing Loan (NPL) Ratio</strong></p>
+<p>$$\text{NPL Ratio} = \frac{\text{Gross Non-Performing Loans}}{\text{Gross Total Loans}} \times 100$$</p>
+<ul>
+<li><strong>Display:</strong> Percentage (2 decimal places)</li>
+<li><strong>Frequency:</strong> Monthly, Quarterly, Annual</li>
+<li><strong>Benchmark:</strong> Regulatory limit and internal target</li>
+<li><strong>Drill-down:</strong> View NPL by product type, vintage, PFI</li>
+<li><strong>Alert:</strong> Flag if projected NPL ratio exceeds regulatory or internal threshold</li>
+</ul>
+<p><strong>FR-KPI-007: Provision Coverage Ratio</strong></p>
+<p>$$\text{Provision Coverage Ratio} = \frac{\text{Total Loan Loss Provisions}}{\text{Gross Non-Performing Loans}} \times 100$$</p>
+<ul>
+<li><strong>Display:</strong> Percentage (2 decimal places)</li>
+<li><strong>Frequency:</strong> Monthly, Quarterly, Annual</li>
+<li><strong>Benchmark:</strong> Regulatory minimum (typically 100%+)</li>
+<li><strong>Drill-down:</strong> View provisions by loan classification</li>
+<li><strong>Alert:</strong> Flag if coverage falls below regulatory minimum</li>
+</ul>
+<h4 id="513-liquidity-and-capital-metrics">5.1.3 Liquidity and Capital Metrics<a class="headerlink" href="#513-liquidity-and-capital-metrics" title="Permanent link">&para;</a></h4>
+<p><strong>FR-KPI-008: Loan-to-Deposit Ratio (LDR)</strong></p>
+<p>$$\text{LDR} = \frac{\text{Total Gross Loans}}{\text{Total Customer Deposits}} \times 100$$</p>
+<ul>
+<li><strong>Display:</strong> Percentage (2 decimal places)</li>
+<li><strong>Frequency:</strong> Monthly, Quarterly, Annual</li>
+<li><strong>Benchmark:</strong> Regulatory maximum and internal target</li>
+<li><strong>Drill-down:</strong> View loans and deposits composition</li>
+<li><strong>Alert:</strong> Flag if LDR exceeds regulatory limit</li>
+</ul>
+<p><strong>FR-KPI-009: Liquidity Ratio</strong></p>
+<p>$$\text{Liquidity Ratio} = \frac{\text{Liquid Assets}}{\text{Total Assets}} \times 100$$</p>
+<p>Where Liquid Assets = Cash + Cash Equivalents + Marketable Securities</p>
+<ul>
+<li><strong>Display:</strong> Percentage (2 decimal places)</li>
+<li><strong>Frequency:</strong> Monthly, Quarterly, Annual</li>
+<li><strong>Benchmark:</strong> Regulatory minimum and internal target</li>
+<li><strong>Drill-down:</strong> View liquid assets composition</li>
+</ul>
+<p><strong>FR-KPI-010: Capital Adequacy Ratio (CAR) - Simplified</strong></p>
+<p>$$\text{CAR} = \frac{\text{Total Equity}}{\text{Risk-Weighted Assets}} \times 100$$</p>
+<ul>
+<li><strong>Display:</strong> Percentage (2 decimal places)</li>
+<li><strong>Frequency:</strong> Quarterly, Annual</li>
+<li><strong>Benchmark:</strong> Regulatory minimum (e.g., 10% under Basel)</li>
+<li><strong>Note:</strong> Risk-weighted assets calculation requires input of risk weights by asset category</li>
+<li><strong>Alert:</strong> Flag if projected CAR falls below regulatory minimum</li>
+</ul>
+<h4 id="514-additional-performance-metrics">5.1.4 Additional Performance Metrics<a class="headerlink" href="#514-additional-performance-metrics" title="Permanent link">&para;</a></h4>
+<p><strong>FR-KPI-011: Earnings Per Share (EPS)</strong></p>
+<p>$$\text{EPS} = \frac{\text{Net Profit After Tax}}{\text{Number of Outstanding Shares}}$$</p>
+<p><strong>FR-KPI-012: Dividend Payout Ratio</strong></p>
+<p>$$\text{Dividend Payout Ratio} = \frac{\text{Dividends Declared}}{\text{Net Profit After Tax}} \times 100$$</p>
+<p><strong>FR-KPI-013: Net Interest Spread</strong></p>
+<p>$$\text{Net Interest Spread} = \text{Average Lending Rate} - \text{Average Funding Rate}$$</p>
+<h3 id="52-kpi-dashboard-requirements">5.2 KPI Dashboard Requirements<a class="headerlink" href="#52-kpi-dashboard-requirements" title="Permanent link">&para;</a></h3>
+<p><strong>FR-KPI-014:</strong> The system shall provide an executive KPI dashboard displaying:
+- All key metrics in a single view
+- Visual indicators (green/yellow/red) based on performance vs. targets
+- Trend charts showing metric evolution over time
+- Comparison to prior year budget and actuals (when available)</p>
+<p><strong>FR-KPI-015:</strong> The system shall allow users to:
+- Configure which KPIs appear on their personal dashboard
+- Set custom alert thresholds
+- Export KPI reports to Excel and PDF
+- Schedule automated KPI report distribution</p>
+<p><strong>FR-KPI-016:</strong> All KPI calculations must be fully auditable with:
+- Formula displayed on hover/click
+- Drill-down to source data
+- Ability to export calculation details</p>
+<hr />
+<h2 id="6-workflow-governance">6. Workflow &amp; Governance<a class="headerlink" href="#6-workflow-governance" title="Permanent link">&para;</a></h2>
+<h3 id="61-budget-preparation-and-approval-workflow">6.1 Budget Preparation and Approval Workflow<a class="headerlink" href="#61-budget-preparation-and-approval-workflow" title="Permanent link">&para;</a></h3>
+<h4 id="611-workflow-stages">6.1.1 Workflow Stages<a class="headerlink" href="#611-workflow-stages" title="Permanent link">&para;</a></h4>
+<p>The system must support a structured, multi-stage workflow with clear status tracking and automated notifications.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>stateDiagram-v2
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    [*] --&gt; Draft
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    Draft --&gt; Submitted: Unit Head Submits
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    Submitted --&gt; UnderReview: Budget Team Reviews
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    UnderReview --&gt; Queried: Issues Found
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    Queried --&gt; Draft: Unit Head Revises
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    UnderReview --&gt; Approved: Budget Team Approves
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    Approved --&gt; Consolidated: All Units Approved
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    Consolidated --&gt; FinalReview: Management Reviews
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    FinalReview --&gt; Queried: Management Requests Changes
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    FinalReview --&gt; Published: Management Approves
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    Published --&gt; [*]
+</code></pre></div>
+<h4 id="612-workflow-functional-requirements">6.1.2 Workflow Functional Requirements<a class="headerlink" href="#612-workflow-functional-requirements" title="Permanent link">&para;</a></h4>
+<p><strong>FR-WF-001: Draft Stage</strong>
+- <strong>Owner:</strong> Head of Business Unit / Operations Team
+- <strong>Actions:</strong>
+  - Create budget entries
+  - Edit budget entries
+  - Attach justification documents
+  - Save as draft (unlimited saves)
+  - Run validation checks (soft validations only)
+- <strong>Status:</strong> "Draft - In Progress"
+- <strong>Notifications:</strong> None</p>
+<p><strong>FR-WF-002: Submission</strong>
+- <strong>Trigger:</strong> User clicks "Submit for Review"
+- <strong>Pre-submission Validation:</strong>
+  - All mandatory fields completed
+  - All justifications meet minimum requirements
+  - Required attachments uploaded
+  - Hard validation rules passed
+- <strong>Actions:</strong>
+  - Lock budget for editing by submitter
+  - Change status to "Submitted - Pending Review"
+  - Send notification to Budget Team
+  - Log submission timestamp and user
+- <strong>Rollback:</strong> Submitter can recall submission before review starts (status returns to Draft)</p>
+<p><strong>FR-WF-003: Budget Team Review</strong>
+- <strong>Owner:</strong> Budget Team
+- <strong>Actions:</strong>
+  - View submitted budget
+  - Compare to assumptions and guidelines
+  - Add review comments
+  - Request clarifications
+  - Approve or Query
+- <strong>Status:</strong> "Under Review"
+- <strong>Notifications:</strong> 
+  - Budget Team notified on submission
+  - Reminder if no action taken within 3 business days (configurable)</p>
+<p><strong>FR-WF-004: Query and Revision</strong>
+- <strong>Trigger:</strong> Budget Team clicks "Query" and enters query comments
+- <strong>Actions:</strong>
+  - Status changes to "Queried - Revision Required"
+  - Budget unlocked for submitter to edit
+  - Notification sent to Unit Head with query details
+  - Query comments visible to submitter
+- <strong>Submitter Actions:</strong>
+  - Revise budget entries
+  - Respond to query comments
+  - Resubmit for review
+- <strong>Status:</strong> Returns to "Submitted - Pending Review" upon resubmission
+- <strong>Audit Trail:</strong> All queries and responses logged with timestamps</p>
+<p><strong>FR-WF-005: Budget Team Approval</strong>
+- <strong>Trigger:</strong> Budget Team clicks "Approve"
+- <strong>Actions:</strong>
+  - Status changes to "Approved - Unit Level"
+  - Budget locked from further editing
+  - Notification sent to Unit Head confirming approval
+  - Budget included in consolidation pool
+- <strong>Approval Metadata:</strong>
+  - Approved by (user ID)
+  - Approval timestamp
+  - Approval comments (optional)</p>
+<p><strong>FR-WF-006: Consolidation</strong>
+- <strong>Owner:</strong> Budget Team
+- <strong>Trigger:</strong> All required unit budgets approved
+- <strong>Actions:</strong>
+  - System automatically consolidates all approved budgets
+  - Generates consolidated financial statements
+  - Calculates KPIs
+  - Runs integration validation checks
+  - Status changes to "Consolidated - Pending Management Review"
+- <strong>Notifications:</strong> Executive Management notified that consolidated budget is ready for review</p>
+<p><strong>FR-WF-007: Management Final Review</strong>
+- <strong>Owner:</strong> Executive Management
+- <strong>Actions:</strong>
+  - Review consolidated budget
+  - Review financial statements
+  - Review KPIs vs. targets
+  - Run scenario analysis
+  - Approve or request revisions
+- <strong>Status:</strong> "Final Review - Management"
+- <strong>Options:</strong>
+  - <strong>Approve:</strong> Status changes to "Published - Final Budget"
+  - <strong>Request Changes:</strong> Status changes to "Queried - Management Feedback"
+    - Specific units can be sent back to Draft for revision
+    - Or Budget Team can make adjustments at consolidated level</p>
+<p><strong>FR-WF-008: Publication</strong>
+- <strong>Trigger:</strong> Management approval
+- <strong>Actions:</strong>
+  - Status changes to "Published - Final Budget"
+  - Budget data flows to GL as budget allocations
+  - Budget becomes baseline for variance reporting
+  - All users granted read-only access to final budget
+  - Notification sent to all stakeholders
+- <strong>Lock:</strong> Published budget cannot be edited; amendments require formal budget revision process</p>
+<h4 id="613-workflow-configuration">6.1.3 Workflow Configuration<a class="headerlink" href="#613-workflow-configuration" title="Permanent link">&para;</a></h4>
+<p><strong>FR-WF-009:</strong> The system shall allow configuration of:
+- Approval hierarchy (single or multi-level)
+- Notification recipients and triggers
+- SLA timers and escalation rules
+- Mandatory vs. optional approval stages</p>
+<p><strong>FR-WF-010:</strong> The system shall support parallel and sequential approval paths:
+- <strong>Parallel:</strong> Multiple units submit and get approved independently
+- <strong>Sequential:</strong> Certain budgets require approval before others can proceed (e.g., Operations budget before Business Unit budgets)</p>
+<h3 id="62-audit-trail-requirements">6.2 Audit Trail Requirements<a class="headerlink" href="#62-audit-trail-requirements" title="Permanent link">&para;</a></h3>
+<h4 id="621-comprehensive-logging">6.2.1 Comprehensive Logging<a class="headerlink" href="#621-comprehensive-logging" title="Permanent link">&para;</a></h4>
+<p><strong>FR-AUD-001:</strong> The system shall maintain a complete, immutable audit trail capturing:</p>
+<table>
+<thead>
+<tr>
+<th>Event Type</th>
+<th>Data Captured</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User Login/Logout</td>
+<td>User ID, Timestamp, IP Address, Session ID</td>
+</tr>
+<tr>
+<td>Budget Entry Creation</td>
+<td>User ID, Timestamp, GL Account, Initial Values</td>
+</tr>
+<tr>
+<td>Budget Entry Modification</td>
+<td>User ID, Timestamp, GL Account, Old Value, New Value, Field Changed</td>
+</tr>
+<tr>
+<td>Document Attachment</td>
+<td>User ID, Timestamp, Document Name, File Size, GL Account</td>
+</tr>
+<tr>
+<td>Document Deletion</td>
+<td>User ID, Timestamp, Document Name, Reason</td>
+</tr>
+<tr>
+<td>Submission</td>
+<td>User ID, Timestamp, Budget Unit, Total Amount</td>
+</tr>
+<tr>
+<td>Approval/Rejection</td>
+<td>User ID, Timestamp, Budget Unit, Action, Comments</td>
+</tr>
+<tr>
+<td>Query Raised</td>
+<td>User ID, Timestamp, Budget Unit, Query Text</td>
+</tr>
+<tr>
+<td>Query Response</td>
+<td>User ID, Timestamp, Response Text</td>
+</tr>
+<tr>
+<td>Assumption Change</td>
+<td>User ID, Timestamp, Assumption Name, Old Value, New Value</td>
+</tr>
+<tr>
+<td>Report Generation</td>
+<td>User ID, Timestamp, Report Type, Parameters</td>
+</tr>
+<tr>
+<td>Data Export</td>
+<td>User ID, Timestamp, Export Type, Records Exported</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FR-AUD-002:</strong> Audit trail entries shall be:
+- <strong>Immutable:</strong> Cannot be edited or deleted by any user, including administrators
+- <strong>Timestamped:</strong> With server timestamp (not client-side)
+- <strong>User-attributed:</strong> Linked to authenticated user ID
+- <strong>Searchable:</strong> By user, date range, event type, budget unit, GL account</p>
+<h4 id="622-audit-trail-access-and-reporting">6.2.2 Audit Trail Access and Reporting<a class="headerlink" href="#622-audit-trail-access-and-reporting" title="Permanent link">&para;</a></h4>
+<p><strong>FR-AUD-003:</strong> The system shall provide an Audit Trail Viewer with:
+- Search and filter capabilities
+- Export to Excel and PDF
+- Drill-down from summary to detail
+- Visual timeline of events for a specific budget line item</p>
+<p><strong>FR-AUD-004:</strong> Audit reports shall be available for:
+- All changes to a specific budget line item
+- All actions by a specific user
+- All actions within a date range
+- All approvals and rejections
+- All assumption changes</p>
+<p><strong>FR-AUD-005:</strong> Access to audit trail shall be restricted to:
+- Budget Team (full access)
+- Auditors (read-only access)
+- Executive Management (read-only access)
+- System Administrators (read-only access, no deletion rights)</p>
+<h4 id="623-compliance-and-retention">6.2.3 Compliance and Retention<a class="headerlink" href="#623-compliance-and-retention" title="Permanent link">&para;</a></h4>
+<p><strong>FR-AUD-006:</strong> Audit trail data shall be:
+- Retained for a minimum of 7 years (configurable)
+- Backed up with the same frequency as transactional data
+- Stored in tamper-evident format
+- Available for regulatory inspection</p>
+<hr />
+<h2 id="7-validation-error-handling">7. Validation &amp; Error Handling<a class="headerlink" href="#7-validation-error-handling" title="Permanent link">&para;</a></h2>
+<h3 id="71-validation-framework">7.1 Validation Framework<a class="headerlink" href="#71-validation-framework" title="Permanent link">&para;</a></h3>
+<p>The system must implement a two-tier validation framework: <strong>Hard Validations</strong> (blocking) and <strong>Soft Validations</strong> (warnings).</p>
+<h4 id="711-hard-validations-blocking">7.1.1 Hard Validations (Blocking)<a class="headerlink" href="#711-hard-validations-blocking" title="Permanent link">&para;</a></h4>
+<p>Hard validations prevent submission or progression to the next workflow stage. Users must resolve these errors before proceeding.</p>
+<p><strong>FR-VAL-001: Mandatory Field Validation</strong>
+- <strong>Rule:</strong> All fields marked as "Required" must be populated
+- <strong>Trigger:</strong> On submission
+- <strong>Error Message:</strong> "The following required fields are empty: [Field Names]. Please complete all required fields before submitting."
+- <strong>Action:</strong> Prevent submission, highlight empty fields in red</p>
+<p><strong>FR-VAL-002: Justification Minimum Length</strong>
+- <strong>Rule:</strong> Justification text must meet minimum character count (default: 50 characters)
+- <strong>Trigger:</strong> On submission
+- <strong>Error Message:</strong> "Justification for [GL Account] is too short. Minimum [X] characters required, you have entered [Y] characters."
+- <strong>Action:</strong> Prevent submission, highlight field</p>
+<p><strong>FR-VAL-003: Placeholder Text Detection</strong>
+- <strong>Rule:</strong> Justification cannot contain placeholder text (e.g., "TBD", "To be determined", "N/A", "NA", "None")
+- <strong>Trigger:</strong> On submission
+- <strong>Error Message:</strong> "Justification for [GL Account] contains placeholder text. Please provide a meaningful justification."
+- <strong>Action:</strong> Prevent submission, highlight field</p>
+<p><strong>FR-VAL-004: Numeric Range Validation</strong>
+- <strong>Rule:</strong> Numeric fields must be within acceptable ranges (e.g., interest rate between 0% and 100%, amounts &gt; 0)
+- <strong>Trigger:</strong> On data entry and submission
+- <strong>Error Message:</strong> "[Field Name] value of [Value] is outside acceptable range of [Min] to [Max]."
+- <strong>Action:</strong> Prevent submission, highlight field</p>
+<p><strong>FR-VAL-005: Date Logic Validation</strong>
+- <strong>Rule:</strong> Maturity date must be after drawdown date, budget year must be future year
+- <strong>Trigger:</strong> On data entry and submission
+- <strong>Error Message:</strong> "Maturity Date cannot be before Drawdown Date."
+- <strong>Action:</strong> Prevent submission, highlight fields</p>
+<p><strong>FR-VAL-006: Required Attachment Validation</strong>
+- <strong>Rule:</strong> If budget line item exceeds threshold (e.g., $50,000), supporting document attachment is mandatory
+- <strong>Trigger:</strong> On submission
+- <strong>Error Message:</strong> "Budget amount for [GL Account] exceeds $[Threshold]. Supporting documentation is required."
+- <strong>Action:</strong> Prevent submission, highlight line item</p>
+<p><strong>FR-VAL-007: Chart of Accounts Validation</strong>
+- <strong>Rule:</strong> All GL account codes must exist in active Chart of Accounts
+- <strong>Trigger:</strong> On data entry
+- <strong>Error Message:</strong> "GL Account Code [Code] is not valid or inactive."
+- <strong>Action:</strong> Prevent entry, provide lookup tool</p>
+<p><strong>FR-VAL-008: Integration Consistency Validation</strong>
+- <strong>Rule:</strong> Balance Sheet must balance (Assets = Liabilities + Equity)
+- <strong>Trigger:</strong> On consolidation and publication
+- <strong>Error Message:</strong> "Balance Sheet does not balance. Assets: [Amount], Liabilities + Equity: [Amount], Difference: [Amount]. Please review budget entries."
+- <strong>Action:</strong> Prevent publication, provide drill-down to identify discrepancy</p>
+<p><strong>FR-VAL-009: Cash Flow Reconciliation Validation</strong>
+- <strong>Rule:</strong> Cash Flow Statement ending cash must equal Balance Sheet cash
+- <strong>Trigger:</strong> On consolidation and publication
+- <strong>Error Message:</strong> "Cash Flow ending balance ([Amount]) does not match Balance Sheet cash ([Amount]). Difference: [Amount]."
+- <strong>Action:</strong> Prevent publication, provide reconciliation report</p>
+<h4 id="712-soft-validations-warnings">7.1.2 Soft Validations (Warnings)<a class="headerlink" href="#712-soft-validations-warnings" title="Permanent link">&para;</a></h4>
+<p>Soft validations flag potential issues but allow users to proceed with justification or acknowledgment.</p>
+<p><strong>FR-VAL-010: Budget Growth Threshold Warning</strong>
+- <strong>Rule:</strong> If budget line item exceeds prior year actual/budget by more than X% (configurable, e.g., 20%), flag for review
+- <strong>Trigger:</strong> On data entry and submission
+- <strong>Warning Message:</strong> "Budget for [GL Account] is [Y]% higher than prior year. Please confirm this is intentional and justified."
+- <strong>Action:</strong> Display warning banner, allow user to acknowledge and proceed, log acknowledgment in audit trail</p>
+<p><strong>FR-VAL-011: Zero Budget Warning</strong>
+- <strong>Rule:</strong> If budget line item is zero but had non-zero value in prior year, flag for review
+- <strong>Trigger:</strong> On submission
+- <strong>Warning Message:</strong> "Budget for [GL Account] is zero, but prior year actual was [Amount]. Please confirm this is intentional."
+- <strong>Action:</strong> Display warning, require user acknowledgment</p>
+<p><strong>FR-VAL-012: KPI Threshold Warning</strong>
+- <strong>Rule:</strong> If calculated KPI falls outside target range (e.g., Cost-to-Income Ratio &gt; 60%, NPL Ratio &gt; 5%), flag for management attention
+- <strong>Trigger:</strong> On consolidation
+- <strong>Warning Message:</strong> "[KPI Name] of [Value]% is outside target range of [Min]% to [Max]%. This may require management review."
+- <strong>Action:</strong> Display warning on KPI dashboard, send notification to Budget Team and Management</p>
+<p><strong>FR-VAL-013: Liquidity Warning</strong>
+- <strong>Rule:</strong> If projected monthly cash flow shows negative balance, flag liquidity risk
+- <strong>Trigger:</strong> On consolidation
+- <strong>Warning Message:</strong> "Projected cash flow for [Month] shows negative balance of [Amount]. Funding gap identified."
+- <strong>Action:</strong> Highlight month in cash flow report, send notification to Budget Team</p>
+<p><strong>FR-VAL-014: Regulatory Compliance Warning</strong>
+- <strong>Rule:</strong> If projected LDR, CAR, or other regulatory ratios approach or breach limits, flag for review
+- <strong>Trigger:</strong> On consolidation
+- <strong>Warning Message:</strong> "[Ratio Name] of [Value]% approaches/exceeds regulatory limit of [Limit]%. Immediate action may be required."
+- <strong>Action:</strong> Display prominent warning, send notification to Executive Management and Compliance</p>
+<p><strong>FR-VAL-015: Incomplete Justification Warning</strong>
+- <strong>Rule:</strong> If justification meets minimum length but lacks specific keywords (e.g., "because", "due to", "based on"), flag as potentially generic
+- <strong>Trigger:</strong> On submission (optional, configurable)
+- <strong>Warning Message:</strong> "Justification for [GL Account] may be too generic. Consider providing more specific rationale."
+- <strong>Action:</strong> Display warning, allow user to revise or acknowledge</p>
+<h3 id="72-error-handling-and-user-guidance">7.2 Error Handling and User Guidance<a class="headerlink" href="#72-error-handling-and-user-guidance" title="Permanent link">&para;</a></h3>
+<p><strong>FR-VAL-016:</strong> The system shall provide user-friendly error messages that:
+- Clearly identify the problem
+- Specify the location (GL account, field name)
+- Suggest corrective action
+- Provide examples of acceptable entries where applicable</p>
+<p><strong>FR-VAL-017:</strong> The system shall provide a "Validation Summary" panel showing:
+- Count of errors and warnings
+- List of all validation issues
+- Click-to-navigate to each issue
+- Ability to export validation report</p>
+<p><strong>FR-VAL-018:</strong> The system shall support bulk validation with:
+- "Validate All" button to run all checks before submission
+- Progress indicator for long-running validations
+- Ability to fix errors and re-validate without full page reload</p>
+<p><strong>FR-VAL-019:</strong> The system shall allow Budget Team to:
+- Configure validation rules (thresholds, mandatory fields, etc.)
+- Enable/disable specific soft validations
+- Create custom validation rules using formula builder</p>
+<hr />
+<h2 id="8-reporting-and-analytics-requirements">8. Reporting and Analytics Requirements<a class="headerlink" href="#8-reporting-and-analytics-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="81-standard-reports">8.1 Standard Reports<a class="headerlink" href="#81-standard-reports" title="Permanent link">&para;</a></h3>
+<p><strong>FR-REP-001:</strong> The system shall provide the following standard reports:</p>
+<table>
+<thead>
+<tr>
+<th>Report Name</th>
+<th>Description</th>
+<th>Frequency</th>
+<th>Output Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Consolidated Budget Summary</td>
+<td>High-level summary of total budget by major category</td>
+<td>On-demand</td>
+<td>Excel, PDF</td>
+</tr>
+<tr>
+<td>Budget by Business Unit</td>
+<td>Detailed budget breakdown by unit</td>
+<td>On-demand</td>
+<td>Excel, PDF</td>
+</tr>
+<tr>
+<td>Budget by GL Account</td>
+<td>Line-by-line budget with justifications</td>
+<td>On-demand</td>
+<td>Excel, PDF</td>
+</tr>
+<tr>
+<td>Loan Portfolio Budget Report</td>
+<td>Disbursement projections by product, PFI, month</td>
+<td>On-demand</td>
+<td>Excel, PDF</td>
+</tr>
+<tr>
+<td>Borrowings Schedule</td>
+<td>Funding sources, amounts, rates, timing</td>
+<td>On-demand</td>
+<td>Excel, PDF</td>
+</tr>
+<tr>
+<td>Three Statement Model</td>
+<td>Income Statement, Balance Sheet, Cash Flow</td>
+<td>On-demand</td>
+<td>Excel, PDF</td>
+</tr>
+<tr>
+<td>KPI Dashboard</td>
+<td>All key metrics with trends and benchmarks</td>
+<td>Real-time</td>
+<td>Dashboard, PDF</td>
+</tr>
+<tr>
+<td>Variance Analysis</td>
+<td>Budget vs. Actual (when actuals available)</td>
+<td>Monthly</td>
+<td>Excel, PDF</td>
+</tr>
+<tr>
+<td>Assumption Report</td>
+<td>All active assumptions with version history</td>
+<td>On-demand</td>
+<td>Excel, PDF</td>
+</tr>
+<tr>
+<td>Audit Trail Report</td>
+<td>User actions, changes, approvals</td>
+<td>On-demand</td>
+<td>Excel, PDF</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FR-REP-002:</strong> All reports shall include:
+- Report title and description
+- Generation date and time
+- Generated by (user ID)
+- Reporting period
+- Filters applied (if any)
+- Page numbers and total page count</p>
+<h3 id="82-variance-analysis">8.2 Variance Analysis<a class="headerlink" href="#82-variance-analysis" title="Permanent link">&para;</a></h3>
+<p><strong>FR-REP-003:</strong> When actual data is available (post-budget year start), the system shall provide variance analysis showing:</p>
+<p>$$\text{Variance (Absolute)} = \text{Actual} - \text{Budget}$$</p>
+<p>$$\text{Variance (\%)} = \frac{\text{Actual} - \text{Budget}}{\text{Budget}} \times 100$$</p>
+<p><strong>FR-REP-004:</strong> Variance reports shall:
+- Display budget, actual, and variance (absolute and %) side-by-side
+- Highlight variances exceeding threshold (e.g., ±10%) in color
+- Provide drill-down to line-item detail
+- Allow filtering by business unit, GL account, time period
+- Support commentary entry for significant variances</p>
+<h3 id="83-scenario-and-sensitivity-analysis">8.3 Scenario and Sensitivity Analysis<a class="headerlink" href="#83-scenario-and-sensitivity-analysis" title="Permanent link">&para;</a></h3>
+<p><strong>FR-REP-005:</strong> The system shall support scenario planning with ability to:
+- Create multiple budget scenarios (Base, Optimistic, Pessimistic, Custom)
+- Copy existing budget as starting point for new scenario
+- Modify assumptions at scenario level
+- Compare scenarios side-by-side
+- Analyze impact of assumption changes on KPIs</p>
+<p><strong>FR-REP-006:</strong> Sensitivity analysis shall allow users to:
+- Select a key assumption (e.g., loan growth rate, interest rate)
+- Define a range of values
+- View impact on selected KPIs (e.g., ROA, NIM, Profit)
+- Generate sensitivity tables and charts</p>
+<h3 id="84-export-and-distribution">8.4 Export and Distribution<a class="headerlink" href="#84-export-and-distribution" title="Permanent link">&para;</a></h3>
+<p><strong>FR-REP-007:</strong> The system shall support export of all reports and data to:
+- <strong>Excel:</strong> With formatting, formulas preserved where applicable
+- <strong>PDF:</strong> Print-ready format with consistent styling
+- <strong>CSV:</strong> Raw data for further analysis</p>
+<p><strong>FR-REP-008:</strong> The system shall provide scheduled report distribution:
+- Define report schedule (daily, weekly, monthly)
+- Select recipients (email distribution list)
+- Specify output format
+- Automatic generation and email delivery</p>
+<p><strong>FR-REP-009:</strong> The system shall maintain a report archive:
+- Store all generated reports for audit purposes
+- Searchable by report type, date, user
+- Retention period: 7 years (configurable)</p>
+<hr />
+<h2 id="9-non-functional-requirements">9. Non-Functional Requirements<a class="headerlink" href="#9-non-functional-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="91-performance">9.1 Performance<a class="headerlink" href="#91-performance" title="Permanent link">&para;</a></h3>
+<p><strong>NFR-PERF-001:</strong> The system shall support:
+- Minimum 500 concurrent users without performance degradation
+- Page load time &lt; 3 seconds for standard operations
+- Report generation &lt; 30 seconds for standard reports
+- Consolidation of 50+ business unit budgets &lt; 5 minutes</p>
+<p><strong>NFR-PERF-002:</strong> The system shall be scalable to accommodate:
+- 10,000+ budget line items
+- 100+ business units
+- 10 years of historical data</p>
+<h3 id="92-availability-and-reliability">9.2 Availability and Reliability<a class="headerlink" href="#92-availability-and-reliability" title="Permanent link">&para;</a></h3>
+<p><strong>NFR-AVAIL-001:</strong> The system shall have:
+- 99.5% uptime during business hours (8 AM - 6 PM local time)
+- Planned maintenance windows outside business hours
+- Maximum unplanned downtime: 4 hours per month</p>
+<p><strong>NFR-AVAIL-002:</strong> The system shall include:
+- Automated daily backups
+- Disaster recovery capability (RTO: 4 hours, RPO: 1 hour)
+- Redundant infrastructure for critical components</p>
+<h3 id="93-usability">9.3 Usability<a class="headerlink" href="#93-usability" title="Permanent link">&para;</a></h3>
+<p><strong>NFR-USE-001:</strong> The system shall provide:
+- Intuitive, modern user interface
+- Responsive design (desktop, tablet support)
+- Consistent navigation and terminology
+- Context-sensitive help and tooltips
+- User manual and training materials</p>
+<p><strong>NFR-USE-002:</strong> The system shall support:
+- Multiple languages (English, French - configurable)
+- Localization of date, number, currency formats
+- Accessibility compliance (WCAG 2.1 Level AA)</p>
+<h3 id="94-security">9.4 Security<a class="headerlink" href="#94-security" title="Permanent link">&para;</a></h3>
+<p><strong>NFR-SEC-001:</strong> The system shall implement:
+- Role-based access control (RBAC) as defined in Section 2.2
+- Encryption at rest (AES-256) and in transit (TLS 1.3)
+- Secure authentication (integration with AD/LDAP, MFA support)
+- Session timeout after 30 minutes of inactivity
+- Password complexity requirements</p>
+<p><strong>NFR-SEC-002:</strong> The system shall comply with:
+- Banking industry security standards (ISO 27001)
+- Data protection regulations (GDPR, local data protection laws)
+- Internal security policies</p>
+<h3 id="95-integration-and-interoperability">9.5 Integration and Interoperability<a class="headerlink" href="#95-integration-and-interoperability" title="Permanent link">&para;</a></h3>
+<p><strong>NFR-INT-001:</strong> The system shall provide:
+- RESTful APIs for integration with GL and other systems
+- API documentation (OpenAPI/Swagger)
+- Support for standard data formats (JSON, XML, CSV)
+- Webhook support for event notifications</p>
+<p><strong>NFR-INT-002:</strong> The system shall integrate with:
+- General Ledger (GL) system
+- Active Directory / LDAP for authentication
+- Email system for notifications
+- Document management system (optional)</p>
+<h3 id="96-maintainability-and-support">9.6 Maintainability and Support<a class="headerlink" href="#96-maintainability-and-support" title="Permanent link">&para;</a></h3>
+<p><strong>NFR-MAINT-001:</strong> The vendor shall provide:
+- Comprehensive system documentation
+- Administrator training
+- End-user training materials
+- Ongoing technical support (SLA-based)
+- Regular software updates and patches</p>
+<p><strong>NFR-MAINT-002:</strong> The system shall include:
+- Logging and monitoring capabilities
+- System health dashboard for administrators
+- Diagnostic tools for troubleshooting</p>
+<hr />
+<h2 id="10-expected-benefits">10. Expected Benefits<a class="headerlink" href="#10-expected-benefits" title="Permanent link">&para;</a></h2>
+<h3 id="101-efficiency-gains">10.1 Efficiency Gains<a class="headerlink" href="#101-efficiency-gains" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Reduced Budget Cycle Time:</strong> From 8-10 weeks to 4-6 weeks (estimated 40% reduction)</li>
+<li><strong>Elimination of Manual Consolidation:</strong> Automated consolidation saves 40+ hours per budget cycle</li>
+<li><strong>Faster Scenario Analysis:</strong> Real-time scenario modeling vs. days of manual spreadsheet work</li>
+</ul>
+<h3 id="102-accuracy-and-data-quality">10.2 Accuracy and Data Quality<a class="headerlink" href="#102-accuracy-and-data-quality" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Elimination of Version Control Errors:</strong> Single source of truth</li>
+<li><strong>Reduced Data Entry Errors:</strong> Built-in validations and automated calculations</li>
+<li><strong>Consistent Financial Statements:</strong> Automated integration ensures mathematical accuracy</li>
+</ul>
+<h3 id="103-governance-and-compliance">10.3 Governance and Compliance<a class="headerlink" href="#103-governance-and-compliance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Complete Audit Trail:</strong> Full traceability of all budget decisions</li>
+<li><strong>Enforced Approval Workflow:</strong> No bypassing of required approvals</li>
+<li><strong>Regulatory Compliance:</strong> Automated KPI monitoring ensures compliance with regulatory ratios</li>
+</ul>
+<h3 id="104-strategic-decision-making">10.4 Strategic Decision-Making<a class="headerlink" href="#104-strategic-decision-making" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Real-Time KPI Visibility:</strong> Management can monitor key metrics throughout budget process</li>
+<li><strong>Enhanced Scenario Planning:</strong> Ability to model multiple scenarios quickly</li>
+<li><strong>Data-Driven Insights:</strong> Analytics and variance analysis support better decision-making</li>
+</ul>
+<h3 id="105-user-experience">10.5 User Experience<a class="headerlink" href="#105-user-experience" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Reduced Manual Effort:</strong> Automated calculations and consolidation free up staff for analysis</li>
+<li><strong>Improved Collaboration:</strong> Centralized platform with clear workflow and communication</li>
+<li><strong>Accessibility:</strong> Anytime, anywhere access (within security constraints)</li>
+</ul>
+<hr />
+<h2 id="11-implementation-approach">11. Implementation Approach<a class="headerlink" href="#11-implementation-approach" title="Permanent link">&para;</a></h2>
+<h3 id="111-phased-implementation">11.1 Phased Implementation<a class="headerlink" href="#111-phased-implementation" title="Permanent link">&para;</a></h3>
+<p><strong>Phase 1: Foundation (Months 1-3)</strong>
+- System setup and configuration
+- Chart of Accounts mapping
+- User role and permission configuration
+- Integration with GL (basic)
+- Assumptions Engine implementation</p>
+<p><strong>Phase 2: Core Budget Module (Months 4-6)</strong>
+- Business Unit budget templates
+- ZBB logic implementation
+- Workflow and approval engine
+- Audit trail
+- Basic reporting</p>
+<p><strong>Phase 3: Specialized Modules (Months 7-9)</strong>
+- Loan Portfolio Module
+- Borrowings and Funding Module
+- Automated financial statement generation
+- KPI engine</p>
+<p><strong>Phase 4: Advanced Features (Months 10-12)</strong>
+- Scenario and sensitivity analysis
+- Advanced analytics and dashboards
+- Variance analysis (if actuals available)
+- Performance optimization
+- User training and change management</p>
+<p><strong>Phase 5: Go-Live and Support (Month 12+)</strong>
+- Parallel run with existing process
+- User acceptance testing (UAT)
+- Go-live
+- Post-implementation support</p>
+<h3 id="112-change-management">11.2 Change Management<a class="headerlink" href="#112-change-management" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Executive sponsorship and communication</li>
+<li>User training program (role-based)</li>
+<li>Super-user identification and training</li>
+<li>Phased rollout by business unit (pilot → full deployment)</li>
+<li>Feedback loops and continuous improvement</li>
+</ul>
+<h3 id="113-success-criteria">11.3 Success Criteria<a class="headerlink" href="#113-success-criteria" title="Permanent link">&para;</a></h3>
+<ul>
+<li>All functional requirements met and tested</li>
+<li>User acceptance achieved (&gt;80% user satisfaction)</li>
+<li>Budget cycle time reduced by at least 30%</li>
+<li>Zero critical defects at go-live</li>
+<li>Successful completion of first budget cycle using new system</li>
+</ul>
+<hr />
+<h2 id="appendix-a-glossary">Appendix A: Glossary<a class="headerlink" href="#appendix-a-glossary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ZBB</strong></td>
+<td>Zero-Based Budgeting - budgeting method requiring justification of all expenses from zero base</td>
+</tr>
+<tr>
+<td><strong>PFI</strong></td>
+<td>Participating Financial Institution</td>
+</tr>
+<tr>
+<td><strong>NPL</strong></td>
+<td>Non-Performing Loan - loan in default or close to default</td>
+</tr>
+<tr>
+<td><strong>CAR</strong></td>
+<td>Capital Adequacy Ratio - measure of bank's capital relative to risk-weighted assets</td>
+</tr>
+<tr>
+<td><strong>LDR</strong></td>
+<td>Loan-to-Deposit Ratio - loans divided by deposits</td>
+</tr>
+<tr>
+<td><strong>NIM</strong></td>
+<td>Net Interest Margin - net interest income as percentage of earning assets</td>
+</tr>
+<tr>
+<td><strong>ROA</strong></td>
+<td>Return on Assets - profitability relative to total assets</td>
+</tr>
+<tr>
+<td><strong>ROE</strong></td>
+<td>Return on Equity - profitability relative to shareholders' equity</td>
+</tr>
+<tr>
+<td><strong>GL</strong></td>
+<td>General Ledger</td>
+</tr>
+<tr>
+<td><strong>CoA</strong></td>
+<td>Chart of Accounts</td>
+</tr>
+<tr>
+<td><strong>RBAC</strong></td>
+<td>Role-Based Access Control</td>
+</tr>
+<tr>
+<td><strong>KPI</strong></td>
+<td>Key Performance Indicator</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="appendix-b-compliance-and-regulatory-references">Appendix B: Compliance and Regulatory References<a class="headerlink" href="#appendix-b-compliance-and-regulatory-references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Basel III:</strong> Capital adequacy and liquidity requirements</li>
+<li><strong>IFRS 9:</strong> Financial instruments and expected credit loss provisioning</li>
+<li><strong>ISO 27001:</strong> Information security management</li>
+<li><strong>GDPR:</strong> Data protection and privacy (if applicable)</li>
+<li><strong>Local Banking Regulations:</strong> [To be specified based on jurisdiction]</li>
+</ul>
+<hr />
+<h2 id="document-control">Document Control<a class="headerlink" href="#document-control" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>February 10, 2026</td>
+<td>ERP Solutions Architect</td>
+<td>Initial FRD for RFP</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>End of Functional Requirements Document</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

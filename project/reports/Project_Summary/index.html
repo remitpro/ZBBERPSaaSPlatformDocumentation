@@ -1,0 +1,3200 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Enterprise Zero-Based Budgeting System Documentation">
+      
+      
+        <meta name="author" content="ZBB ERP Team">
+      
+      
+      
+        <link rel="prev" href="../../requirements/Requirements_Workshop_Results/">
+      
+      
+        <link rel="next" href="../Project_Status_Dashboard/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Project Summary - ZBB ERP Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#zbb-erp-module-implementation-project-summary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ZBB ERP Platform" class="md-header__button md-logo" aria-label="ZBB ERP Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZBB ERP Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Project Summary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/remitpro/ZBBERPSaaSPlatform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZBBERPSaaSPlatform
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../guides/quickstart/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../reference/api/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../design/Technical_Architecture/" class="md-tabs__link">
+          
+  
+  
+  Project Info
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ZBB ERP Platform" class="md-nav__button md-logo" aria-label="ZBB ERP Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ZBB ERP Platform
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/remitpro/ZBBERPSaaSPlatform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZBBERPSaaSPlatform
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (AWS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/deployment_digitalocean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (DigitalOcean)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Info
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Info
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/Technical_Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/CoA_Mapping_Specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoA Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/Loan_Product_Taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loan Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/Product_Geography_Taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geo Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/integration_specs/GL_Integration_PoC_Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GL Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/integration_specs/GL_Integration_PoC_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GL Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/workplan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workplan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/Infrastructure_Procurement_Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planning/Risk_Register/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/functional_specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/Requirements_Validation_Workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Workshop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/Requirements_Workshop_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Summary
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-2-completion-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1-2 Completion Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1-2 Completion Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status-complete-months-1-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status: ✅ COMPLETE (Months 1-6)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#major-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Major Achievements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Major Achievements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-gl-integration-operational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. GL Integration Operational
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-multi-dimensional-chart-of-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Multi-Dimensional Chart of Accounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-assumptions-engine-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Assumptions Engine Complete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-zbb-budget-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ZBB Budget Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-8-stage-workflow-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 8-Stage Workflow Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-rbac-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. RBAC &amp; Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-comprehensive-audit-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Comprehensive Audit Trail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-risks-mitigated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Risks Mitigated
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stakeholder-satisfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stakeholder Satisfaction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-preview-core-budget-module-months-4-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 Preview: Core Budget Module (Months 4-6)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2 Preview: Core Budget Module (Months 4-6)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remaining-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remaining Phases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remaining Phases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-specialized-modules-months-7-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Specialized Modules (Months 7-9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-advanced-features-months-10-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Advanced Features (Months 10-12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-go-live-month-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Go-Live (Month 12+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics-phase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics - Phase 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planning-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planning &amp; Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design &amp; Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progress-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Progress Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Team">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-team-13-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Team (13 Members)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-team-join-in-later-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended Team (Join in Later Phases)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-status-on-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Status: 🟢 ON TRACK
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Status_Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Status Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Team_Roster_Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team Roster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Final_Project_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Completion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_5" id="__nav_5_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1 Details
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 1 Details
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Phase_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Phase_1_Progress_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Phase_2_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_7" id="__nav_5_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monthly Updates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monthly Updates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Month_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Month_2_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Month_3_Phase_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Month_4_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-2-completion-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1-2 Completion Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1-2 Completion Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status-complete-months-1-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status: ✅ COMPLETE (Months 1-6)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#major-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Major Achievements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Major Achievements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-gl-integration-operational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. GL Integration Operational
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-multi-dimensional-chart-of-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Multi-Dimensional Chart of Accounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-assumptions-engine-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Assumptions Engine Complete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-zbb-budget-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ZBB Budget Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-8-stage-workflow-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 8-Stage Workflow Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-rbac-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. RBAC &amp; Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-comprehensive-audit-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Comprehensive Audit Trail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-risks-mitigated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Risks Mitigated
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stakeholder-satisfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stakeholder Satisfaction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-preview-core-budget-module-months-4-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 Preview: Core Budget Module (Months 4-6)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2 Preview: Core Budget Module (Months 4-6)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remaining-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remaining Phases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remaining Phases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-specialized-modules-months-7-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Specialized Modules (Months 7-9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-advanced-features-months-10-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Advanced Features (Months 10-12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-go-live-month-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Go-Live (Month 12+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics-phase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics - Phase 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planning-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planning &amp; Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design &amp; Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progress-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Progress Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Team">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-team-13-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Team (13 Members)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-team-join-in-later-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended Team (Join in Later Phases)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-status-on-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Status: 🟢 ON TRACK
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/remitpro/ZBBERPSaaSPlatform/edit/master/docs/project/reports/Project_Summary.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="zbb-erp-module-implementation-project-summary">ZBB ERP Module Implementation - Project Summary<a class="headerlink" href="#zbb-erp-module-implementation-project-summary" title="Permanent link">&para;</a></h1>
+<h2 id="executive-overview">Executive Overview<a class="headerlink" href="#executive-overview" title="Permanent link">&para;</a></h2>
+<p><strong>Project Name:</strong> Zero-Based Budgeting ERP Module Implementation<br />
+<strong>Project Code:</strong> ZBB-ERP-2026<br />
+<strong>Current Status:</strong> 🟢 ON TRACK | Phase 2 Complete<br />
+<strong>Overall Progress:</strong> 50% (6 months of 12 complete)</p>
+<hr />
+<h2 id="project-overview">Project Overview<a class="headerlink" href="#project-overview" title="Permanent link">&para;</a></h2>
+<p>Implementation of a comprehensive Zero-Based Budgeting module integrated with the Bank's General Ledger system to automate and streamline the annual budgeting process, replacing the current Excel-based approach.</p>
+<p><strong>Timeline:</strong> 12 months (5 phases)<br />
+<strong>Budget:</strong> $3,638,000<br />
+<strong>Spent to Date:</strong> $1,578,002 (43%, 0.4% under budget)<br />
+<strong>Team Size:</strong> 16 members (13 core + 3 QA)</p>
+<hr />
+<h2 id="phase-1-2-completion-summary">Phase 1-2 Completion Summary<a class="headerlink" href="#phase-1-2-completion-summary" title="Permanent link">&para;</a></h2>
+<h3 id="status-complete-months-1-6">Status: ✅ COMPLETE (Months 1-6)<a class="headerlink" href="#status-complete-months-1-6" title="Permanent link">&para;</a></h3>
+<p><strong>Budget Performance:</strong> $1,578K spent of $1,585K budgeted (0.4% under budget)<br />
+<strong>Schedule Performance:</strong> 0 days variance (118/118 deliverables on time)<br />
+<strong>Quality Performance:</strong> 100% integration test pass rate, 96% UAT acceptance</p>
+<h3 id="major-achievements">Major Achievements<a class="headerlink" href="#major-achievements" title="Permanent link">&para;</a></h3>
+<h4 id="1-gl-integration-operational">1. GL Integration Operational<a class="headerlink" href="#1-gl-integration-operational" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>4 core functions:</strong> CoA sync, Master data sync, Budget upload, Actual retrieval</li>
+<li><strong>Performance:</strong> 20% better than targets</li>
+<li><strong>Code coverage:</strong> 85% (exceeded 80% target)</li>
+</ul>
+<h4 id="2-multi-dimensional-chart-of-accounts">2. Multi-Dimensional Chart of Accounts<a class="headerlink" href="#2-multi-dimensional-chart-of-accounts" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>823 GL accounts</strong> with 5-level hierarchy</li>
+<li><strong>5 dimensions:</strong> GL Account, Cost Center (23), Business Unit (12), Product (15), Geography (8)</li>
+<li><strong>Total dimension values:</strong> 58</li>
+<li><strong>Data quality:</strong> 97.6% clean</li>
+</ul>
+<h4 id="3-assumptions-engine-complete">3. Assumptions Engine Complete<a class="headerlink" href="#3-assumptions-engine-complete" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>23 assumptions</strong> across 4 categories (Macroeconomic, Growth, Regulatory, Operational)</li>
+<li><strong>CFO approval workflow</strong> for all assumption changes</li>
+<li><strong>3 scenarios:</strong> Base, Optimistic, Pessimistic</li>
+<li><strong>Complete version control</strong> with change history</li>
+</ul>
+<h4 id="4-zbb-budget-templates">4. ZBB Budget Templates<a class="headerlink" href="#4-zbb-budget-templates" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Decision package grouping:</strong> 3 tiers (Essential, Discretionary, Strategic)</li>
+<li><strong>Mandatory justification:</strong> 100 characters minimum</li>
+<li><strong>Document attachment:</strong> Required for amounts ≥$25K</li>
+<li><strong>15 validation rules</strong> enforced</li>
+</ul>
+<h4 id="5-8-stage-workflow-engine">5. 8-Stage Workflow Engine<a class="headerlink" href="#5-8-stage-workflow-engine" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Workflow stages:</strong> Draft → Unit Review → Operations Review → Finance Review → Consolidation → Executive Review → Final Approval → Published</li>
+<li><strong>SLA monitoring:</strong> 5 business days per stage</li>
+<li><strong>Email notifications:</strong> 8 notification types</li>
+<li><strong>Role-based routing</strong></li>
+</ul>
+<h4 id="6-rbac-security">6. RBAC &amp; Security<a class="headerlink" href="#6-rbac-security" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>6 roles:</strong> Executive, Budget Team, Unit Heads, Operations Team, Finance Team, Auditors</li>
+<li><strong>Active Directory integration</strong> with single sign-on</li>
+<li><strong>Multi-Factor Authentication</strong> enabled</li>
+<li><strong>150 permission combinations</strong></li>
+</ul>
+<h4 id="7-comprehensive-audit-trail">7. Comprehensive Audit Trail<a class="headerlink" href="#7-comprehensive-audit-trail" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>20 action types</strong> logged (user login, budget changes, approvals, etc.)</li>
+<li><strong>5 standard reports:</strong> User Activity, Budget Change History, Assumption Change History, Approval Activity, System Access</li>
+<li><strong>Field-level change tracking</strong></li>
+</ul>
+<hr />
+<h2 id="critical-risks-mitigated">Critical Risks Mitigated<a class="headerlink" href="#critical-risks-mitigated" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Original Score</th>
+<th>Final Score</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R-001: GL Integration Complexity</strong></td>
+<td>12 (Critical)</td>
+<td>2 (Low)</td>
+<td>PoC successful, REST API validated</td>
+</tr>
+<tr>
+<td><strong>R-005: Data Quality Issues</strong></td>
+<td>8 (High)</td>
+<td>2 (Low)</td>
+<td>97.6% clean data, 3 issues resolved</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="stakeholder-satisfaction">Stakeholder Satisfaction<a class="headerlink" href="#stakeholder-satisfaction" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Stakeholder Group</th>
+<th>Satisfaction Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Steering Committee</td>
+<td>9.5/10</td>
+</tr>
+<tr>
+<td>Finance Team</td>
+<td>9.2/10</td>
+</tr>
+<tr>
+<td>Budget Team</td>
+<td>8.9/10</td>
+</tr>
+<tr>
+<td>Technical Team</td>
+<td>9.2/10</td>
+</tr>
+<tr>
+<td><strong>Average</strong></td>
+<td><strong>9.2/10</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="phase-2-preview-core-budget-module-months-4-6">Phase 2 Preview: Core Budget Module (Months 4-6)<a class="headerlink" href="#phase-2-preview-core-budget-module-months-4-6" title="Permanent link">&para;</a></h2>
+<h3 id="objectives">Objectives<a class="headerlink" href="#objectives" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Develop Loan Portfolio Module with IFRS 9 provisioning</li>
+<li>Develop Funding Module (deposits and borrowings)</li>
+<li>Implement Financial Statements Engine (Income Statement, Balance Sheet, Cash Flow)</li>
+<li>Build KPI Dashboard with 13+ KPIs</li>
+</ul>
+<h3 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h3>
+<p><strong>Loan Portfolio Module:</strong>
+- 5 product types (Retail, SME, Corporate, Mortgage, Consumer)
+- PFI classification
+- Interest income calculations
+- IFRS 9 provisioning engine
+- Loan repricing assumptions
+- Early repayment rates</p>
+<p><strong>Funding Module:</strong>
+- Deposit budgeting by product and maturity
+- Borrowing budgeting (interbank, bonds, central bank)
+- Interest expense calculations
+- Liquidity ratio monitoring</p>
+<p><strong>Financial Statements &amp; KPIs:</strong>
+- Income Statement (15 line items)
+- Balance Sheet (22 line items)
+- Cash Flow Statement (indirect method)
+- 16 KPIs with targets and alerts (13 original + 3 additional from workshop)</p>
+<hr />
+<h2 id="remaining-phases">Remaining Phases<a class="headerlink" href="#remaining-phases" title="Permanent link">&para;</a></h2>
+<h3 id="phase-3-specialized-modules-months-7-9">Phase 3: Specialized Modules (Months 7-9)<a class="headerlink" href="#phase-3-specialized-modules-months-7-9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Enhanced reporting and analytics</li>
+<li>Scenario planning and what-if analysis</li>
+<li>Budget consolidation and rollup</li>
+<li>Variance analysis automation</li>
+</ul>
+<h3 id="phase-4-advanced-features-months-10-12">Phase 4: Advanced Features (Months 10-12)<a class="headerlink" href="#phase-4-advanced-features-months-10-12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Performance optimization</li>
+<li>Advanced dashboards and visualizations</li>
+<li>Mobile access (deferred from Phase 1)</li>
+<li>Bulk operations and data import/export</li>
+</ul>
+<h3 id="phase-5-go-live-month-12">Phase 5: Go-Live (Month 12+)<a class="headerlink" href="#phase-5-go-live-month-12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Production deployment</li>
+<li>Parallel run with existing Excel process</li>
+<li>User training and change management</li>
+<li>Hypercare support (4 weeks)</li>
+</ul>
+<hr />
+<h2 id="success-metrics-phase-1">Success Metrics - Phase 1<a class="headerlink" href="#success-metrics-phase-1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+<th>Actual</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deliverables Completed</td>
+<td>100%</td>
+<td>100% (58/58)</td>
+<td>✅ Met</td>
+</tr>
+<tr>
+<td>Budget Variance</td>
+<td>±5%</td>
+<td>-0.6%</td>
+<td>✅ Met</td>
+</tr>
+<tr>
+<td>Schedule Variance</td>
+<td>0 days</td>
+<td>0 days</td>
+<td>✅ Met</td>
+</tr>
+<tr>
+<td>Integration Tests Passed</td>
+<td>&gt;95%</td>
+<td>98.7%</td>
+<td>✅ Exceeded</td>
+</tr>
+<tr>
+<td>UAT Acceptance</td>
+<td>&gt;90%</td>
+<td>96%</td>
+<td>✅ Exceeded</td>
+</tr>
+<tr>
+<td>User Satisfaction</td>
+<td>&gt;8.0</td>
+<td>8.9 avg</td>
+<td>✅ Exceeded</td>
+</tr>
+<tr>
+<td>Critical Risks Mitigated</td>
+<td>2</td>
+<td>2</td>
+<td>✅ Met</td>
+</tr>
+<tr>
+<td>Code Coverage</td>
+<td>&gt;80%</td>
+<td>85%</td>
+<td>✅ Exceeded</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="key-documents">Key Documents<a class="headerlink" href="#key-documents" title="Permanent link">&para;</a></h2>
+<h3 id="planning-governance">Planning &amp; Governance<a class="headerlink" href="#planning-governance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="file:///c:/Users/tabdu/OneDrive/Desktop/AILab/budget-dbn/project/Project_Charter.md">Project Charter</a></li>
+<li><a href="file:///c:/Users/tabdu/OneDrive/Desktop/AILab/budget-dbn/Implementation_Workplan.md">Implementation Workplan</a></li>
+<li><a href="file:///c:/Users/tabdu/OneDrive/Desktop/AILab/budget-dbn/project/planning/Risk_Register.md">Risk Register</a></li>
+<li><a href="file:///c:/Users/tabdu/OneDrive/Desktop/AILab/budget-dbn/project/documentation/Project_Status_Dashboard.md">Project Status Dashboard</a></li>
+</ul>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="file:///c:/Users/tabdu/OneDrive/Desktop/AILab/budget-dbn/ERP_Functional_Requirements_Document.md">Functional Requirements Document</a></li>
+<li><a href="file:///c:/Users/tabdu/OneDrive/Desktop/AILab/budget-dbn/project/requirements/Requirements_Workshop_Results.md">Requirements Workshop Results</a></li>
+</ul>
+<h3 id="design-architecture">Design &amp; Architecture<a class="headerlink" href="#design-architecture" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="file:///c:/Users/tabdu/OneDrive/Desktop/AILab/budget-dbn/project/design/integration_specs/GL_Integration_PoC_Results.md">GL Integration PoC Results</a></li>
+<li><a href="file:///c:/Users/tabdu/OneDrive/Desktop/AILab/budget-dbn/project/design/data_models/CoA_Mapping_Specification.md">CoA Mapping Specification</a></li>
+<li><a href="file:///c:/Users/tabdu/OneDrive/Desktop/AILab/budget-dbn/project/design/data_models/Product_Geography_Taxonomy.md">Product &amp; Geography Taxonomy</a></li>
+</ul>
+<h3 id="progress-reports">Progress Reports<a class="headerlink" href="#progress-reports" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="file:///c:/Users/tabdu/OneDrive/Desktop/AILab/budget-dbn/project/documentation/Month_1_Completion_Summary.md">Month 1 Completion Summary</a></li>
+<li><a href="file:///c:/Users/tabdu/OneDrive/Desktop/AILab/budget-dbn/project/documentation/Month_2_Completion_Summary.md">Month 2 Completion Summary</a></li>
+<li><a href="file:///c:/Users/tabdu/OneDrive/Desktop/AILab/budget-dbn/project/documentation/Month_3_Phase_1_Completion_Summary.md">Month 3 &amp; Phase 1 Completion Summary</a></li>
+</ul>
+<hr />
+<h2 id="team">Team<a class="headerlink" href="#team" title="Permanent link">&para;</a></h2>
+<h3 id="core-team-13-members">Core Team (13 Members)<a class="headerlink" href="#core-team-13-members" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Project Manager: Alex Thompson</li>
+<li>Technical Lead: Priya Sharma</li>
+<li>Functional Lead: Marcus Johnson</li>
+<li>Business Analysts: 3</li>
+<li>Developers: 5</li>
+<li>Integration Specialists: 2</li>
+</ul>
+<h3 id="extended-team-join-in-later-phases">Extended Team (Join in Later Phases)<a class="headerlink" href="#extended-team-join-in-later-phases" title="Permanent link">&para;</a></h3>
+<ul>
+<li>QA Team: 3 members (Phase 2)</li>
+<li>Change Management: 1 member (Phase 2)</li>
+<li>Training Specialists: 2 members (Phase 4)</li>
+</ul>
+<hr />
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Phase 1 Celebration:</strong> Team retrospective and recognition</li>
+<li><strong>Phase 2 Kickoff:</strong> Month 4, Week 1</li>
+<li><strong>Loan Portfolio Module Development:</strong> Months 4-5</li>
+<li><strong>Financial Statements &amp; KPIs:</strong> Month 6</li>
+<li><strong>Phase 2 Sign-off:</strong> Month 6, Week 4</li>
+</ol>
+<hr />
+<h2 id="project-status-on-track">Project Status: 🟢 ON TRACK<a class="headerlink" href="#project-status-on-track" title="Permanent link">&para;</a></h2>
+<p><strong>Phase 1:</strong> ✅ Complete<br />
+<strong>Phase 2:</strong> 🔵 Starting<br />
+<strong>Overall Progress:</strong> 25%</p>
+<hr />
+<p><strong>Document Owner:</strong> Project Manager<br />
+<strong>Last Updated:</strong> Month 3, Week 4<br />
+<strong>Status:</strong> Phase 1 Complete | Phase 2 Ready to Start</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

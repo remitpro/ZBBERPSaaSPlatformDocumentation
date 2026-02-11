@@ -1,0 +1,7294 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Enterprise Zero-Based Budgeting System Documentation">
+      
+      
+        <meta name="author" content="ZBB ERP Team">
+      
+      
+      
+        <link rel="prev" href="../../design/integration_specs/GL_Integration_PoC_Results/">
+      
+      
+        <link rel="next" href="../Infrastructure_Procurement_Plan/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Workplan - ZBB ERP Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#implementation-workplan" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ZBB ERP Platform" class="md-header__button md-logo" aria-label="ZBB ERP Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZBB ERP Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Workplan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/remitpro/ZBBERPSaaSPlatform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZBBERPSaaSPlatform
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../guides/quickstart/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../reference/api/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../design/Technical_Architecture/" class="md-tabs__link">
+          
+  
+  
+  Project Info
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ZBB ERP Platform" class="md-nav__button md-logo" aria-label="ZBB ERP Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ZBB ERP Platform
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/remitpro/ZBBERPSaaSPlatform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZBBERPSaaSPlatform
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (AWS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/deployment_digitalocean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (DigitalOcean)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Info
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Info
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/Technical_Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/CoA_Mapping_Specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoA Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/Loan_Product_Taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loan Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data_models/Product_Geography_Taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geo Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/integration_specs/GL_Integration_PoC_Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GL Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/integration_specs/GL_Integration_PoC_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GL Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workplan
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workplan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zero-based-budgeting-erp-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zero-Based Budgeting ERP Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-project-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Project Governance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Project Governance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-project-organization-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Project Organization Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-roles-and-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Roles and Responsibilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-governance-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Governance Mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-decision-making-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Decision-Making Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-phase-1-foundation-months-1-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Phase 1: Foundation (Months 1-3)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Phase 1: Foundation (Months 1-3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-phase-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Phase Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-detailed-task-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Detailed Task Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Detailed Task Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#month-1-project-initiation-and-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 1: Project Initiation and Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-2-chart-of-accounts-and-gl-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 2: Chart of Accounts and GL Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-3-assumptions-engine-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 3: Assumptions Engine and Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-phase-1-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Phase 1 Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-phase-1-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Phase 1 Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-phase-2-core-budget-module-months-4-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Phase 2: Core Budget Module (Months 4-6)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Phase 2: Core Budget Module (Months 4-6)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-phase-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Phase Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-detailed-task-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Detailed Task Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Detailed Task Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#month-4-zbb-templates-and-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 4: ZBB Templates and Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-5-workflow-and-approval-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 5: Workflow and Approval Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-6-audit-trail-and-basic-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 6: Audit Trail and Basic Reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-phase-2-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Phase 2 Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-phase-2-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Phase 2 Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-phase-3-specialized-modules-months-7-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Phase 3: Specialized Modules (Months 7-9)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Phase 3: Specialized Modules (Months 7-9)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-phase-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Phase Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-detailed-task-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Detailed Task Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Detailed Task Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#month-7-loan-portfolio-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 7: Loan Portfolio Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-8-borrowings-and-funding-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 8: Borrowings and Funding Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-9-financial-statements-and-kpi-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 9: Financial Statements and KPI Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-phase-3-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Phase 3 Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-phase-3-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Phase 3 Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-phase-4-advanced-features-months-10-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Phase 4: Advanced Features (Months 10-12)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Phase 4: Advanced Features (Months 10-12)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-phase-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Phase Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-detailed-task-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Detailed Task Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Detailed Task Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#month-10-scenario-analysis-and-advanced-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 10: Scenario Analysis and Advanced Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-11-performance-optimization-and-uat-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 11: Performance Optimization and UAT Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-12-uat-completion-and-go-live-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 12: UAT Completion and Go-Live Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-phase-4-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Phase 4 Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-phase-4-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Phase 4 Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-phase-5-go-live-and-support-month-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Phase 5: Go-Live and Support (Month 12+)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Phase 5: Go-Live and Support (Month 12+)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-phase-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Phase Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-go-live-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Go-Live Activities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-post-go-live-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Post-Go-Live Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-phase-5-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Phase 5 Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-phase-5-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Phase 5 Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resource-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Resource Allocation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Resource Allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-resource-summary-by-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Resource Summary by Phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-budget-estimate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Budget Estimate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-resource-allocation-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Resource Allocation Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-risk-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Risk Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Risk Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-risk-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Risk Register
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-risk-mitigation-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Risk Mitigation Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Quality Assurance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Quality Assurance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Testing Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-testing-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Testing Phases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-test-coverage-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Test Coverage Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-defect-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Defect Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-change-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Change Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Change Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-change-management-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Change Management Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-stakeholder-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Stakeholder Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-change-management-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Change Management Activities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3 Change Management Activities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#communication-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-champions-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Champions Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-readiness-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Readiness Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-success-metrics-and-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Success Metrics and KPIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Success Metrics and KPIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-project-success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Project Success Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-business-benefits-realization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Business Benefits Realization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-dependencies-and-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Dependencies and Assumptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Dependencies and Assumptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-critical-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 Critical Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-key-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 Key Assumptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-project-closure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Project Closure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Project Closure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-closure-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Closure Activities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-lessons-learned-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Lessons Learned Categories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-detailed-gantt-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A: Detailed Gantt Chart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-raci-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B: RACI Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-c-communication-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix C: Communication Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Infrastructure_Procurement_Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Risk_Register/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/functional_specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/Requirements_Validation_Workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Workshop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/Requirements_Workshop_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Project_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Project_Status_Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Status Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Team_Roster_Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team Roster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Final_Project_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Completion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_5" id="__nav_5_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1 Details
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 1 Details
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_1_Progress_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Phase_2_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_7" id="__nav_5_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monthly Updates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Monthly Updates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_2_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_3_Phase_1_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/Month_4_Completion_Summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zero-based-budgeting-erp-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zero-Based Budgeting ERP Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Milestones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-project-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Project Governance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Project Governance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-project-organization-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Project Organization Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-roles-and-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Roles and Responsibilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-governance-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Governance Mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-decision-making-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Decision-Making Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-phase-1-foundation-months-1-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Phase 1: Foundation (Months 1-3)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Phase 1: Foundation (Months 1-3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-phase-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Phase Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-detailed-task-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Detailed Task Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Detailed Task Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#month-1-project-initiation-and-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 1: Project Initiation and Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-2-chart-of-accounts-and-gl-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 2: Chart of Accounts and GL Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-3-assumptions-engine-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 3: Assumptions Engine and Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-phase-1-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Phase 1 Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-phase-1-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Phase 1 Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-phase-2-core-budget-module-months-4-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Phase 2: Core Budget Module (Months 4-6)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Phase 2: Core Budget Module (Months 4-6)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-phase-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Phase Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-detailed-task-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Detailed Task Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Detailed Task Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#month-4-zbb-templates-and-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 4: ZBB Templates and Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-5-workflow-and-approval-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 5: Workflow and Approval Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-6-audit-trail-and-basic-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 6: Audit Trail and Basic Reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-phase-2-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Phase 2 Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-phase-2-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Phase 2 Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-phase-3-specialized-modules-months-7-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Phase 3: Specialized Modules (Months 7-9)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Phase 3: Specialized Modules (Months 7-9)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-phase-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Phase Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-detailed-task-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Detailed Task Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Detailed Task Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#month-7-loan-portfolio-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 7: Loan Portfolio Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-8-borrowings-and-funding-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 8: Borrowings and Funding Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-9-financial-statements-and-kpi-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 9: Financial Statements and KPI Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-phase-3-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Phase 3 Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-phase-3-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Phase 3 Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-phase-4-advanced-features-months-10-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Phase 4: Advanced Features (Months 10-12)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Phase 4: Advanced Features (Months 10-12)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-phase-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Phase Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-detailed-task-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Detailed Task Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Detailed Task Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#month-10-scenario-analysis-and-advanced-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 10: Scenario Analysis and Advanced Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-11-performance-optimization-and-uat-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 11: Performance Optimization and UAT Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#month-12-uat-completion-and-go-live-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month 12: UAT Completion and Go-Live Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-phase-4-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Phase 4 Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-phase-4-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Phase 4 Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-phase-5-go-live-and-support-month-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Phase 5: Go-Live and Support (Month 12+)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Phase 5: Go-Live and Support (Month 12+)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-phase-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Phase Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-go-live-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Go-Live Activities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-post-go-live-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Post-Go-Live Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-phase-5-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Phase 5 Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-phase-5-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Phase 5 Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resource-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Resource Allocation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Resource Allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-resource-summary-by-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Resource Summary by Phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-budget-estimate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Budget Estimate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-resource-allocation-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Resource Allocation Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-risk-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Risk Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Risk Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-risk-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Risk Register
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-risk-mitigation-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Risk Mitigation Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Quality Assurance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Quality Assurance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Testing Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-testing-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Testing Phases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-test-coverage-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Test Coverage Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-defect-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Defect Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-change-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Change Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Change Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-change-management-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Change Management Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-stakeholder-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Stakeholder Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-change-management-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Change Management Activities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3 Change Management Activities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#communication-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-champions-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Champions Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-readiness-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Readiness Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-success-metrics-and-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Success Metrics and KPIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Success Metrics and KPIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-project-success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Project Success Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-business-benefits-realization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Business Benefits Realization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-dependencies-and-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Dependencies and Assumptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Dependencies and Assumptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-critical-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 Critical Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-key-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 Key Assumptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-project-closure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Project Closure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Project Closure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-closure-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Closure Activities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-lessons-learned-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Lessons Learned Categories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-detailed-gantt-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A: Detailed Gantt Chart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-raci-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B: RACI Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-c-communication-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix C: Communication Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/remitpro/ZBBERPSaaSPlatform/edit/master/docs/project/planning/workplan.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="implementation-workplan">Implementation Workplan<a class="headerlink" href="#implementation-workplan" title="Permanent link">&para;</a></h1>
+<h2 id="zero-based-budgeting-erp-module">Zero-Based Budgeting ERP Module<a class="headerlink" href="#zero-based-budgeting-erp-module" title="Permanent link">&para;</a></h2>
+<p><strong>Project Duration:</strong> 12 Months<br />
+<strong>Document Version:</strong> 1.0<br />
+<strong>Date:</strong> February 10, 2026<br />
+<strong>Project Type:</strong> ERP Module Implementation</p>
+<hr />
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>This implementation workplan provides a comprehensive roadmap for deploying the Zero-Based Budgeting (ZBB) ERP module for the Bank. The project is structured into 5 major phases over 12 months, encompassing system setup, core module development, specialized functionality, advanced features, and go-live support.</p>
+<h3 id="key-milestones">Key Milestones<a class="headerlink" href="#key-milestones" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Milestone</th>
+<th>Target Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project Kickoff</td>
+<td>Month 1, Week 1</td>
+<td>Project initiation and team mobilization</td>
+</tr>
+<tr>
+<td>Foundation Complete</td>
+<td>Month 3, Week 4</td>
+<td>Core infrastructure and GL integration ready</td>
+</tr>
+<tr>
+<td>Core Budget Module Live</td>
+<td>Month 6, Week 4</td>
+<td>Basic budgeting functionality operational</td>
+</tr>
+<tr>
+<td>Specialized Modules Complete</td>
+<td>Month 9, Week 4</td>
+<td>Loan and funding modules operational</td>
+</tr>
+<tr>
+<td>User Acceptance Testing</td>
+<td>Month 11, Week 4</td>
+<td>UAT completed and signed off</td>
+</tr>
+<tr>
+<td>Go-Live</td>
+<td>Month 12, Week 4</td>
+<td>Production deployment</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-project-governance">Project Governance</a></li>
+<li><a href="#2-phase-1-foundation-months-1-3">Phase 1: Foundation (Months 1-3)</a></li>
+<li><a href="#3-phase-2-core-budget-module-months-4-6">Phase 2: Core Budget Module (Months 4-6)</a></li>
+<li><a href="#4-phase-3-specialized-modules-months-7-9">Phase 3: Specialized Modules (Months 7-9)</a></li>
+<li><a href="#5-phase-4-advanced-features-months-10-12">Phase 4: Advanced Features (Months 10-12)</a></li>
+<li><a href="#6-phase-5-go-live-and-support-month-12">Phase 5: Go-Live and Support (Month 12+)</a></li>
+<li><a href="#7-resource-allocation">Resource Allocation</a></li>
+<li><a href="#8-risk-management">Risk Management</a></li>
+<li><a href="#9-quality-assurance">Quality Assurance</a></li>
+<li><a href="#10-change-management">Change Management</a></li>
+</ol>
+<hr />
+<h2 id="1-project-governance">1. Project Governance<a class="headerlink" href="#1-project-governance" title="Permanent link">&para;</a></h2>
+<h3 id="11-project-organization-structure">1.1 Project Organization Structure<a class="headerlink" href="#11-project-organization-structure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>flowchart TD
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A[Steering Committee] --&gt; B[Project Sponsor]
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    B --&gt; C[Project Manager]
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    C --&gt; D[Technical Lead]
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    C --&gt; E[Functional Lead]
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    C --&gt; F[Change Management Lead]
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    D --&gt; G[Development Team]
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    D --&gt; H[Integration Team]
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    E --&gt; I[Business Analysts]
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    E --&gt; J[Testing Team]
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    F --&gt; K[Training Team]
+</code></pre></div>
+<h3 id="12-roles-and-responsibilities">1.2 Roles and Responsibilities<a class="headerlink" href="#12-roles-and-responsibilities" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Responsibility</th>
+<th>Time Commitment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Steering Committee</strong></td>
+<td>Strategic oversight, issue escalation, budget approval</td>
+<td>4 hours/month</td>
+</tr>
+<tr>
+<td><strong>Project Sponsor</strong></td>
+<td>Executive champion, resource allocation, stakeholder management</td>
+<td>8 hours/month</td>
+</tr>
+<tr>
+<td><strong>Project Manager</strong></td>
+<td>Overall project coordination, timeline, budget, risk management</td>
+<td>Full-time</td>
+</tr>
+<tr>
+<td><strong>Technical Lead</strong></td>
+<td>System architecture, technical decisions, integration oversight</td>
+<td>Full-time</td>
+</tr>
+<tr>
+<td><strong>Functional Lead</strong></td>
+<td>Requirements validation, process design, user acceptance</td>
+<td>Full-time</td>
+</tr>
+<tr>
+<td><strong>Business Analysts (3)</strong></td>
+<td>Requirements gathering, process mapping, UAT coordination</td>
+<td>Full-time</td>
+</tr>
+<tr>
+<td><strong>Developers (5)</strong></td>
+<td>System configuration, customization, module development</td>
+<td>Full-time</td>
+</tr>
+<tr>
+<td><strong>Integration Specialists (2)</strong></td>
+<td>GL integration, API development, data migration</td>
+<td>Full-time</td>
+</tr>
+<tr>
+<td><strong>QA/Testing Team (3)</strong></td>
+<td>Test planning, execution, defect management</td>
+<td>Full-time (Months 3-12)</td>
+</tr>
+<tr>
+<td><strong>Change Management Lead</strong></td>
+<td>Training, communication, user adoption</td>
+<td>Full-time (Months 6-12)</td>
+</tr>
+<tr>
+<td><strong>Training Specialists (2)</strong></td>
+<td>Training material development, delivery</td>
+<td>Part-time (Months 8-12)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-governance-mechanisms">1.3 Governance Mechanisms<a class="headerlink" href="#13-governance-mechanisms" title="Permanent link">&para;</a></h3>
+<p><strong>Steering Committee Meetings</strong>
+- <strong>Frequency:</strong> Monthly
+- <strong>Attendees:</strong> Sponsor, PM, Technical Lead, Functional Lead, Key Stakeholders
+- <strong>Agenda:</strong> Progress review, budget status, risk review, decision-making</p>
+<p><strong>Project Team Meetings</strong>
+- <strong>Frequency:</strong> Weekly
+- <strong>Attendees:</strong> PM, Technical Lead, Functional Lead, Team Leads
+- <strong>Agenda:</strong> Weekly progress, blockers, upcoming tasks</p>
+<p><strong>Daily Standups</strong>
+- <strong>Frequency:</strong> Daily (15 minutes)
+- <strong>Attendees:</strong> Development and implementation teams
+- <strong>Agenda:</strong> Yesterday's progress, today's plan, blockers</p>
+<h3 id="14-decision-making-framework">1.4 Decision-Making Framework<a class="headerlink" href="#14-decision-making-framework" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Decision Type</th>
+<th>Decision Maker</th>
+<th>Escalation Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Technical architecture</td>
+<td>Technical Lead</td>
+<td>Project Sponsor</td>
+</tr>
+<tr>
+<td>Functional design</td>
+<td>Functional Lead</td>
+<td>Steering Committee</td>
+</tr>
+<tr>
+<td>Scope changes</td>
+<td>Steering Committee</td>
+<td>Executive Management</td>
+</tr>
+<tr>
+<td>Resource allocation</td>
+<td>Project Manager</td>
+<td>Project Sponsor</td>
+</tr>
+<tr>
+<td>Budget variance &gt;10%</td>
+<td>Project Sponsor</td>
+<td>Steering Committee</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-phase-1-foundation-months-1-3">2. Phase 1: Foundation (Months 1-3)<a class="headerlink" href="#2-phase-1-foundation-months-1-3" title="Permanent link">&para;</a></h2>
+<h3 id="21-phase-objectives">2.1 Phase Objectives<a class="headerlink" href="#21-phase-objectives" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Establish project infrastructure and governance</li>
+<li>Complete system setup and environment configuration</li>
+<li>Map Chart of Accounts and configure GL integration</li>
+<li>Implement Assumptions Engine</li>
+<li>Configure user roles and security</li>
+</ul>
+<h3 id="22-detailed-task-breakdown">2.2 Detailed Task Breakdown<a class="headerlink" href="#22-detailed-task-breakdown" title="Permanent link">&para;</a></h3>
+<h4 id="month-1-project-initiation-and-planning"><strong>Month 1: Project Initiation and Planning</strong><a class="headerlink" href="#month-1-project-initiation-and-planning" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Task ID</th>
+<th>Task Description</th>
+<th>Owner</th>
+<th>Duration</th>
+<th>Dependencies</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1.1.1</td>
+<td>Project kickoff meeting</td>
+<td>PM</td>
+<td>1 day</td>
+<td>-</td>
+<td>Kickoff deck, meeting minutes</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1.1.2</td>
+<td>Finalize project charter</td>
+<td>PM</td>
+<td>2 days</td>
+<td>1.1.1</td>
+<td>Signed project charter</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1.1.3</td>
+<td>Establish project governance</td>
+<td>PM</td>
+<td>3 days</td>
+<td>1.1.2</td>
+<td>Governance framework document</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>1.1.4</td>
+<td>Assemble project team</td>
+<td>PM, Sponsor</td>
+<td>5 days</td>
+<td>1.1.2</td>
+<td>Team roster with roles</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.1.5</td>
+<td>Conduct requirements workshop</td>
+<td>Functional Lead</td>
+<td>3 days</td>
+<td>1.1.4</td>
+<td>Requirements validation report</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.1.6</td>
+<td>Develop detailed project plan</td>
+<td>PM</td>
+<td>3 days</td>
+<td>1.1.5</td>
+<td>MS Project plan with tasks</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>1.1.7</td>
+<td>Procure hardware/infrastructure</td>
+<td>Technical Lead</td>
+<td>10 days</td>
+<td>1.1.3</td>
+<td>Infrastructure ready</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1.1.8</td>
+<td>Install ERP software (Dev environment)</td>
+<td>Technical Lead</td>
+<td>3 days</td>
+<td>1.1.7</td>
+<td>Dev environment operational</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>1.1.9</td>
+<td>Configure development environment</td>
+<td>Developers</td>
+<td>5 days</td>
+<td>1.1.8</td>
+<td>Configured dev environment</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1.1.10</td>
+<td>Establish version control and CI/CD</td>
+<td>Technical Lead</td>
+<td>3 days</td>
+<td>1.1.9</td>
+<td>Git repo, CI/CD pipeline</td>
+</tr>
+</tbody>
+</table>
+<h4 id="month-2-chart-of-accounts-and-gl-integration"><strong>Month 2: Chart of Accounts and GL Integration</strong><a class="headerlink" href="#month-2-chart-of-accounts-and-gl-integration" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Task ID</th>
+<th>Task Description</th>
+<th>Owner</th>
+<th>Duration</th>
+<th>Dependencies</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1.2.1</td>
+<td>Extract current Chart of Accounts</td>
+<td>Business Analyst</td>
+<td>2 days</td>
+<td>-</td>
+<td>CoA export file</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1.2.2</td>
+<td>Review and validate CoA structure</td>
+<td>Functional Lead</td>
+<td>3 days</td>
+<td>1.2.1</td>
+<td>CoA validation report</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>1.2.3</td>
+<td>Map CoA to ERP structure</td>
+<td>Business Analyst</td>
+<td>5 days</td>
+<td>1.2.2</td>
+<td>CoA mapping document</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.2.4</td>
+<td>Configure CoA in ERP system</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>1.2.3</td>
+<td>CoA configured in system</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.2.5</td>
+<td>Define cost center hierarchy</td>
+<td>Business Analyst</td>
+<td>2 days</td>
+<td>1.2.1</td>
+<td>Cost center structure</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>1.2.6</td>
+<td>Configure business unit structure</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>1.2.5</td>
+<td>Business units in system</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1.2.7</td>
+<td>Design GL integration architecture</td>
+<td>Integration Specialist</td>
+<td>3 days</td>
+<td>1.2.4</td>
+<td>Integration design document</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1.2.8</td>
+<td>Develop GL integration APIs</td>
+<td>Integration Specialist</td>
+<td>5 days</td>
+<td>1.2.7</td>
+<td>API endpoints developed</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1.2.9</td>
+<td>Test GL data synchronization</td>
+<td>Integration Specialist</td>
+<td>3 days</td>
+<td>1.2.8</td>
+<td>Test results report</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1.2.10</td>
+<td>Configure master data sync</td>
+<td>Developer</td>
+<td>2 days</td>
+<td>1.2.9</td>
+<td>Automated sync operational</td>
+</tr>
+</tbody>
+</table>
+<h4 id="month-3-assumptions-engine-and-security"><strong>Month 3: Assumptions Engine and Security</strong><a class="headerlink" href="#month-3-assumptions-engine-and-security" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Task ID</th>
+<th>Task Description</th>
+<th>Owner</th>
+<th>Duration</th>
+<th>Dependencies</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1.3.1</td>
+<td>Design Assumptions Engine UI</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>-</td>
+<td>UI mockups</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>1.3.2</td>
+<td>Develop Assumptions module</td>
+<td>Developer</td>
+<td>5 days</td>
+<td>1.3.1</td>
+<td>Assumptions module functional</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.3.3</td>
+<td>Configure assumption categories</td>
+<td>Business Analyst</td>
+<td>2 days</td>
+<td>1.3.2</td>
+<td>Assumption taxonomy</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.3.4</td>
+<td>Implement version control for assumptions</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>1.3.2</td>
+<td>Version control functional</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>1.3.5</td>
+<td>Build assumption approval workflow</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>1.3.4</td>
+<td>Workflow operational</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1.3.6</td>
+<td>Define user roles and permissions</td>
+<td>Functional Lead</td>
+<td>2 days</td>
+<td>-</td>
+<td>RBAC matrix</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1.3.7</td>
+<td>Configure RBAC in system</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>1.3.6</td>
+<td>Roles configured</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1.3.8</td>
+<td>Integrate with Active Directory</td>
+<td>Integration Specialist</td>
+<td>3 days</td>
+<td>1.3.7</td>
+<td>AD integration complete</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1.3.9</td>
+<td>Configure MFA and security policies</td>
+<td>Technical Lead</td>
+<td>2 days</td>
+<td>1.3.8</td>
+<td>Security policies active</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1.3.10</td>
+<td>Phase 1 testing and validation</td>
+<td>QA Team</td>
+<td>3 days</td>
+<td>All Phase 1</td>
+<td>Phase 1 test report</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1.3.11</td>
+<td>Phase 1 review and sign-off</td>
+<td>Steering Committee</td>
+<td>1 day</td>
+<td>1.3.10</td>
+<td>Phase 1 completion certificate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-phase-1-deliverables">2.3 Phase 1 Deliverables<a class="headerlink" href="#23-phase-1-deliverables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ Project charter and governance framework</li>
+<li>✅ Development, test, and production environments configured</li>
+<li>✅ Chart of Accounts mapped and loaded</li>
+<li>✅ GL integration operational (basic sync)</li>
+<li>✅ Assumptions Engine functional with version control</li>
+<li>✅ User roles and permissions configured</li>
+<li>✅ Active Directory integration complete</li>
+<li>✅ Phase 1 test report and sign-off</li>
+</ul>
+<h3 id="24-phase-1-success-criteria">2.4 Phase 1 Success Criteria<a class="headerlink" href="#24-phase-1-success-criteria" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Target</th>
+<th>Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CoA mapping accuracy</td>
+<td>100%</td>
+<td>All GL accounts mapped correctly</td>
+</tr>
+<tr>
+<td>GL sync success rate</td>
+<td>&gt;95%</td>
+<td>Successful data synchronization tests</td>
+</tr>
+<tr>
+<td>User authentication</td>
+<td>100%</td>
+<td>All users can log in via AD</td>
+</tr>
+<tr>
+<td>Assumptions module functionality</td>
+<td>100%</td>
+<td>All features per FR-ASM-001 to FR-ASM-007 working</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-phase-2-core-budget-module-months-4-6">3. Phase 2: Core Budget Module (Months 4-6)<a class="headerlink" href="#3-phase-2-core-budget-module-months-4-6" title="Permanent link">&para;</a></h2>
+<h3 id="31-phase-objectives">3.1 Phase Objectives<a class="headerlink" href="#31-phase-objectives" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Implement Zero-Based Budgeting logic and templates</li>
+<li>Develop budget workflow and approval engine</li>
+<li>Build audit trail functionality</li>
+<li>Create basic reporting capabilities</li>
+<li>Conduct initial user training</li>
+</ul>
+<h3 id="32-detailed-task-breakdown">3.2 Detailed Task Breakdown<a class="headerlink" href="#32-detailed-task-breakdown" title="Permanent link">&para;</a></h3>
+<h4 id="month-4-zbb-templates-and-logic"><strong>Month 4: ZBB Templates and Logic</strong><a class="headerlink" href="#month-4-zbb-templates-and-logic" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Task ID</th>
+<th>Task Description</th>
+<th>Owner</th>
+<th>Duration</th>
+<th>Dependencies</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2.1.1</td>
+<td>Design budget template structure</td>
+<td>Business Analyst</td>
+<td>3 days</td>
+<td>Phase 1 complete</td>
+<td>Template design document</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>2.1.2</td>
+<td>Develop dynamic template engine</td>
+<td>Developer</td>
+<td>5 days</td>
+<td>2.1.1</td>
+<td>Template engine functional</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2.1.3</td>
+<td>Configure business unit templates</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>2.1.2</td>
+<td>BU templates configured</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2.1.4</td>
+<td>Implement mandatory justification fields</td>
+<td>Developer</td>
+<td>2 days</td>
+<td>2.1.3</td>
+<td>Justification fields active</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>2.1.5</td>
+<td>Build document attachment functionality</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>2.1.4</td>
+<td>File upload working</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2.1.6</td>
+<td>Implement ZBB logic (no auto-populate)</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>2.1.2</td>
+<td>ZBB logic enforced</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2.1.7</td>
+<td>Add prior year reference data display</td>
+<td>Developer</td>
+<td>2 days</td>
+<td>2.1.6</td>
+<td>Reference data visible</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>2.1.8</td>
+<td>Develop Decision Package functionality</td>
+<td>Developer</td>
+<td>5 days</td>
+<td>2.1.6</td>
+<td>Decision packages working</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2.1.9</td>
+<td>Build business driver dropdown</td>
+<td>Developer</td>
+<td>2 days</td>
+<td>2.1.4</td>
+<td>Business drivers selectable</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2.1.10</td>
+<td>Unit test ZBB module</td>
+<td>QA Team</td>
+<td>3 days</td>
+<td>All 2.1.x</td>
+<td>ZBB test report</td>
+</tr>
+</tbody>
+</table>
+<h4 id="month-5-workflow-and-approval-engine"><strong>Month 5: Workflow and Approval Engine</strong><a class="headerlink" href="#month-5-workflow-and-approval-engine" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Task ID</th>
+<th>Task Description</th>
+<th>Owner</th>
+<th>Duration</th>
+<th>Dependencies</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2.2.1</td>
+<td>Design workflow state machine</td>
+<td>Technical Lead</td>
+<td>2 days</td>
+<td>-</td>
+<td>Workflow design document</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>2.2.2</td>
+<td>Develop workflow engine</td>
+<td>Developer</td>
+<td>5 days</td>
+<td>2.2.1</td>
+<td>Workflow engine functional</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2.2.3</td>
+<td>Implement Draft → Submit transition</td>
+<td>Developer</td>
+<td>2 days</td>
+<td>2.2.2</td>
+<td>Submit functionality working</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2.2.4</td>
+<td>Build review interface for Budget Team</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>2.2.3</td>
+<td>Review UI operational</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>2.2.5</td>
+<td>Implement Query functionality</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>2.2.4</td>
+<td>Query/response working</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2.2.6</td>
+<td>Build approval mechanism</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>2.2.5</td>
+<td>Approval functional</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2.2.7</td>
+<td>Implement notification system</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>2.2.6</td>
+<td>Email notifications working</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>2.2.8</td>
+<td>Configure SLA timers and escalation</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>2.2.7</td>
+<td>SLA alerts functional</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2.2.9</td>
+<td>Build workflow dashboard</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>2.2.8</td>
+<td>Dashboard operational</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2.2.10</td>
+<td>Test workflow end-to-end</td>
+<td>QA Team</td>
+<td>3 days</td>
+<td>All 2.2.x</td>
+<td>Workflow test report</td>
+</tr>
+</tbody>
+</table>
+<h4 id="month-6-audit-trail-and-basic-reporting"><strong>Month 6: Audit Trail and Basic Reporting</strong><a class="headerlink" href="#month-6-audit-trail-and-basic-reporting" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Task ID</th>
+<th>Task Description</th>
+<th>Owner</th>
+<th>Duration</th>
+<th>Dependencies</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2.3.1</td>
+<td>Design audit trail data model</td>
+<td>Technical Lead</td>
+<td>2 days</td>
+<td>-</td>
+<td>Audit schema design</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2.3.2</td>
+<td>Implement audit logging framework</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>2.3.1</td>
+<td>Logging framework active</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>2.3.3</td>
+<td>Capture all user actions (FR-AUD-001)</td>
+<td>Developer</td>
+<td>5 days</td>
+<td>2.3.2</td>
+<td>All events logged</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2.3.4</td>
+<td>Build audit trail viewer</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>2.3.3</td>
+<td>Audit viewer UI</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2.3.5</td>
+<td>Implement audit search and filter</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>2.3.4</td>
+<td>Search functional</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>2.3.6</td>
+<td>Configure audit retention policy</td>
+<td>Technical Lead</td>
+<td>2 days</td>
+<td>2.3.3</td>
+<td>Retention policy active</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2.3.7</td>
+<td>Design basic reports (Budget Summary)</td>
+<td>Business Analyst</td>
+<td>2 days</td>
+<td>-</td>
+<td>Report specifications</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2.3.8</td>
+<td>Develop budget summary report</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>2.3.7</td>
+<td>Summary report working</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>2.3.9</td>
+<td>Develop budget by unit report</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>2.3.8</td>
+<td>Unit report working</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2.3.10</td>
+<td>Implement Excel/PDF export</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>2.3.9</td>
+<td>Export functional</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2.3.11</td>
+<td>Conduct Phase 2 integration testing</td>
+<td>QA Team</td>
+<td>4 days</td>
+<td>All Phase 2</td>
+<td>Phase 2 test report</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2.3.12</td>
+<td>Initial user training (Budget Team)</td>
+<td>Training Specialist</td>
+<td>2 days</td>
+<td>2.3.11</td>
+<td>Training materials, attendance</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2.3.13</td>
+<td>Phase 2 review and sign-off</td>
+<td>Steering Committee</td>
+<td>1 day</td>
+<td>2.3.12</td>
+<td>Phase 2 completion certificate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-phase-2-deliverables">3.3 Phase 2 Deliverables<a class="headerlink" href="#33-phase-2-deliverables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ ZBB budget templates with mandatory justifications</li>
+<li>✅ Decision Package functionality</li>
+<li>✅ Complete workflow engine (Draft → Published)</li>
+<li>✅ Email notification system</li>
+<li>✅ Comprehensive audit trail</li>
+<li>✅ Basic reporting (Summary, By Unit, By GL Account)</li>
+<li>✅ Excel/PDF export capability</li>
+<li>✅ Initial training materials and user guides</li>
+</ul>
+<h3 id="34-phase-2-success-criteria">3.4 Phase 2 Success Criteria<a class="headerlink" href="#34-phase-2-success-criteria" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Target</th>
+<th>Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ZBB logic enforcement</td>
+<td>100%</td>
+<td>Cannot submit without justifications</td>
+</tr>
+<tr>
+<td>Workflow completion rate</td>
+<td>100%</td>
+<td>All workflow states functional</td>
+</tr>
+<tr>
+<td>Audit trail completeness</td>
+<td>100%</td>
+<td>All actions logged per FR-AUD-001</td>
+</tr>
+<tr>
+<td>User training satisfaction</td>
+<td>&gt;80%</td>
+<td>Training feedback survey</td>
+</tr>
+<tr>
+<td>System performance</td>
+<td>&lt;3 sec</td>
+<td>Page load time for budget entry</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-phase-3-specialized-modules-months-7-9">4. Phase 3: Specialized Modules (Months 7-9)<a class="headerlink" href="#4-phase-3-specialized-modules-months-7-9" title="Permanent link">&para;</a></h2>
+<h3 id="41-phase-objectives">4.1 Phase Objectives<a class="headerlink" href="#41-phase-objectives" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Implement Loan Portfolio Module with disbursement projections</li>
+<li>Build Borrowings and Funding Module</li>
+<li>Develop automated financial statement generation</li>
+<li>Implement KPI calculation engine</li>
+<li>Conduct comprehensive testing</li>
+</ul>
+<h3 id="42-detailed-task-breakdown">4.2 Detailed Task Breakdown<a class="headerlink" href="#42-detailed-task-breakdown" title="Permanent link">&para;</a></h3>
+<h4 id="month-7-loan-portfolio-module"><strong>Month 7: Loan Portfolio Module</strong><a class="headerlink" href="#month-7-loan-portfolio-module" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Task ID</th>
+<th>Task Description</th>
+<th>Owner</th>
+<th>Duration</th>
+<th>Dependencies</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3.1.1</td>
+<td>Design loan portfolio data model</td>
+<td>Business Analyst</td>
+<td>3 days</td>
+<td>Phase 2 complete</td>
+<td>Data model document</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>3.1.2</td>
+<td>Configure product type taxonomy</td>
+<td>Business Analyst</td>
+<td>3 days</td>
+<td>3.1.1</td>
+<td>Product types configured</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>3.1.3</td>
+<td>Configure PFI type and PFI master data</td>
+<td>Business Analyst</td>
+<td>3 days</td>
+<td>3.1.1</td>
+<td>PFI data loaded</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.1.4</td>
+<td>Develop loan disbursement template</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>3.1.2, 3.1.3</td>
+<td>Disbursement template UI</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>3.1.5</td>
+<td>Implement monthly phasing functionality</td>
+<td>Developer</td>
+<td>5 days</td>
+<td>3.1.4</td>
+<td>Phasing working</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3.1.6</td>
+<td>Build interest income calculation engine</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>3.1.5</td>
+<td>Interest calc per FR-LOAN-007</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3.1.7</td>
+<td>Implement loan growth calculations</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>3.1.6</td>
+<td>Growth calc per FR-LOAN-004</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>3.1.8</td>
+<td>Develop provisioning calculation logic</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>3.1.7</td>
+<td>Provisioning per FR-LOAN-010</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3.1.9</td>
+<td>Build loan portfolio reports</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>3.1.8</td>
+<td>Loan reports operational</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3.1.10</td>
+<td>Test loan module end-to-end</td>
+<td>QA Team</td>
+<td>3 days</td>
+<td>All 3.1.x</td>
+<td>Loan module test report</td>
+</tr>
+</tbody>
+</table>
+<h4 id="month-8-borrowings-and-funding-module"><strong>Month 8: Borrowings and Funding Module</strong><a class="headerlink" href="#month-8-borrowings-and-funding-module" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Task ID</th>
+<th>Task Description</th>
+<th>Owner</th>
+<th>Duration</th>
+<th>Dependencies</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3.2.1</td>
+<td>Design funding sources data model</td>
+<td>Business Analyst</td>
+<td>2 days</td>
+<td>-</td>
+<td>Funding data model</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3.2.2</td>
+<td>Configure funding source types</td>
+<td>Business Analyst</td>
+<td>2 days</td>
+<td>3.2.1</td>
+<td>Funding types configured</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>3.2.3</td>
+<td>Develop borrowings schedule template</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>3.2.2</td>
+<td>Borrowings template UI</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.2.4</td>
+<td>Implement interest expense calculations</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>3.2.3</td>
+<td>Interest exp per FR-FUND-003</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>3.2.5</td>
+<td>Build deposit projection functionality</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>3.2.4</td>
+<td>Deposit projections working</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3.2.6</td>
+<td>Implement weighted avg cost of funds</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>3.2.5</td>
+<td>WACOF per FR-FUND-006</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3.2.7</td>
+<td>Build funding profile reports</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>3.2.6</td>
+<td>Funding reports operational</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>3.2.8</td>
+<td>Integrate loan and funding modules</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>3.1.10, 3.2.7</td>
+<td>Integration complete</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3.2.9</td>
+<td>Test funding module end-to-end</td>
+<td>QA Team</td>
+<td>3 days</td>
+<td>All 3.2.x</td>
+<td>Funding module test report</td>
+</tr>
+</tbody>
+</table>
+<h4 id="month-9-financial-statements-and-kpi-engine"><strong>Month 9: Financial Statements and KPI Engine</strong><a class="headerlink" href="#month-9-financial-statements-and-kpi-engine" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Task ID</th>
+<th>Task Description</th>
+<th>Owner</th>
+<th>Duration</th>
+<th>Dependencies</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3.3.1</td>
+<td>Design Income Statement generator</td>
+<td>Technical Lead</td>
+<td>2 days</td>
+<td>3.2.8</td>
+<td>IS design document</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3.3.2</td>
+<td>Develop Income Statement automation</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>3.3.1</td>
+<td>IS auto-generated</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>3.3.3</td>
+<td>Design Balance Sheet generator</td>
+<td>Technical Lead</td>
+<td>2 days</td>
+<td>3.3.2</td>
+<td>BS design document</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.3.4</td>
+<td>Develop Balance Sheet automation</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>3.3.3</td>
+<td>BS auto-generated</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>3.3.5</td>
+<td>Design Cash Flow Statement (indirect)</td>
+<td>Technical Lead</td>
+<td>2 days</td>
+<td>3.3.4</td>
+<td>CFS design document</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3.3.6</td>
+<td>Develop Cash Flow Statement automation</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>3.3.5</td>
+<td>CFS auto-generated</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3.3.7</td>
+<td>Implement integration validation checks</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>3.3.6</td>
+<td>Validation per FR-INT-001</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>3.3.8</td>
+<td>Build KPI calculation engine</td>
+<td>Developer</td>
+<td>5 days</td>
+<td>3.3.6</td>
+<td>All KPIs per Section 5.1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3.3.9</td>
+<td>Develop KPI dashboard</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>3.3.8</td>
+<td>KPI dashboard operational</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3.3.10</td>
+<td>Test Three Statement Model integration</td>
+<td>QA Team</td>
+<td>4 days</td>
+<td>All 3.3.x</td>
+<td>Integration test report</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3.3.11</td>
+<td>Phase 3 comprehensive testing</td>
+<td>QA Team</td>
+<td>5 days</td>
+<td>All Phase 3</td>
+<td>Phase 3 test report</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3.3.12</td>
+<td>Phase 3 review and sign-off</td>
+<td>Steering Committee</td>
+<td>1 day</td>
+<td>3.3.11</td>
+<td>Phase 3 completion certificate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-phase-3-deliverables">4.3 Phase 3 Deliverables<a class="headerlink" href="#43-phase-3-deliverables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ Loan Portfolio Module with disbursement projections by Product × PFI</li>
+<li>✅ Interest income calculations (FR-LOAN-007, FR-LOAN-008)</li>
+<li>✅ Loan growth and provisioning calculations</li>
+<li>✅ Borrowings and Funding Module</li>
+<li>✅ Interest expense and cost of funds calculations</li>
+<li>✅ Automated Income Statement generation</li>
+<li>✅ Automated Balance Sheet generation</li>
+<li>✅ Automated Cash Flow Statement (indirect method)</li>
+<li>✅ Integration validation checks</li>
+<li>✅ KPI calculation engine (all 13 KPIs)</li>
+<li>✅ Executive KPI dashboard</li>
+</ul>
+<h3 id="44-phase-3-success-criteria">4.4 Phase 3 Success Criteria<a class="headerlink" href="#44-phase-3-success-criteria" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Target</th>
+<th>Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Loan module accuracy</td>
+<td>100%</td>
+<td>Interest income calculations verified</td>
+</tr>
+<tr>
+<td>Funding module accuracy</td>
+<td>100%</td>
+<td>Interest expense calculations verified</td>
+</tr>
+<tr>
+<td>Balance Sheet balance</td>
+<td>100%</td>
+<td>Assets = Liabilities + Equity always</td>
+</tr>
+<tr>
+<td>Cash Flow reconciliation</td>
+<td>100%</td>
+<td>CFS ending cash = BS cash</td>
+</tr>
+<tr>
+<td>KPI calculation accuracy</td>
+<td>100%</td>
+<td>All formulas per Section 5.1 verified</td>
+</tr>
+<tr>
+<td>Three Statement Model integrity</td>
+<td>100%</td>
+<td>All integration checks pass</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-phase-4-advanced-features-months-10-12">5. Phase 4: Advanced Features (Months 10-12)<a class="headerlink" href="#5-phase-4-advanced-features-months-10-12" title="Permanent link">&para;</a></h2>
+<h3 id="51-phase-objectives">5.1 Phase Objectives<a class="headerlink" href="#51-phase-objectives" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Implement scenario and sensitivity analysis</li>
+<li>Build advanced analytics and dashboards</li>
+<li>Develop variance analysis functionality</li>
+<li>Optimize system performance</li>
+<li>Conduct comprehensive user training</li>
+<li>Prepare for go-live</li>
+</ul>
+<h3 id="52-detailed-task-breakdown">5.2 Detailed Task Breakdown<a class="headerlink" href="#52-detailed-task-breakdown" title="Permanent link">&para;</a></h3>
+<h4 id="month-10-scenario-analysis-and-advanced-analytics"><strong>Month 10: Scenario Analysis and Advanced Analytics</strong><a class="headerlink" href="#month-10-scenario-analysis-and-advanced-analytics" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Task ID</th>
+<th>Task Description</th>
+<th>Owner</th>
+<th>Duration</th>
+<th>Dependencies</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4.1.1</td>
+<td>Design scenario management framework</td>
+<td>Business Analyst</td>
+<td>2 days</td>
+<td>Phase 3 complete</td>
+<td>Scenario design document</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>4.1.2</td>
+<td>Develop scenario creation functionality</td>
+<td>Developer</td>
+<td>5 days</td>
+<td>4.1.1</td>
+<td>Scenario creation working</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.1.3</td>
+<td>Implement scenario comparison</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>4.1.2</td>
+<td>Comparison reports working</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.1.4</td>
+<td>Build sensitivity analysis tool</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>4.1.2</td>
+<td>Sensitivity analysis functional</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>4.1.5</td>
+<td>Develop variance analysis module</td>
+<td>Developer</td>
+<td>5 days</td>
+<td>-</td>
+<td>Variance analysis per FR-REP-003</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4.1.6</td>
+<td>Build variance commentary functionality</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>4.1.5</td>
+<td>Commentary entry working</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4.1.7</td>
+<td>Create advanced analytics dashboards</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>4.1.5</td>
+<td>Analytics dashboards live</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>4.1.8</td>
+<td>Implement scheduled report distribution</td>
+<td>Developer</td>
+<td>4 days</td>
+<td>-</td>
+<td>Scheduled reports per FR-REP-008</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4.1.9</td>
+<td>Build report archive functionality</td>
+<td>Developer</td>
+<td>2 days</td>
+<td>4.1.8</td>
+<td>Report archive operational</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4.1.10</td>
+<td>Test advanced features</td>
+<td>QA Team</td>
+<td>3 days</td>
+<td>All 4.1.x</td>
+<td>Advanced features test report</td>
+</tr>
+</tbody>
+</table>
+<h4 id="month-11-performance-optimization-and-uat-preparation"><strong>Month 11: Performance Optimization and UAT Preparation</strong><a class="headerlink" href="#month-11-performance-optimization-and-uat-preparation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Task ID</th>
+<th>Task Description</th>
+<th>Owner</th>
+<th>Duration</th>
+<th>Dependencies</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4.2.1</td>
+<td>Conduct performance testing</td>
+<td>QA Team</td>
+<td>4 days</td>
+<td>4.1.10</td>
+<td>Performance test report</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.2.2</td>
+<td>Identify performance bottlenecks</td>
+<td>Technical Lead</td>
+<td>2 days</td>
+<td>4.2.1</td>
+<td>Bottleneck analysis</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>4.2.3</td>
+<td>Optimize database queries</td>
+<td>Developer</td>
+<td>5 days</td>
+<td>4.2.2</td>
+<td>Query optimization complete</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.2.4</td>
+<td>Implement caching mechanisms</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>4.2.3</td>
+<td>Caching operational</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.2.5</td>
+<td>Optimize report generation</td>
+<td>Developer</td>
+<td>3 days</td>
+<td>4.2.4</td>
+<td>Report performance improved</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>4.2.6</td>
+<td>Conduct load testing (500 users)</td>
+<td>QA Team</td>
+<td>4 days</td>
+<td>4.2.5</td>
+<td>Load test report</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4.2.7</td>
+<td>Prepare UAT environment</td>
+<td>Technical Lead</td>
+<td>3 days</td>
+<td>4.2.6</td>
+<td>UAT environment ready</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4.2.8</td>
+<td>Develop UAT test scripts</td>
+<td>Business Analyst</td>
+<td>3 days</td>
+<td>-</td>
+<td>UAT test cases</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4.2.9</td>
+<td>Load production-like data in UAT</td>
+<td>Integration Specialist</td>
+<td>3 days</td>
+<td>4.2.7</td>
+<td>UAT data loaded</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>4.2.10</td>
+<td>Conduct UAT training for users</td>
+<td>Training Specialist</td>
+<td>5 days</td>
+<td>4.2.9</td>
+<td>UAT training complete</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4.2.11</td>
+<td>Execute User Acceptance Testing</td>
+<td>Business Users</td>
+<td>5 days</td>
+<td>4.2.10</td>
+<td>UAT in progress</td>
+</tr>
+</tbody>
+</table>
+<h4 id="month-12-uat-completion-and-go-live-preparation"><strong>Month 12: UAT Completion and Go-Live Preparation</strong><a class="headerlink" href="#month-12-uat-completion-and-go-live-preparation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Task ID</th>
+<th>Task Description</th>
+<th>Owner</th>
+<th>Duration</th>
+<th>Dependencies</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4.3.1</td>
+<td>Complete UAT execution</td>
+<td>Business Users</td>
+<td>5 days</td>
+<td>4.2.11</td>
+<td>UAT results</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.3.2</td>
+<td>Log and prioritize UAT defects</td>
+<td>QA Team</td>
+<td>Ongoing</td>
+<td>4.3.1</td>
+<td>Defect log</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>4.3.3</td>
+<td>Fix critical and high defects</td>
+<td>Developer</td>
+<td>7 days</td>
+<td>4.3.2</td>
+<td>Defects resolved</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.3.4</td>
+<td>Retest fixed defects</td>
+<td>QA Team</td>
+<td>3 days</td>
+<td>4.3.3</td>
+<td>Retest results</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.3.5</td>
+<td>Obtain UAT sign-off</td>
+<td>Functional Lead</td>
+<td>1 day</td>
+<td>4.3.4</td>
+<td>UAT sign-off document</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>4.3.6</td>
+<td>Prepare production environment</td>
+<td>Technical Lead</td>
+<td>5 days</td>
+<td>4.3.5</td>
+<td>Production environment ready</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4.3.7</td>
+<td>Conduct security audit</td>
+<td>Security Team</td>
+<td>3 days</td>
+<td>4.3.6</td>
+<td>Security audit report</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4.3.8</td>
+<td>Perform data migration dry run</td>
+<td>Integration Specialist</td>
+<td>3 days</td>
+<td>4.3.6</td>
+<td>Migration test results</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4.3.9</td>
+<td>Finalize user training (all users)</td>
+<td>Training Specialist</td>
+<td>5 days</td>
+<td>4.3.5</td>
+<td>All users trained</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>4.3.10</td>
+<td>Develop go-live runbook</td>
+<td>PM</td>
+<td>4 days</td>
+<td>4.3.6</td>
+<td>Go-live runbook</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4.3.11</td>
+<td>Conduct go-live readiness review</td>
+<td>Steering Committee</td>
+<td>1 day</td>
+<td>All 4.3.x</td>
+<td>Go-live approval</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4.3.12</td>
+<td>Phase 4 review and sign-off</td>
+<td>Steering Committee</td>
+<td>1 day</td>
+<td>4.3.11</td>
+<td>Phase 4 completion certificate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-phase-4-deliverables">5.3 Phase 4 Deliverables<a class="headerlink" href="#53-phase-4-deliverables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ Scenario planning and comparison functionality</li>
+<li>✅ Sensitivity analysis tool</li>
+<li>✅ Variance analysis module</li>
+<li>✅ Advanced analytics dashboards</li>
+<li>✅ Scheduled report distribution</li>
+<li>✅ Performance optimization complete (meets NFR-PERF-001)</li>
+<li>✅ UAT completed and signed off</li>
+<li>✅ Production environment ready</li>
+<li>✅ All users trained</li>
+<li>✅ Go-live runbook</li>
+<li>✅ Security audit passed</li>
+</ul>
+<h3 id="54-phase-4-success-criteria">5.4 Phase 4 Success Criteria<a class="headerlink" href="#54-phase-4-success-criteria" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Target</th>
+<th>Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UAT pass rate</td>
+<td>&gt;95%</td>
+<td>Test cases passed</td>
+</tr>
+<tr>
+<td>User satisfaction</td>
+<td>&gt;80%</td>
+<td>UAT feedback survey</td>
+</tr>
+<tr>
+<td>Performance (500 users)</td>
+<td>&lt;3 sec page load</td>
+<td>Load test results</td>
+</tr>
+<tr>
+<td>Defect closure</td>
+<td>100% critical/high</td>
+<td>Defect tracking system</td>
+</tr>
+<tr>
+<td>Training completion</td>
+<td>100%</td>
+<td>Training attendance records</td>
+</tr>
+<tr>
+<td>Security audit</td>
+<td>Pass</td>
+<td>Audit report</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-phase-5-go-live-and-support-month-12">6. Phase 5: Go-Live and Support (Month 12+)<a class="headerlink" href="#6-phase-5-go-live-and-support-month-12" title="Permanent link">&para;</a></h2>
+<h3 id="61-phase-objectives">6.1 Phase Objectives<a class="headerlink" href="#61-phase-objectives" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Execute production deployment</li>
+<li>Conduct parallel run with existing process</li>
+<li>Provide hypercare support</li>
+<li>Monitor system performance</li>
+<li>Gather feedback and plan enhancements</li>
+</ul>
+<h3 id="62-go-live-activities">6.2 Go-Live Activities<a class="headerlink" href="#62-go-live-activities" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Task ID</th>
+<th>Task Description</th>
+<th>Owner</th>
+<th>Duration</th>
+<th>Dependencies</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>5.1.1</td>
+<td>Final data migration to production</td>
+<td>Integration Specialist</td>
+<td>2 days</td>
+<td>4.3.11</td>
+<td>Production data loaded</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5.1.2</td>
+<td>Conduct smoke testing in production</td>
+<td>QA Team</td>
+<td>1 day</td>
+<td>5.1.1</td>
+<td>Smoke test results</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5.1.3</td>
+<td>Go-Live (production cutover)</td>
+<td>PM, Technical Lead</td>
+<td>1 day</td>
+<td>5.1.2</td>
+<td>System live</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>5.1.4</td>
+<td>Hypercare support (24/7)</td>
+<td>All teams</td>
+<td>10 days</td>
+<td>5.1.3</td>
+<td>Incident log</td>
+</tr>
+<tr>
+<td>2-4</td>
+<td>5.1.5</td>
+<td>Parallel run with Excel process</td>
+<td>Business Users</td>
+<td>15 days</td>
+<td>5.1.3</td>
+<td>Parallel run results</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5.1.6</td>
+<td>Monitor system performance</td>
+<td>Technical Lead</td>
+<td>Ongoing</td>
+<td>5.1.3</td>
+<td>Performance metrics</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>5.1.7</td>
+<td>Resolve production issues</td>
+<td>Developer</td>
+<td>Ongoing</td>
+<td>5.1.4</td>
+<td>Issue resolution log</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5.1.8</td>
+<td>Conduct parallel run reconciliation</td>
+<td>Business Analyst</td>
+<td>3 days</td>
+<td>5.1.5</td>
+<td>Reconciliation report</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5.1.9</td>
+<td>Obtain final go-live sign-off</td>
+<td>Steering Committee</td>
+<td>1 day</td>
+<td>5.1.8</td>
+<td>Go-live sign-off</td>
+</tr>
+<tr>
+<td>4+</td>
+<td>5.1.10</td>
+<td>Transition to BAU support</td>
+<td>PM</td>
+<td>2 days</td>
+<td>5.1.9</td>
+<td>Support handover document</td>
+</tr>
+</tbody>
+</table>
+<h3 id="63-post-go-live-support">6.3 Post-Go-Live Support<a class="headerlink" href="#63-post-go-live-support" title="Permanent link">&para;</a></h3>
+<p><strong>Hypercare Period (Weeks 1-2 post go-live)</strong>
+- 24/7 support coverage
+- &lt;1 hour response time for critical issues
+- Daily status meetings
+- Incident tracking and resolution</p>
+<p><strong>Stabilization Period (Weeks 3-8 post go-live)</strong>
+- Extended support hours (7 AM - 9 PM)
+- &lt;4 hour response time for critical issues
+- Weekly status meetings
+- Performance monitoring</p>
+<p><strong>Business-as-Usual (Week 9+ post go-live)</strong>
+- Standard support hours (8 AM - 6 PM)
+- SLA-based support (per support contract)
+- Monthly review meetings
+- Continuous improvement backlog</p>
+<h3 id="64-phase-5-deliverables">6.4 Phase 5 Deliverables<a class="headerlink" href="#64-phase-5-deliverables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ Production system live and operational</li>
+<li>✅ Parallel run completed successfully</li>
+<li>✅ Reconciliation report (ERP vs. Excel)</li>
+<li>✅ Hypercare incident log and resolutions</li>
+<li>✅ Performance monitoring dashboard</li>
+<li>✅ Final go-live sign-off</li>
+<li>✅ Support handover to BAU team</li>
+<li>✅ Lessons learned document</li>
+<li>✅ Project closure report</li>
+</ul>
+<h3 id="65-phase-5-success-criteria">6.5 Phase 5 Success Criteria<a class="headerlink" href="#65-phase-5-success-criteria" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Target</th>
+<th>Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parallel run variance</td>
+<td>&lt;2%</td>
+<td>Reconciliation report</td>
+</tr>
+<tr>
+<td>Critical incidents</td>
+<td>0</td>
+<td>Incident log</td>
+</tr>
+<tr>
+<td>System availability</td>
+<td>&gt;99.5%</td>
+<td>Uptime monitoring</td>
+</tr>
+<tr>
+<td>User adoption</td>
+<td>&gt;90%</td>
+<td>System usage analytics</td>
+</tr>
+<tr>
+<td>Budget cycle time reduction</td>
+<td>&gt;30%</td>
+<td>Process metrics</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-resource-allocation">7. Resource Allocation<a class="headerlink" href="#7-resource-allocation" title="Permanent link">&para;</a></h2>
+<h3 id="71-resource-summary-by-phase">7.1 Resource Summary by Phase<a class="headerlink" href="#71-resource-summary-by-phase" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Phase 1</th>
+<th>Phase 2</th>
+<th>Phase 3</th>
+<th>Phase 4</th>
+<th>Phase 5</th>
+<th>Total Effort (Person-Days)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project Manager</td>
+<td>60</td>
+<td>60</td>
+<td>60</td>
+<td>60</td>
+<td>30</td>
+<td>270</td>
+</tr>
+<tr>
+<td>Technical Lead</td>
+<td>60</td>
+<td>60</td>
+<td>60</td>
+<td>60</td>
+<td>30</td>
+<td>270</td>
+</tr>
+<tr>
+<td>Functional Lead</td>
+<td>60</td>
+<td>60</td>
+<td>60</td>
+<td>60</td>
+<td>30</td>
+<td>270</td>
+</tr>
+<tr>
+<td>Business Analysts (3)</td>
+<td>120</td>
+<td>150</td>
+<td>120</td>
+<td>90</td>
+<td>30</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Developers (5)</td>
+<td>250</td>
+<td>300</td>
+<td>350</td>
+<td>300</td>
+<td>50</td>
+<td>1,250</td>
+</tr>
+<tr>
+<td>Integration Specialists (2)</td>
+<td>80</td>
+<td>40</td>
+<td>60</td>
+<td>40</td>
+<td>20</td>
+<td>240</td>
+</tr>
+<tr>
+<td>QA/Testing Team (3)</td>
+<td>30</td>
+<td>120</td>
+<td>150</td>
+<td>180</td>
+<td>30</td>
+<td>510</td>
+</tr>
+<tr>
+<td>Change Mgmt Lead</td>
+<td>0</td>
+<td>20</td>
+<td>40</td>
+<td>60</td>
+<td>20</td>
+<td>140</td>
+</tr>
+<tr>
+<td>Training Specialists (2)</td>
+<td>0</td>
+<td>20</td>
+<td>40</td>
+<td>80</td>
+<td>20</td>
+<td>160</td>
+</tr>
+<tr>
+<td><strong>Total Person-Days</strong></td>
+<td><strong>660</strong></td>
+<td><strong>830</strong></td>
+<td><strong>940</strong></td>
+<td><strong>930</strong></td>
+<td><strong>260</strong></td>
+<td><strong>3,620</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="72-budget-estimate">7.2 Budget Estimate<a class="headerlink" href="#72-budget-estimate" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Cost Category</th>
+<th>Estimated Cost (USD)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Personnel Costs</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Internal staff (3,620 person-days @ $500/day)</td>
+<td>$1,810,000</td>
+<td>Blended rate for Bank staff</td>
+</tr>
+<tr>
+<td>Vendor implementation team</td>
+<td>$800,000</td>
+<td>ERP vendor professional services</td>
+</tr>
+<tr>
+<td><strong>Software Licenses</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ERP software licenses (500 users)</td>
+<td>$300,000</td>
+<td>Annual subscription</td>
+</tr>
+<tr>
+<td>Development/test environments</td>
+<td>$50,000</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Infrastructure</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Servers and hardware</td>
+<td>$150,000</td>
+<td>On-premise or cloud infrastructure</td>
+</tr>
+<tr>
+<td>Network and security</td>
+<td>$50,000</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Training and Change Management</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Training materials development</td>
+<td>$30,000</td>
+<td></td>
+</tr>
+<tr>
+<td>Training delivery</td>
+<td>$40,000</td>
+<td></td>
+</tr>
+<tr>
+<td>Change management activities</td>
+<td>$60,000</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Contingency (15%)</strong></td>
+<td>$348,000</td>
+<td>Risk buffer</td>
+</tr>
+<tr>
+<td><strong>Total Estimated Budget</strong></td>
+<td><strong>$3,638,000</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="73-resource-allocation-chart">7.3 Resource Allocation Chart<a class="headerlink" href="#73-resource-allocation-chart" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>gantt
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    title Resource Allocation Timeline
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    dateFormat YYYY-MM-DD
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    section Phase 1
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    PM/Leads           :2026-03-01, 90d
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    Business Analysts  :2026-03-01, 90d
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    Developers         :2026-03-15, 75d
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    Integration        :2026-03-15, 75d
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    section Phase 2
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    PM/Leads           :2026-06-01, 90d
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    Business Analysts  :2026-06-01, 90d
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    Developers         :2026-06-01, 90d
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    QA Team            :2026-07-15, 45d
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    section Phase 3
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    PM/Leads           :2026-09-01, 90d
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    Business Analysts  :2026-09-01, 90d
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    Developers         :2026-09-01, 90d
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    Integration        :2026-09-01, 60d
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    QA Team            :2026-09-01, 90d
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    section Phase 4
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    PM/Leads           :2026-12-01, 90d
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    Developers         :2026-12-01, 90d
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    QA Team            :2026-12-01, 90d
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    Training           :2027-01-01, 60d
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    section Phase 5
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    All Teams          :2027-03-01, 30d
+</code></pre></div>
+<hr />
+<h2 id="8-risk-management">8. Risk Management<a class="headerlink" href="#8-risk-management" title="Permanent link">&para;</a></h2>
+<h3 id="81-risk-register">8.1 Risk Register<a class="headerlink" href="#81-risk-register" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Risk ID</th>
+<th>Risk Description</th>
+<th>Probability</th>
+<th>Impact</th>
+<th>Risk Score</th>
+<th>Mitigation Strategy</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R-001</td>
+<td>GL integration complexity higher than expected</td>
+<td>Medium</td>
+<td>High</td>
+<td>12</td>
+<td>Early PoC, dedicated integration specialist, vendor support</td>
+<td>Technical Lead</td>
+</tr>
+<tr>
+<td>R-002</td>
+<td>User resistance to change from Excel</td>
+<td>High</td>
+<td>Medium</td>
+<td>12</td>
+<td>Strong change management, executive sponsorship, training</td>
+<td>Change Mgmt Lead</td>
+</tr>
+<tr>
+<td>R-003</td>
+<td>Scope creep during implementation</td>
+<td>Medium</td>
+<td>High</td>
+<td>12</td>
+<td>Strict change control process, steering committee approval</td>
+<td>PM</td>
+</tr>
+<tr>
+<td>R-004</td>
+<td>Key resources unavailable</td>
+<td>Medium</td>
+<td>High</td>
+<td>12</td>
+<td>Cross-training, documentation, backup resources identified</td>
+<td>PM</td>
+</tr>
+<tr>
+<td>R-005</td>
+<td>Data quality issues in CoA mapping</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>9</td>
+<td>Data cleansing phase, validation workshops</td>
+<td>Functional Lead</td>
+</tr>
+<tr>
+<td>R-006</td>
+<td>Performance issues with large datasets</td>
+<td>Low</td>
+<td>High</td>
+<td>6</td>
+<td>Performance testing in Phase 4, optimization, scalable architecture</td>
+<td>Technical Lead</td>
+</tr>
+<tr>
+<td>R-007</td>
+<td>Regulatory requirements change</td>
+<td>Low</td>
+<td>High</td>
+<td>6</td>
+<td>Flexible design, regular regulatory review, configurable rules</td>
+<td>Functional Lead</td>
+</tr>
+<tr>
+<td>R-008</td>
+<td>Vendor delays or issues</td>
+<td>Low</td>
+<td>High</td>
+<td>6</td>
+<td>Clear SLAs, escalation process, alternative vendor identified</td>
+<td>PM</td>
+</tr>
+<tr>
+<td>R-009</td>
+<td>Budget overrun</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>9</td>
+<td>Monthly budget tracking, contingency buffer, early warning system</td>
+<td>PM</td>
+</tr>
+<tr>
+<td>R-010</td>
+<td>UAT reveals major gaps</td>
+<td>Low</td>
+<td>High</td>
+<td>6</td>
+<td>Early user involvement, iterative demos, prototype validation</td>
+<td>Functional Lead</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Risk Scoring:</strong> Probability (Low=1, Medium=2, High=3) × Impact (Low=2, Medium=4, High=6)</p>
+<h3 id="82-risk-mitigation-actions">8.2 Risk Mitigation Actions<a class="headerlink" href="#82-risk-mitigation-actions" title="Permanent link">&para;</a></h3>
+<p><strong>High Priority Risks (Score ≥12):</strong></p>
+<ol>
+<li><strong>R-001: GL Integration Complexity</strong></li>
+<li><strong>Action:</strong> Conduct Proof of Concept (PoC) in Month 1</li>
+<li><strong>Timeline:</strong> Week 2-3 of Month 1</li>
+<li>
+<p><strong>Success Criteria:</strong> Successful bi-directional data sync demonstrated</p>
+</li>
+<li>
+<p><strong>R-002: User Resistance</strong></p>
+</li>
+<li><strong>Action:</strong> Establish Change Champions network, executive communication plan</li>
+<li><strong>Timeline:</strong> Month 1 onwards</li>
+<li>
+<p><strong>Success Criteria:</strong> &gt;80% user satisfaction in training feedback</p>
+</li>
+<li>
+<p><strong>R-003: Scope Creep</strong></p>
+</li>
+<li><strong>Action:</strong> Implement formal change request process with impact analysis</li>
+<li><strong>Timeline:</strong> Month 1</li>
+<li>
+<p><strong>Success Criteria:</strong> Zero unapproved scope changes</p>
+</li>
+<li>
+<p><strong>R-004: Resource Availability</strong></p>
+</li>
+<li><strong>Action:</strong> Identify backup resources, create knowledge transfer plan</li>
+<li><strong>Timeline:</strong> Month 1</li>
+<li><strong>Success Criteria:</strong> &lt;5 days delay due to resource unavailability</li>
+</ol>
+<hr />
+<h2 id="9-quality-assurance">9. Quality Assurance<a class="headerlink" href="#9-quality-assurance" title="Permanent link">&para;</a></h2>
+<h3 id="91-testing-strategy">9.1 Testing Strategy<a class="headerlink" href="#91-testing-strategy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>flowchart LR
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    A[Unit Testing] --&gt; B[Integration Testing]
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    B --&gt; C[System Testing]
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    C --&gt; D[Performance Testing]
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    D --&gt; E[Security Testing]
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    E --&gt; F[User Acceptance Testing]
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    F --&gt; G[Go-Live]
+</code></pre></div>
+<h3 id="92-testing-phases">9.2 Testing Phases<a class="headerlink" href="#92-testing-phases" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Testing Phase</th>
+<th>Scope</th>
+<th>Owner</th>
+<th>Timeline</th>
+<th>Entry Criteria</th>
+<th>Exit Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unit Testing</strong></td>
+<td>Individual modules and functions</td>
+<td>Developers</td>
+<td>Ongoing (each sprint)</td>
+<td>Code complete</td>
+<td>&gt;95% code coverage, all tests pass</td>
+</tr>
+<tr>
+<td><strong>Integration Testing</strong></td>
+<td>Module interactions, data flow</td>
+<td>QA Team</td>
+<td>End of each phase</td>
+<td>Unit tests passed</td>
+<td>All integration points validated</td>
+</tr>
+<tr>
+<td><strong>System Testing</strong></td>
+<td>End-to-end scenarios</td>
+<td>QA Team</td>
+<td>Months 6, 9, 11</td>
+<td>Integration tests passed</td>
+<td>All test cases passed</td>
+</tr>
+<tr>
+<td><strong>Performance Testing</strong></td>
+<td>Load, stress, scalability</td>
+<td>QA Team</td>
+<td>Month 11</td>
+<td>System stable</td>
+<td>Meets NFR-PERF-001</td>
+</tr>
+<tr>
+<td><strong>Security Testing</strong></td>
+<td>Vulnerabilities, penetration</td>
+<td>Security Team</td>
+<td>Month 12</td>
+<td>System complete</td>
+<td>No critical vulnerabilities</td>
+</tr>
+<tr>
+<td><strong>UAT</strong></td>
+<td>Business process validation</td>
+<td>Business Users</td>
+<td>Month 11-12</td>
+<td>System testing passed</td>
+<td>&gt;95% test cases passed, sign-off</td>
+</tr>
+</tbody>
+</table>
+<h3 id="93-test-coverage-requirements">9.3 Test Coverage Requirements<a class="headerlink" href="#93-test-coverage-requirements" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Functional Area</th>
+<th>Test Cases (Estimated)</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assumptions Engine</td>
+<td>50</td>
+<td>High</td>
+</tr>
+<tr>
+<td>ZBB Templates and Logic</td>
+<td>80</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>Workflow and Approvals</td>
+<td>100</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>Loan Portfolio Module</td>
+<td>120</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>Funding Module</td>
+<td>80</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>Financial Statements</td>
+<td>150</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>KPI Calculations</td>
+<td>70</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Reporting</td>
+<td>60</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Security and RBAC</td>
+<td>50</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Audit Trail</td>
+<td>40</td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>800</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="94-defect-management">9.4 Defect Management<a class="headerlink" href="#94-defect-management" title="Permanent link">&para;</a></h3>
+<p><strong>Defect Severity Levels:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Definition</th>
+<th>Response Time</th>
+<th>Resolution Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Critical</strong></td>
+<td>System down, data loss, security breach</td>
+<td>1 hour</td>
+<td>24 hours</td>
+</tr>
+<tr>
+<td><strong>High</strong></td>
+<td>Major functionality broken, workaround exists</td>
+<td>4 hours</td>
+<td>72 hours</td>
+</tr>
+<tr>
+<td><strong>Medium</strong></td>
+<td>Minor functionality issue, cosmetic</td>
+<td>1 day</td>
+<td>1 week</td>
+</tr>
+<tr>
+<td><strong>Low</strong></td>
+<td>Enhancement request, documentation</td>
+<td>3 days</td>
+<td>Next release</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Defect Closure Criteria:</strong>
+- Critical and High defects: 100% resolved before go-live
+- Medium defects: &gt;90% resolved before go-live
+- Low defects: Logged for future releases</p>
+<hr />
+<h2 id="10-change-management">10. Change Management<a class="headerlink" href="#10-change-management" title="Permanent link">&para;</a></h2>
+<h3 id="101-change-management-strategy">10.1 Change Management Strategy<a class="headerlink" href="#101-change-management-strategy" title="Permanent link">&para;</a></h3>
+<p><strong>Objective:</strong> Ensure smooth transition from manual Excel-based process to automated ERP system with high user adoption and minimal disruption.</p>
+<h3 id="102-stakeholder-analysis">10.2 Stakeholder Analysis<a class="headerlink" href="#102-stakeholder-analysis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Stakeholder Group</th>
+<th>Impact Level</th>
+<th>Resistance Level</th>
+<th>Engagement Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Executive Management</td>
+<td>High</td>
+<td>Low</td>
+<td>Regular steering committee updates, KPI dashboards</td>
+</tr>
+<tr>
+<td>Budget Team</td>
+<td>Very High</td>
+<td>Medium</td>
+<td>Early involvement, super-user training, process design input</td>
+</tr>
+<tr>
+<td>Heads of Business Units</td>
+<td>High</td>
+<td>Medium-High</td>
+<td>Training, change champions, benefits communication</td>
+</tr>
+<tr>
+<td>Operations Team</td>
+<td>High</td>
+<td>Medium</td>
+<td>Hands-on training, early access, feedback loops</td>
+</tr>
+<tr>
+<td>Finance Team</td>
+<td>Medium</td>
+<td>Low</td>
+<td>Training, reporting demos</td>
+</tr>
+<tr>
+<td>IT Team</td>
+<td>Medium</td>
+<td>Low</td>
+<td>Technical workshops, documentation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="103-change-management-activities">10.3 Change Management Activities<a class="headerlink" href="#103-change-management-activities" title="Permanent link">&para;</a></h3>
+<h4 id="communication-plan"><strong>Communication Plan</strong><a class="headerlink" href="#communication-plan" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Audience</th>
+<th>Frequency</th>
+<th>Channel</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project Newsletter</td>
+<td>All stakeholders</td>
+<td>Monthly</td>
+<td>Email</td>
+<td>Change Mgmt Lead</td>
+</tr>
+<tr>
+<td>Executive Updates</td>
+<td>Steering Committee</td>
+<td>Monthly</td>
+<td>Presentation</td>
+<td>PM</td>
+</tr>
+<tr>
+<td>Town Hall Meetings</td>
+<td>All users</td>
+<td>Quarterly</td>
+<td>In-person/Virtual</td>
+<td>Project Sponsor</td>
+</tr>
+<tr>
+<td>Department Briefings</td>
+<td>Business Units</td>
+<td>As needed</td>
+<td>In-person</td>
+<td>Functional Lead</td>
+</tr>
+<tr>
+<td>Quick Wins Showcase</td>
+<td>All stakeholders</td>
+<td>Ad-hoc</td>
+<td>Email, Demo</td>
+<td>PM</td>
+</tr>
+</tbody>
+</table>
+<h4 id="training-plan"><strong>Training Plan</strong><a class="headerlink" href="#training-plan" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Training Type</th>
+<th>Audience</th>
+<th>Duration</th>
+<th>Delivery Method</th>
+<th>Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System Overview</td>
+<td>All users</td>
+<td>2 hours</td>
+<td>Virtual classroom</td>
+<td>Month 8</td>
+</tr>
+<tr>
+<td>Budget Team Deep Dive</td>
+<td>Budget Team</td>
+<td>2 days</td>
+<td>In-person workshop</td>
+<td>Month 6, 11</td>
+</tr>
+<tr>
+<td>Unit Head Training</td>
+<td>Heads of Units</td>
+<td>1 day</td>
+<td>In-person workshop</td>
+<td>Month 11</td>
+</tr>
+<tr>
+<td>Operations Team Training</td>
+<td>Operations Team</td>
+<td>1 day</td>
+<td>In-person workshop</td>
+<td>Month 11</td>
+</tr>
+<tr>
+<td>Super-User Training</td>
+<td>Change Champions</td>
+<td>3 days</td>
+<td>In-person workshop</td>
+<td>Month 10</td>
+</tr>
+<tr>
+<td>Refresher Training</td>
+<td>All users</td>
+<td>1 hour</td>
+<td>Virtual</td>
+<td>Month 12</td>
+</tr>
+</tbody>
+</table>
+<h4 id="change-champions-network"><strong>Change Champions Network</strong><a class="headerlink" href="#change-champions-network" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Selection:</strong> Identify 1-2 champions per business unit (15-20 total)</li>
+<li><strong>Role:</strong> Early adopters, peer support, feedback collection, training assistance</li>
+<li><strong>Training:</strong> Intensive 3-day super-user training in Month 10</li>
+<li><strong>Recognition:</strong> Certificate, acknowledgment in town halls</li>
+</ul>
+<h3 id="104-readiness-assessment">10.4 Readiness Assessment<a class="headerlink" href="#104-readiness-assessment" title="Permanent link">&para;</a></h3>
+<p><strong>Go-Live Readiness Checklist:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Criteria</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>System Readiness</strong></td>
+<td>All UAT defects resolved</td>
+<td>☐</td>
+</tr>
+<tr>
+<td></td>
+<td>Performance testing passed</td>
+<td>☐</td>
+</tr>
+<tr>
+<td></td>
+<td>Security audit passed</td>
+<td>☐</td>
+</tr>
+<tr>
+<td></td>
+<td>Production environment ready</td>
+<td>☐</td>
+</tr>
+<tr>
+<td><strong>Data Readiness</strong></td>
+<td>Data migration completed</td>
+<td>☐</td>
+</tr>
+<tr>
+<td></td>
+<td>Data validation passed</td>
+<td>☐</td>
+</tr>
+<tr>
+<td><strong>User Readiness</strong></td>
+<td>&gt;90% users trained</td>
+<td>☐</td>
+</tr>
+<tr>
+<td></td>
+<td>Super-users certified</td>
+<td>☐</td>
+</tr>
+<tr>
+<td></td>
+<td>User guides distributed</td>
+<td>☐</td>
+</tr>
+<tr>
+<td><strong>Process Readiness</strong></td>
+<td>New processes documented</td>
+<td>☐</td>
+</tr>
+<tr>
+<td></td>
+<td>Approval workflows tested</td>
+<td>☐</td>
+</tr>
+<tr>
+<td><strong>Support Readiness</strong></td>
+<td>Helpdesk trained</td>
+<td>☐</td>
+</tr>
+<tr>
+<td></td>
+<td>Support runbook complete</td>
+<td>☐</td>
+</tr>
+<tr>
+<td></td>
+<td>Escalation process defined</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="11-success-metrics-and-kpis">11. Success Metrics and KPIs<a class="headerlink" href="#11-success-metrics-and-kpis" title="Permanent link">&para;</a></h2>
+<h3 id="111-project-success-metrics">11.1 Project Success Metrics<a class="headerlink" href="#111-project-success-metrics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Baseline</th>
+<th>Target</th>
+<th>Measurement Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Budget Cycle Time</td>
+<td>8-10 weeks</td>
+<td>4-6 weeks</td>
+<td>Process timeline tracking</td>
+</tr>
+<tr>
+<td>Manual Consolidation Time</td>
+<td>40+ hours</td>
+<td>0 hours (automated)</td>
+<td>Time tracking</td>
+</tr>
+<tr>
+<td>Budget Accuracy (variance)</td>
+<td>±15%</td>
+<td>±5%</td>
+<td>Variance analysis</td>
+</tr>
+<tr>
+<td>User Satisfaction</td>
+<td>N/A</td>
+<td>&gt;80%</td>
+<td>Post-implementation survey</td>
+</tr>
+<tr>
+<td>System Availability</td>
+<td>N/A</td>
+<td>&gt;99.5%</td>
+<td>Uptime monitoring</td>
+</tr>
+<tr>
+<td>User Adoption Rate</td>
+<td>0%</td>
+<td>&gt;90%</td>
+<td>System usage analytics</td>
+</tr>
+<tr>
+<td>Training Completion</td>
+<td>0%</td>
+<td>100%</td>
+<td>Training attendance records</td>
+</tr>
+</tbody>
+</table>
+<h3 id="112-business-benefits-realization">11.2 Business Benefits Realization<a class="headerlink" href="#112-business-benefits-realization" title="Permanent link">&para;</a></h3>
+<p><strong>Quantitative Benefits:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Benefit</th>
+<th>Estimated Annual Value</th>
+<th>Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time savings (staff productivity)</td>
+<td>$250,000</td>
+<td>Hours saved × average hourly rate</td>
+</tr>
+<tr>
+<td>Reduced errors and rework</td>
+<td>$100,000</td>
+<td>Error rate reduction × cost per error</td>
+</tr>
+<tr>
+<td>Faster decision-making</td>
+<td>$150,000</td>
+<td>Opportunity cost of delays</td>
+</tr>
+<tr>
+<td><strong>Total Quantitative Benefits</strong></td>
+<td><strong>$500,000/year</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Qualitative Benefits:</strong></p>
+<ul>
+<li>Improved data accuracy and consistency</li>
+<li>Enhanced governance and audit trail</li>
+<li>Better strategic planning capability</li>
+<li>Increased transparency and accountability</li>
+<li>Improved stakeholder confidence</li>
+</ul>
+<p><strong>ROI Calculation:</strong></p>
+<ul>
+<li><strong>Total Investment:</strong> $3,638,000</li>
+<li><strong>Annual Benefits:</strong> $500,000</li>
+<li><strong>Payback Period:</strong> 7.3 years</li>
+<li><strong>5-Year NPV (10% discount rate):</strong> $256,000</li>
+</ul>
+<hr />
+<h2 id="12-dependencies-and-assumptions">12. Dependencies and Assumptions<a class="headerlink" href="#12-dependencies-and-assumptions" title="Permanent link">&para;</a></h2>
+<h3 id="121-critical-dependencies">12.1 Critical Dependencies<a class="headerlink" href="#121-critical-dependencies" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Dependency</th>
+<th>Description</th>
+<th>Impact if Not Met</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GL System Availability</td>
+<td>Access to GL for integration</td>
+<td>Project delay</td>
+<td>Early engagement with GL team</td>
+</tr>
+<tr>
+<td>CoA Finalization</td>
+<td>Chart of Accounts must be stable</td>
+<td>Rework required</td>
+<td>Freeze CoA during project</td>
+</tr>
+<tr>
+<td>User Availability</td>
+<td>Business users for requirements, UAT</td>
+<td>Incomplete requirements</td>
+<td>Secure executive commitment</td>
+</tr>
+<tr>
+<td>Vendor Support</td>
+<td>ERP vendor timely support</td>
+<td>Implementation delays</td>
+<td>SLA with vendor, escalation process</td>
+</tr>
+<tr>
+<td>Infrastructure</td>
+<td>Servers, network ready on time</td>
+<td>Deployment delays</td>
+<td>Early procurement, parallel setup</td>
+</tr>
+</tbody>
+</table>
+<h3 id="122-key-assumptions">12.2 Key Assumptions<a class="headerlink" href="#122-key-assumptions" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Scope:</strong> Functional requirements as documented are complete and accurate</li>
+<li><strong>Resources:</strong> All identified resources will be available as planned</li>
+<li><strong>Budget:</strong> Budget of $3.6M is approved and available</li>
+<li><strong>Timeline:</strong> 12-month timeline is acceptable to stakeholders</li>
+<li><strong>Data:</strong> Historical data for migration is available and of acceptable quality</li>
+<li><strong>Integration:</strong> GL system has APIs or integration capabilities</li>
+<li><strong>Change Management:</strong> Executive sponsorship and user cooperation</li>
+<li><strong>Vendor:</strong> ERP vendor has proven capability in banking sector</li>
+<li><strong>Regulatory:</strong> No major regulatory changes during implementation</li>
+<li><strong>Technology:</strong> No major technology platform changes during project</li>
+</ol>
+<hr />
+<h2 id="13-project-closure">13. Project Closure<a class="headerlink" href="#13-project-closure" title="Permanent link">&para;</a></h2>
+<h3 id="131-closure-activities">13.1 Closure Activities<a class="headerlink" href="#131-closure-activities" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Owner</th>
+<th>Timeline</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Final project review meeting</td>
+<td>PM</td>
+<td>Month 13, Week 1</td>
+<td>Meeting minutes</td>
+</tr>
+<tr>
+<td>Lessons learned workshop</td>
+<td>PM</td>
+<td>Month 13, Week 1</td>
+<td>Lessons learned document</td>
+</tr>
+<tr>
+<td>Project closure report</td>
+<td>PM</td>
+<td>Month 13, Week 2</td>
+<td>Closure report</td>
+</tr>
+<tr>
+<td>Financial reconciliation</td>
+<td>PM</td>
+<td>Month 13, Week 2</td>
+<td>Final budget report</td>
+</tr>
+<tr>
+<td>Archive project documentation</td>
+<td>PM</td>
+<td>Month 13, Week 2</td>
+<td>Document repository</td>
+</tr>
+<tr>
+<td>Celebrate success</td>
+<td>Project Sponsor</td>
+<td>Month 13, Week 2</td>
+<td>Team recognition event</td>
+</tr>
+<tr>
+<td>Handover to BAU support</td>
+<td>PM</td>
+<td>Month 13, Week 2</td>
+<td>Handover document</td>
+</tr>
+</tbody>
+</table>
+<h3 id="132-lessons-learned-categories">13.2 Lessons Learned Categories<a class="headerlink" href="#132-lessons-learned-categories" title="Permanent link">&para;</a></h3>
+<ul>
+<li>What went well?</li>
+<li>What could be improved?</li>
+<li>What should we do differently next time?</li>
+<li>Key risks that materialized and how they were handled</li>
+<li>Recommendations for future projects</li>
+</ul>
+<hr />
+<h2 id="appendix-a-detailed-gantt-chart">Appendix A: Detailed Gantt Chart<a class="headerlink" href="#appendix-a-detailed-gantt-chart" title="Permanent link">&para;</a></h2>
+<p><em>(To be developed in MS Project or similar tool with all tasks, dependencies, and resource assignments)</em></p>
+<hr />
+<h2 id="appendix-b-raci-matrix">Appendix B: RACI Matrix<a class="headerlink" href="#appendix-b-raci-matrix" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>PM</th>
+<th>Tech Lead</th>
+<th>Func Lead</th>
+<th>BA</th>
+<th>Dev</th>
+<th>QA</th>
+<th>Change Mgmt</th>
+<th>Sponsor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project Planning</td>
+<td>A</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>I</td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Requirements Gathering</td>
+<td>C</td>
+<td>I</td>
+<td>A</td>
+<td>R</td>
+<td>C</td>
+<td>I</td>
+<td>I</td>
+<td>I</td>
+</tr>
+<tr>
+<td>System Design</td>
+<td>C</td>
+<td>A</td>
+<td>C</td>
+<td>R</td>
+<td>R</td>
+<td>I</td>
+<td>I</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Development</td>
+<td>C</td>
+<td>A</td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+<td>I</td>
+<td>I</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>C</td>
+<td>C</td>
+<td>I</td>
+<td>C</td>
+<td>C</td>
+<td>A</td>
+<td>I</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Training</td>
+<td>C</td>
+<td>I</td>
+<td>C</td>
+<td>I</td>
+<td>I</td>
+<td>I</td>
+<td>A</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Go-Live</td>
+<td>A</td>
+<td>R</td>
+<td>R</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>R</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend:</strong> R = Responsible, A = Accountable, C = Consulted, I = Informed</p>
+<hr />
+<h2 id="appendix-c-communication-matrix">Appendix C: Communication Matrix<a class="headerlink" href="#appendix-c-communication-matrix" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Communication</th>
+<th>Purpose</th>
+<th>Frequency</th>
+<th>Format</th>
+<th>Audience</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Steering Committee</td>
+<td>Governance, decisions</td>
+<td>Monthly</td>
+<td>Meeting</td>
+<td>Executives, PM, Leads</td>
+<td>PM</td>
+</tr>
+<tr>
+<td>Project Team Meeting</td>
+<td>Coordination</td>
+<td>Weekly</td>
+<td>Meeting</td>
+<td>Project team</td>
+<td>PM</td>
+</tr>
+<tr>
+<td>Daily Standup</td>
+<td>Progress tracking</td>
+<td>Daily</td>
+<td>Standup</td>
+<td>Dev team</td>
+<td>Tech Lead</td>
+</tr>
+<tr>
+<td>Status Report</td>
+<td>Progress update</td>
+<td>Weekly</td>
+<td>Email</td>
+<td>Stakeholders</td>
+<td>PM</td>
+</tr>
+<tr>
+<td>Newsletter</td>
+<td>General updates</td>
+<td>Monthly</td>
+<td>Email</td>
+<td>All users</td>
+<td>Change Mgmt</td>
+</tr>
+<tr>
+<td>Town Hall</td>
+<td>Major milestones</td>
+<td>Quarterly</td>
+<td>Presentation</td>
+<td>All stakeholders</td>
+<td>Sponsor</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="document-control">Document Control<a class="headerlink" href="#document-control" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>February 10, 2026</td>
+<td>Project Manager</td>
+<td>Initial implementation workplan</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>End of Implementation Workplan</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
